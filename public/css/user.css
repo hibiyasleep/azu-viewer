@@ -1,0 +1,404 @@
+body {
+  width: 50rem;
+  min-width: 32rem;
+  background: #222;
+  color: #eee;
+  margin: 0 auto;
+}
+/* header */
+header, nav, main {
+  margin-bottom: 1em;
+  background: #262626;
+  box-shadow: 0 0rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+.header {
+  padding: 0.5em 0.5em 0.375em 0.5em;
+  margin-bottom: 0.125em;
+  background: #333;
+}
+.notice {
+  font-size: 0.75em;
+}
+.notice.notice a {
+  text-decoration: none;
+  color: #c93;
+}
+.notice.notice a:hover {
+  color: #39c;
+}
+.header .buttons {
+  display: inline-block;
+  float: right;
+}
+.header .buttons a {
+  display: inline-block;
+  padding: 0 0.25em;
+}
+.nickname {
+  color: #888;
+}
+.profile {
+  text-align: right;
+  padding: 0.375em;
+}
+.username { /* .profile > h1 */
+  float: left;
+  padding: 0.125em 0.25em;
+  vertical-align: -10%;
+  display: inline-block;
+  font-family: SdvxCollection; /* Consolas, Monaco, 'Lucida Console', monospace; */
+  font-weight: normal;
+}
+.skill-level {
+  display: inline-block;
+  width: 9.375em;
+  height: 2.625em;
+  background-size: 100%;
+  float: left;
+}
+.skill-level > span {
+  font-size: 1.25em;
+  font-weight: 900;
+  display: inline-block;
+  width: 100%;
+  padding: 0.333333em 1em 0 2.5em;
+  text-align: center;
+}
+
+.userdata-detail {
+  display: inline-block;
+  font-family: SdvxCollection, '맑은 고딕', 'Malgun Gothic', sans-serif;
+  color: #999;
+}
+.userdata-detail > span {
+  font-size: 2em;
+  color: #ddd;
+}
+.overview-header {
+  display: inline-block;
+  padding: 0.25em;
+  width: 100%;
+  height: 2em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.overview {
+  height: 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  transition: height 0.5s ease;
+  -webkit-transition: height 0.5s ease;
+}
+.triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 0.75em solid transparent;
+  border-bottom: 0.75em solid #ddd;
+  margin: 0 0.5em;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transition: transform 250ms ease, -webkit-transform 250ms ease;
+}
+/*   Overview Expanded */
+#overview-toggle:checked ~ .overview-header > .triangle {
+  transform: rotate(0);
+  -webkit-transform: rotate(0);
+}
+#overview-toggle:checked ~ .overview {
+  height: 23.5em;
+}
+/*   Overview table */
+table {
+  width: calc(100% - 1em);
+  height: calc(100% - 1em);
+  margin: 0.5em;
+  font-size: 0.75em;
+  border-collapse: collapse;
+}
+th, td {
+  min-width: 3em;
+  text-align: center;
+  border: calc(1em / 12) solid #444;
+}
+td:last-of-type {
+  width: calc(100% / 7);
+}
+/*   blocks */
+.pattern {
+  width: 8rem;
+}
+.upper {
+  width: 5rem;
+  height: 3rem;
+  display: inline-block;
+}
+.middle {
+  font-size: 0.75em;
+  height: 0rem;
+  line-height: 2rem;
+  margin-top: -0.5rem;
+  text-align: center;
+  overflow-y: hidden;
+  transition: height 100ms;
+}
+.middle > span {
+  text-align: center;
+}
+.pattern:hover > .middle {
+  height: 2rem;
+}
+.lower {
+  height: 2rem;
+  line-height: 2rem;
+}
+/* nav */
+nav {
+  background: #333;
+  height: 3rem;
+  z-index: 1;
+  text-align: right;
+  position: relative;
+}
+nav > * {
+  padding: 0.25em;
+  text-align: initial;
+}
+nav.fixed {
+  position: fixed;
+  top: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  width: inherit;
+}
+nav.fixed ~ main {
+  margin-top: 5rem;
+}
+.nav-heading {
+  width: calc(100% - 32rem);
+  height: 3em;
+  padding: 0.5em;
+  float: left;
+  color: #777;
+}
+nav select, .like-select {
+  display: inline-block;
+  color: inherit;
+  background: none;
+  border: none;
+  font-size: 1em;
+  font-family: inherit;
+  height: 100%;
+  padding: 0.25em;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  text-decoration: none;
+  color: #ddd;
+}
+.like-select > svg {
+  margin-top: 0.25em;
+}
+nav .pattern {
+  height: 3em;
+}
+nav .pattern select {
+  width: 100%;
+  padding-left: 0.5em;
+}
+input#src {
+  font-size: 1em;
+  width: 6em;
+  display: inline-block;
+  border: none;
+  border-bottom: 0.125em solid #18a;
+  padding: 0.5em;
+  background: none;
+  color: white;
+  vertical-align: 0.75em;
+}
+/* main */
+main {
+  background: #222;
+  color: #ddd;
+}
+/* Coulmn */
+.song-column {
+  width: 100%;
+  height: 5rem;
+  text-align: right;
+}
+.song-column * {
+  text-align: initial;
+}
+.song-title {
+  width: calc(100% - 32rem);
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  white-space: nowrap;
+  overflow-x: hidden;
+  float: left;
+}
+/*   title */
+.song-column h2 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+.song-column h3 {
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+.song-column .pattern {
+  height: 5em;
+}
+/* style-by-value */
+/*   pattern backgrounds */
+.nov { background: #336; }
+.adv { background: #663; }
+.exh { background: #633; }
+.inf { background: #366; }
+.grv { background: #963; }
+/*   playcount */
+.playcount-played {
+  display: inline-block;
+  width: 30%;
+}
+.playcount-cleared {
+  display: inline-block;
+  color: #0da;
+  width: 30%;
+}
+.playcount-uc {
+  display: inline-block;
+  color: #f48;
+  width: 20%;
+}
+.playcount-perfect {
+  display: inline-block;
+  color: #ff3;
+  width: 20%;
+}
+/*   rating */
+.song-rank[data-rank='0']:before { content: 'D'; color: #ccc; }
+.song-rank[data-rank='1']:before { content: 'C'; color: #ccc; }
+.song-rank[data-rank='2']:before { content: 'B'; color: #ccc; }
+.song-rank[data-rank='3']:before { content: 'A'; color: #ff9; }
+.song-rank[data-rank='4']:before {
+  content: 'AA';
+  color: #ff9;
+  display: inline-block;
+  transform: scaleX(0.75);
+  -webkit-transform: scaleX(0.75);
+}
+.song-rank[data-rank='5']:before {
+  content: 'AAA';
+  color: #ff9;
+  display: inline-block;
+  transform: scaleX(0.5);
+  -webkit-transform: scaleX(0.5);
+  -webkit-transform-origin-x: 0.625em;
+}
+/*   clearlamp */
+.song-clear[data-clear='undefined'], .song-clear[data-clear=''] {
+  box-shadow: none;
+  border: none;
+  background: none;
+}
+/*     failed */
+.song-clear {
+  border: calc(1em / 12) solid;
+  background: #000;
+}
+.song-clear[data-clear='0'] {
+  border: none;
+  padding: calc(1em / 12);
+  color: #075;
+}
+.song-clear[data-clear='0']:before {
+  content: 'C';
+}
+/*     clear */
+.song-clear[data-clear='1'] {
+  border-color: #0da;
+  color: #0da;
+}
+.song-clear[data-clear='1']:before {
+  content: 'C';
+}
+/*     hard clear */
+.song-clear[data-clear='2'] {
+  border-color: #a0d;
+  color: #a0d;
+}
+.song-clear[data-clear='2']:before {
+  content: 'C';
+}
+/*     ultimate chain */
+.song-clear[data-clear='3'] {
+  border-color: #f8a;
+  color: #f48;
+}
+.song-clear[data-clear='3']:before {
+  content: 'U';
+}
+/*     perfect ultimate chain */
+.song-clear[data-clear='4'] {
+  border-color: #ff9;
+  color: #ff3;
+}
+.song-clear[data-clear='4']:before {
+  content: 'P';
+}
+/*   skill level */
+.skill-level[data-skill-level='1'] {
+  background-image: url('https://p.eagate.573.jp/game/sdvx/iii/p/images/profile/skill_01.gif');
+  color: rgba(0, 0, 0, 0.75);
+}
+.skill-level[data-skill-level='2'] {
+  background-image: url('https://p.eagate.573.jp/game/sdvx/iii/p/images/profile/skill_02.gif');
+  color: rgba(0, 0, 0, 0.75);
+}
+.skill-level[data-skill-level='3'] {
+  background-image: url('https://p.eagate.573.jp/game/sdvx/iii/p/images/profile/skill_03.gif');
+  color: rgba(0, 0, 0, 0.75);
+}
+.skill-level[data-skill-level='4'] {
+  background-image: url('https://p.eagate.573.jp/game/sdvx/iii/p/images/profile/skill_04.gif');
+  color: rgba(0, 0, 0, 0.75);
+}
+.skill-level[data-skill-level='5'] {
+  background-image: url('https://p.eagate.573.jp/game/sdvx/iii/p/images/profile/skill_05.gif');
+  color: rgba(0, 0, 0, 0.75);
+}
+.skill-level[data-skill-level='6'] {
+  background-image: url('https://p.eagate.573.jp/game/sdvx/iii/p/images/profile/skill_06.gif');
+  color: rgba(0, 0, 0, 0.75);
+}
+.skill-level[data-skill-level='7'] {
+  background-image: url('https://p.eagate.573.jp/game/sdvx/iii/p/images/profile/skill_07.gif');
+  color: rgba(0, 0, 0, 0.75);
+}
+.skill-level[data-skill-level='8'] {
+  background-image: url('https://p.eagate.573.jp/game/sdvx/iii/p/images/profile/skill_08.gif');
+  color: rgba(0, 0, 0, 0.75);
+}
+.skill-level[data-skill-level='9'] {
+  background-image: url('https://p.eagate.573.jp/game/sdvx/iii/p/images/profile/skill_09.gif');
+  color: rgba(0, 0, 0, 0.75);
+}
+.skill-level[data-skill-level='10'] {
+  background-image: url('https://p.eagate.573.jp/game/sdvx/iii/p/images/profile/skill_10.gif');
+  color: rgba(0, 0, 0, 0.75);
+}
+.skill-level[data-skill-level='11'] {
+  background-image: url('https://p.eagate.573.jp/game/sdvx/iii/p/images/profile/skill_11.gif');
+  color: rgba(255, 255, 51, 0.75);
+}
+.skill-level[data-skill-level='12'] {
+  color: #ff3;
+  background-image: url('https://p.eagate.573.jp/game/sdvx/iii/p/images/profile/skill_inf.gif');
+}
+

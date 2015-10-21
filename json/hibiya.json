@@ -1,0 +1,4343 @@
+[
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163379,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "8572900",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "ginkiha",
+            "name": "Borealis"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 0
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163398,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "7491770",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Nizikawa",
+            "name": "F.K.S."
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163906,
+            "level": "10",
+            "perfect": "0",
+            "play": "1",
+            "score": "9413043",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "sky_delta",
+            "name": "The Wind of Gold -H\u0394PPY MIX-"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 164114,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "8914686",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Ultra-Noob",
+            "name": "MEGANE(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163229,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "9606598",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163739,
+            "level": "14",
+            "perfect": "0",
+            "play": "1",
+            "score": "8368454",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "N-Driver",
+            "name": "The Sampling Paradise (N-Driver Style)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164571,
+            "level": "10",
+            "perfect": "0",
+            "play": "1",
+            "score": "9686147",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163640,
+            "level": "14",
+            "perfect": "0",
+            "play": "2",
+            "score": "9115226",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "xac",
+            "name": "Virtual Sunrise (xac remix)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163643,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "9055555",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u304b\u3081\u308a\u3042",
+            "name": "werewolf howls."
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163644,
+            "level": "14",
+            "perfect": "0",
+            "play": "3",
+            "score": "8927083",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "you",
+            "name": "Mist Tek"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163917,
+            "level": "11",
+            "perfect": "0",
+            "play": "1",
+            "score": "9530685",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "0kash",
+            "name": "Little princess has no identity."
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163921,
+            "level": "14",
+            "perfect": "0",
+            "play": "1",
+            "score": "8863636",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u30d2\u30b2\u30c9\u30e9\u30a4\u30d0\u30fc join. SELEN",
+            "name": "\u6253\u6253\u6253\u6253\u6253\u6253\u6253\u6253\u6253\u6253"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 164002,
+            "level": "11",
+            "perfect": "0",
+            "play": "1",
+            "score": "8664772",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Hate",
+            "name": "gigadelic -stance xxxx-"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 0
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163230,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "2625628",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "borzy",
+            "name": "The Wind of Gold (folkcore remix)"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 0
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163743,
+            "level": "14",
+            "perfect": "0",
+            "play": "2",
+            "score": "2291666",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Shiron",
+            "name": "Wave of Craze"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163139,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9081455",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Tracy feat.\u7bc9\u5c71\u3055\u3048",
+            "name": "Flying!"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163663,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "8047468",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Ryu\u2606",
+            "name": "Sakura Mirage"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163669,
+            "level": "14",
+            "perfect": "0",
+            "play": "1",
+            "score": "9161051",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u5cb8\u7530\u6559\u56e3\uff06THE\u660e\u661f\u30ed\u30b1\u30c3\u30c4",
+            "name": "\u7af9\u53d6\u98db\u7fd4"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 163143,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "8858148",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Last Note.",
+            "name": "\u5c11\u5973\u66b4\u52d5(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163931,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9196499",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Music by Hommarju, Vocal by \u3041\u3085",
+            "name": "REPLiCA"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164262,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "9265426",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "QURELESS",
+            "name": "KiLLeR MeRMaiD"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163932,
+            "level": "11",
+            "perfect": "0",
+            "play": "2",
+            "score": "9506227",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "LUNA",
+            "name": "Mist In Hell"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 163145,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "8597345",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Diceros Bicornis",
+            "name": "Innocent Tempest"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163673,
+            "level": "14",
+            "perfect": "0",
+            "play": "1",
+            "score": "9002557",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "kors k",
+            "name": "Virtual Sunrise"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164331,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "9630996",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "kors k",
+            "name": "Pure Evil"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163146,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9084802",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "8284 feat. \u307f\u304b\u3093\u6c41",
+            "name": "\u30b4\u30fc\u30a4\u30f3\u30b0 \u30de\u30a4 \u30a6\u30a7\u30a4\uff01"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163516,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9122731",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Neru",
+            "name": "\u547d\u306e\u30e6\u30fc\u30b9\u30c6\u30a3\u30c6\u30a3\u30a2(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 163147,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "9003202",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "dj TAKA VS DJ TOTTO feat.\u85cd",
+            "name": "IX"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "5",
+            "illust": 163238,
+            "level": "13",
+            "perfect": "0",
+            "play": "6",
+            "score": "9429065",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "ginkiha",
+            "name": "EOS -INFINITE EDIT-"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164041,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "9357410",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "ZOGRAPHOS (Yu_Asahina+Yamajet)",
+            "name": "Verse IV"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163520,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9191592",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u3042\u3055\u304d\u5927\u76e3\u7763",
+            "name": "\u91ce\u7403\u306e\u904a\u3073\u65b9\u3000\u305d\u3057\u3066\u305d\u306e\u6b74\u53f2\u3000\uff5e\u6c7a\u5b9a\u7248\uff5e"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164245,
+            "level": "11",
+            "perfect": "0",
+            "play": "1",
+            "score": "9185832",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163521,
+            "level": "14",
+            "perfect": "0",
+            "play": "2",
+            "score": "8793985",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u304b\u306d\u3053\u3061\u306f\u308b",
+            "name": "\u96ea\u5973"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 0
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163840,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "7513572",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u304b\u3081\u308a\u3042",
+            "name": "Lunatic Rough Party!!"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164043,
+            "level": "10",
+            "perfect": "0",
+            "play": "1",
+            "score": "8962177",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163523,
+            "level": "14",
+            "perfect": "0",
+            "play": "2",
+            "score": "8411351",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Akhuta Philharmonic Orchestra",
+            "name": "Stella Sinistra"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163245,
+            "level": "14",
+            "perfect": "0",
+            "play": "1",
+            "score": "8451695",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "TAG\u00d7PON",
+            "name": "PUNISHER"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163525,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9069456",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u524a\u9664",
+            "name": "Erlung"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163851,
+            "level": "11",
+            "perfect": "0",
+            "play": "1",
+            "score": "9277108",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Project Mayhem",
+            "name": "Decretum"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 164156,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "9261710",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "ETIA.",
+            "name": "Demetel"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 5
+        },
+        "adv_detail": {
+            "clear": "2",
+            "illust": 164047,
+            "level": "11",
+            "perfect": "0",
+            "play": "2",
+            "score": "9853085",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "4",
+            "illust": 163448,
+            "level": "14",
+            "perfect": "0",
+            "play": "4",
+            "score": "9465986",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "ginkiha+kamome sano",
+            "name": "Dawn of Asia"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163159,
+            "level": "11",
+            "perfect": "0",
+            "play": "1",
+            "score": "9337044",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 0
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163449,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "7613100",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Yooh",
+            "name": "snow storm -euphoria-"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163160,
+            "level": "11",
+            "perfect": "0",
+            "play": "1",
+            "score": "8733955",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "BlackY",
+            "name": "DEADLOCK XXX"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164293,
+            "level": "11",
+            "perfect": "0",
+            "play": "1",
+            "score": "9548272",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163452,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "8078256",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "RoughSketch + DD\"\u30ca\u30ab\u30bf\"Metal",
+            "name": "Booths of Fighters"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163535,
+            "level": "14",
+            "perfect": "0",
+            "play": "1",
+            "score": "8498659",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "MAD CHILD",
+            "name": "Voice 2 Voice"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163162,
+            "level": "10",
+            "perfect": "0",
+            "play": "1",
+            "score": "8998100",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163163,
+            "level": "14",
+            "perfect": "0",
+            "play": "2",
+            "score": "8689041",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u3055\u308f\u308f",
+            "name": "Cirno Break"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163252,
+            "level": "14",
+            "perfect": "0",
+            "play": "1",
+            "score": "8285420",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "uno(IOSYS)",
+            "name": "#Fairy_dancing_in_lake"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "3",
+            "illust": 163254,
+            "level": "11",
+            "perfect": "0",
+            "play": "3",
+            "score": "9095182",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163456,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "8385321",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Yu_Asahina",
+            "name": "\u97f3\u697d -resolve-"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "2",
+            "illust": 163255,
+            "level": "9",
+            "perfect": "0",
+            "play": "2",
+            "score": "9645340",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u3068\u308d\u307e\u308b",
+            "name": "\u5c11\u5e74\u306f\u7a7a\u3092\u8fbf\u308b Prog Piano Remix"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163457,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "7895161",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "ke-ji",
+            "name": "Joyeuse"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163458,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "8393375",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "orangentle / Yu_Asahina",
+            "name": "HAELEQUIN"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163172,
+            "level": "10",
+            "perfect": "0",
+            "play": "1",
+            "score": "9719730",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163459,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "8417721",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "cosMo\uff20\u66b4\u8d70P feat.GUMI",
+            "name": "\u30e9\u30af\u30ac\u30ad\u30b9\u30c8(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163173,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "8783371",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Neru",
+            "name": "\u30ed\u30b9\u30c8\u30ef\u30f3\u306e\u53f7\u54ed(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163261,
+            "level": "9",
+            "perfect": "0",
+            "play": "1",
+            "score": "9015918",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "6",
+            "illust": 163542,
+            "level": "14",
+            "perfect": "0",
+            "play": "7",
+            "score": "9210526",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Ryu\u2606",
+            "name": "I'm so Happy"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "2",
+            "illust": 163262,
+            "level": "12",
+            "perfect": "0",
+            "play": "3",
+            "score": "9629777",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u3046\u305f\u305fP",
+            "name": "\u3053\u3061\u3089\u3001\u5e78\u798f\u5b89\u5fc3\u59d4\u54e1\u4f1a\u3067\u3059\u3002(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163461,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "8453453",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Hate vs Brilliance",
+            "name": "Qubism"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164613,
+            "level": "7",
+            "perfect": "0",
+            "play": "1",
+            "score": "9422588",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 164099,
+            "level": "12",
+            "perfect": "0",
+            "play": "2",
+            "score": "9709141",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "syzfonics",
+            "name": "Fly to Next World (syzfonics Remix)"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "3",
+            "illust": 163463,
+            "level": "15",
+            "perfect": "0",
+            "play": "4",
+            "score": "8907185",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "ginkiha",
+            "name": "Starlight Express"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163275,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9695540",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "lapix",
+            "name": "Foolish Hero"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163559,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "8155497",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Music by Ryuwitty, Vocal by Kuroa*",
+            "name": "The world of sound"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163564,
+            "level": "14",
+            "perfect": "0",
+            "play": "1",
+            "score": "8673128",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u30b9\u30ba\u30e0 feat.GUMI\uff06MAYU",
+            "name": "\u904e\u98df\u6027:\u30a2\u30a4\u30c9\u30eb\u75c7\u5019\u7fa4(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 164323,
+            "level": "11",
+            "perfect": "0",
+            "play": "2",
+            "score": "8191489",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "5",
+            "illust": 163708,
+            "level": "14",
+            "perfect": "0",
+            "play": "5",
+            "score": "9099099",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "uno(IOSYS)",
+            "name": "Disagree Feelings"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "4",
+            "illust": 163190,
+            "level": "14",
+            "perfect": "0",
+            "play": "5",
+            "score": "9282786",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u30d3\u30fc\u30c8\u307e\u308a\u304a\uff08COOL&CREATE;\uff09",
+            "name": "\u30ca\u30a4\u30c8\u30fb\u30aa\u30d6\u30fb\u30ca\u30a4\u30c4"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "2",
+            "illust": 163572,
+            "level": "14",
+            "perfect": "0",
+            "play": "3",
+            "score": "9139167",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Silver Forest feat. \u3081\u3089\u307f\u307d\u3063\u3077",
+            "name": "\u30b1\u30ed\u2468destiny"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163465,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "8742514",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "TeamGrimoire+\u3042\u307e\u732b",
+            "name": "croiX"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163576,
+            "level": "15",
+            "perfect": "0",
+            "play": "4",
+            "score": "9064898",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Hommarju",
+            "name": "Gott"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "2",
+            "illust": 163191,
+            "level": "12",
+            "perfect": "0",
+            "play": "3",
+            "score": "9251925",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163578,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "8667582",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 163859,
+            "level": "6",
+            "perfect": "0",
+            "play": "1",
+            "score": "8873015",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "Yooh",
+            "name": "Dynasty"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163711,
+            "level": "11",
+            "perfect": "0",
+            "play": "1",
+            "score": "8564356",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163467,
+            "level": "15",
+            "perfect": "0",
+            "play": "6",
+            "score": "9086483",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 164083,
+            "level": "6",
+            "perfect": "0",
+            "play": "1",
+            "score": "9126602",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "C-Show",
+            "name": "PANIC HOLIC"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163842,
+            "level": "11",
+            "perfect": "0",
+            "play": "1",
+            "score": "9579976",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "2",
+            "illust": 163470,
+            "level": "15",
+            "perfect": "0",
+            "play": "2",
+            "score": "8727929",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "siromaru",
+            "name": "Absurd Gaff"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "20",
+            "illust": 163472,
+            "level": "13",
+            "perfect": "0",
+            "play": "21",
+            "score": "9466929",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "ginkiha",
+            "name": "EGG"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "3",
+            "illust": 163713,
+            "level": "11",
+            "perfect": "0",
+            "play": "4",
+            "score": "9309859",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163478,
+            "level": "15",
+            "perfect": "0",
+            "play": "7",
+            "score": "8472222",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u9ed2\u9b54",
+            "name": "\u5927\u5b87\u5b99\u30b9\u30c6\u30fc\u30b8"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "5",
+            "illust": 163715,
+            "level": "10",
+            "perfect": "0",
+            "play": "7",
+            "score": "9544253",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163480,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "8883071",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "P*Light",
+            "name": "TRIGGER\u2605HAPPY"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163482,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9622719",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "nora2r",
+            "name": "VISION"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163718,
+            "level": "14",
+            "perfect": "0",
+            "play": "1",
+            "score": "9228523",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Last Note. feat. GUMI",
+            "name": "\u30ce\u30a4\u30b8\u30fc\u30e9\u30d0\u30fc\u30bd\u30a6\u30eb(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164325,
+            "level": "8",
+            "perfect": "0",
+            "play": "1",
+            "score": "8868421",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "2",
+            "illust": 163584,
+            "level": "13",
+            "perfect": "0",
+            "play": "4",
+            "score": "9386120",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "YM feat. GUMI",
+            "name": "\u5341\u9762\u76f8(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163487,
+            "level": "14",
+            "perfect": "0",
+            "play": "1",
+            "score": "8802698",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "kemu feat. GUMI",
+            "name": "\u4eba\u751f\u30ea\u30bb\u30c3\u30c8\u30dc\u30bf\u30f3(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163197,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "9177958",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163488,
+            "level": "15",
+            "perfect": "0",
+            "play": "5",
+            "score": "8780821",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "nov_detail": {
+            "clear": "2",
+            "illust": 163196,
+            "level": "6",
+            "perfect": "0",
+            "play": "2",
+            "score": "9641485",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "BlackY",
+            "name": "AA BlackY mix"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163812,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9489937",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Maozon",
+            "name": "pandora (Maozon Remix)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164028,
+            "level": "10",
+            "perfect": "0",
+            "play": "1",
+            "score": "9236760",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "6",
+            "illust": 163586,
+            "level": "14",
+            "perfect": "0",
+            "play": "6",
+            "score": "9482615",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Yu_Asahina",
+            "name": "Freeway Shuffle -More2 HAPPY Re-Mix-"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163950,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9094942",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "borzy",
+            "name": "Abyss (sharp stepp remix)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164554,
+            "level": "9",
+            "perfect": "0",
+            "play": "1",
+            "score": "9541154",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163587,
+            "level": "14",
+            "perfect": "0",
+            "play": "2",
+            "score": "8773184",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "PHQUASE",
+            "name": "rainbow flyer -gratitude remix-"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163588,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9084440",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u5cb8\u7530\u6559\u56e3\uff06THE\u660e\u661f\u30ed\u30b1\u30c3\u30c4",
+            "name": "\u660e\u661f\u30ed\u30b1\u30c3\u30c8"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163589,
+            "level": "14",
+            "perfect": "0",
+            "play": "4",
+            "score": "9499417",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u8c5a\u4e59\u5973",
+            "name": "\u5e7b\u60f3\u306e\u30b5\u30c6\u30e9\u30a4\u30c8"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163591,
+            "level": "14",
+            "perfect": "0",
+            "play": "1",
+            "score": "9050387",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "SOUND HOLIC feat. Nana Takahashi",
+            "name": "Grip & Break down !! - SDVX Edit. -"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 163199,
+            "level": "10",
+            "perfect": "0",
+            "play": "1",
+            "score": "9083601",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163200,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9093567",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "ARM(IOSYS)",
+            "name": "\u30c1\u30eb\u30ce\u306e\u30d1\u30fc\u30d5\u30a7\u30af\u30c8\u3055\u3093\u3059\u3046\u6559\u5ba4"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "3",
+            "illust": 163726,
+            "level": "10",
+            "perfect": "0",
+            "play": "5",
+            "score": "8833107",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163596,
+            "level": "14",
+            "perfect": "0",
+            "play": "1",
+            "score": "9063136",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "kemu feat. IA",
+            "name": "\u516d\u5146\u5e74\u3068\u4e00\u591c\u7269\u8a9e(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163312,
+            "level": "15",
+            "perfect": "0",
+            "play": "2",
+            "score": "8718689",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "kamome sano",
+            "name": "Ganymede kamome mix"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 0
+        },
+        "inf_detail": {
+            "clear": "0",
+            "illust": 163727,
+            "level": "14",
+            "perfect": "0",
+            "play": "6",
+            "score": "4840698",
+            "ultimate": "0"
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "D.F.K.Soundsystem",
+            "name": "GAMBOL (dfk SLC rmx)"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163492,
+            "level": "14",
+            "perfect": "0",
+            "play": "2",
+            "score": "9086897",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "RoughSketch",
+            "name": "Distorted Floor"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "3",
+            "illust": 163729,
+            "level": "10",
+            "perfect": "0",
+            "play": "3",
+            "score": "9595115",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "11",
+            "illust": 163493,
+            "level": "14",
+            "perfect": "0",
+            "play": "11",
+            "score": "9357959",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "kamome sano",
+            "name": "freaky freak"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163598,
+            "level": "15",
+            "perfect": "0",
+            "play": "1",
+            "score": "8667041",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Hommarju",
+            "name": "Onigo"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163207,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9230038",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "P*Light",
+            "name": "caramel ribbon"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163318,
+            "level": "14",
+            "perfect": "0",
+            "play": "1",
+            "score": "9365733",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Mayumi Morinaga",
+            "name": "\u541b\u306b\u30a8\u30fc\u30eb\u3092\u30fb\u30fb\u30fb\uff01 \uff08DJ UTO REMIX\uff09(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "2",
+            "illust": 163212,
+            "level": "13",
+            "perfect": "0",
+            "play": "3",
+            "score": "9367369",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "IDEA+RHYTHM",
+            "name": ".59 -BOOTH BOOST REMIX-"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "22",
+            "illust": 163338,
+            "level": "14",
+            "perfect": "0",
+            "play": "33",
+            "score": "9329320",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u30c7\u30c3\u30c9\u30dc\u30fc\u30ebP",
+            "name": "Xepher Light and Darkness Dragon REMIX"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 163224,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "9038778",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "164",
+            "name": "\u51a5 Rockin' SWING REMIX"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 163832,
+            "level": "9",
+            "perfect": "0",
+            "play": "1",
+            "score": "9334889",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "cosMo\uff20\u66b4\u8d70P",
+            "name": "Evans VolteX Pf arrange"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163228,
+            "level": "8",
+            "perfect": "0",
+            "play": "1",
+            "score": "9455128",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "4",
+            "illust": 163998,
+            "level": "13",
+            "perfect": "0",
+            "play": "4",
+            "score": "9448705",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "yuukiss",
+            "name": "\u300c\u6708\u98a8\u9b54\u4f1d\u300d\u9f8d\u9aa8\u9b3c\u6226 yks Remix"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "23",
+            "illust": 163351,
+            "level": "13",
+            "perfect": "0",
+            "play": "23",
+            "score": "9578252",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "fu_mou",
+            "name": "gentle stress wobble rmx"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 3
+        },
+        "inf_detail": {
+            "clear": "0",
+            "illust": 163357,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9278810",
+            "ultimate": "0"
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "otetsu",
+            "name": "\u30ca\u30ca\u30a4\u30ed"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 163360,
+            "level": "7",
+            "perfect": "0",
+            "play": "1",
+            "score": "8590844",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163361,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "9245667",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "SOUND HOLIC feat. Nana Takahashi",
+            "name": "Ha\uff65lle\uff65lu\uff65jah"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 163793,
+            "level": "7",
+            "perfect": "0",
+            "play": "1",
+            "score": "9313583",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "cosMo\uff20\u66b4\u8d70P",
+            "name": "For UltraPlayers"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163527,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "8423076",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "1640mP",
+            "name": "\u30bf\u30a4\u30e0\u30de\u30b7\u30f3(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 163157,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "8164867",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "BlackY vs. Yooh",
+            "name": "XROSS INFECTION"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164049,
+            "level": "10",
+            "perfect": "0",
+            "play": "1",
+            "score": "9412455",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u63d0\u4f9b",
+            "name": "Daily Lunch Special \uff5eDeliciousREMIX\uff5e"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164123,
+            "level": "10",
+            "perfect": "0",
+            "play": "1",
+            "score": "9553249",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 164051,
+            "level": "6",
+            "perfect": "0",
+            "play": "1",
+            "score": "9763157",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "Team Grimoire",
+            "name": "C18H27NO3"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164405,
+            "level": "7",
+            "perfect": "0",
+            "play": "1",
+            "score": "9286846",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163942,
+            "level": "12",
+            "perfect": "0",
+            "play": "2",
+            "score": "8672376",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Verdammt",
+            "name": "\u30ab\u30e9\u30eb\u306e\u6708 Verdammt Remix"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163259,
+            "level": "8",
+            "perfect": "0",
+            "play": "1",
+            "score": "9084821",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163260,
+            "level": "12",
+            "perfect": "0",
+            "play": "2",
+            "score": "8579447",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Daisuke Ohnuma(\u5927\u798fP)",
+            "name": "\u9685\u7530\u5ddd\u590f\u604b\u6b4c (I/O Angel mix)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163175,
+            "level": "11",
+            "perfect": "0",
+            "play": "2",
+            "score": "9083390",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 163174,
+            "level": "6",
+            "perfect": "0",
+            "play": "1",
+            "score": "9170013",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "DJ YOSHITAKA",
+            "name": "VALLIS-NERIA"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "2",
+            "illust": 163177,
+            "level": "11",
+            "perfect": "0",
+            "play": "2",
+            "score": "9180451",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 164796,
+            "level": "5",
+            "perfect": "0",
+            "play": "1",
+            "score": "8827586",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "LeaF",
+            "name": "\u97f3\u697d -\u58ca\u97f3\u697d mix-"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 163266,
+            "level": "4",
+            "perfect": "0",
+            "play": "1",
+            "score": "8890909",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "kamome sano",
+            "name": "concon (picom'n'bass rmx)"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "nov_detail": {
+            "clear": "2",
+            "illust": 163267,
+            "level": "4",
+            "perfect": "0",
+            "play": "2",
+            "score": "9305555",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "P*Light",
+            "name": "Sakura Reflection (P*Light Slayer Remix)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164102,
+            "level": "9",
+            "perfect": "0",
+            "play": "2",
+            "score": "8775510",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "t+pazolite",
+            "name": "Daily Lunch Special (tpz Overcute Remix)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163944,
+            "level": "11",
+            "perfect": "0",
+            "play": "1",
+            "score": "8928104",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 163276,
+            "level": "4",
+            "perfect": "0",
+            "play": "1",
+            "score": "9035433",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "C-YA",
+            "name": "Mother Ship (C-YA MIX)"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163187,
+            "level": "11",
+            "perfect": "0",
+            "play": "1",
+            "score": "9200567",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u767a\u71b1\u5deb\u5973\uff5e\u305a",
+            "name": "Silent Story"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 163193,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "8107789",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "BlackY",
+            "name": "Max Burning!!"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 164385,
+            "level": "6",
+            "perfect": "0",
+            "play": "1",
+            "score": "8938223",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "ismK",
+            "name": "V.I.P."
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164324,
+            "level": "7",
+            "perfect": "0",
+            "play": "1",
+            "score": "8459079",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "cosMo\uff20\u66b4\u8d70P feat. MAYU",
+            "name": "\u30a8\u30b9\u30b1\u30fc\u30d7\u30fb\u30d5\u30ed\u30e0\u30fb\u30c7\u30a3\u30b9\u30c8\u30d4\u30a2(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163719,
+            "level": "10",
+            "perfect": "0",
+            "play": "1",
+            "score": "9274809",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u30d4\u30ce\u30ad\u30aaP",
+            "name": "\u8150\u308c\u5916\u9053\u3068\u30c1\u30e7\u30b3\u30ec\u3090\u30c8(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 163297,
+            "level": "9",
+            "perfect": "0",
+            "play": "1",
+            "score": "8682051",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163590,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "8628355",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u5e7d\u9589\u30b5\u30c6\u30e9\u30a4\u30c8 feat. senya",
+            "name": "\u6708\u306b\u53e2\u96f2\u83ef\u306b\u98a8"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "2",
+            "illust": 163300,
+            "level": "7",
+            "perfect": "0",
+            "play": "3",
+            "score": "9395280",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163301,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "9069529",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Masayoshi Minoshima",
+            "name": "Bad Apple!! feat. nomico"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 164029,
+            "level": "7",
+            "perfect": "0",
+            "play": "1",
+            "score": "9209979",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "Neru",
+            "name": "\u518d\u6559\u80b2(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "2",
+            "illust": 163303,
+            "level": "10",
+            "perfect": "0",
+            "play": "2",
+            "score": "9320987",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "nov_detail": {
+            "clear": "2",
+            "illust": 163302,
+            "level": "5",
+            "perfect": "0",
+            "play": "2",
+            "score": "9559471",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "Mayumi Morinaga  (moimoi)",
+            "name": "dreamin' feat.Ryu\u2606(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163304,
+            "level": "10",
+            "perfect": "0",
+            "play": "3",
+            "score": "9207974",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 164135,
+            "level": "4",
+            "perfect": "0",
+            "play": "1",
+            "score": "9056451",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "kemu feat. GUMI",
+            "name": "\u30a4\u30ab\u30b5\u30de\u30e9\u30a4\u30d5\u30b2\u30a4\u30e0(EXIT TUNES)"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 163204,
+            "level": "5",
+            "perfect": "0",
+            "play": "1",
+            "score": "8048780",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "N-driver",
+            "name": "Ignited Night burst"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163209,
+            "level": "7",
+            "perfect": "0",
+            "play": "2",
+            "score": "8663101",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 164188,
+            "level": "3",
+            "perfect": "0",
+            "play": "1",
+            "score": "9179431",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "\u304b\u3081\u308a\u3042",
+            "name": "\u30b5\u30e8\u30ca\u30e9\u30fb\u30d8\u30f4\u30f3 \uff08\u304b\u3081\u308a\u3042's NEKOMATAelectroRMX\uff09"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "nov_detail": {
+            "clear": "2",
+            "illust": 163216,
+            "level": "6",
+            "perfect": "0",
+            "play": "2",
+            "score": "9503386",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "ARM (IOSYS)",
+            "name": "\u604b\u3059\u308b\u2606\u5b87\u5b99\u6226\u4e89\u3063\uff01\uff01 \u3042\u3070\u3070\u3070\u307f\u3063\u304f\u3059"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 163219,
+            "level": "6",
+            "perfect": "0",
+            "play": "1",
+            "score": "8246197",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "REDALiCE",
+            "name": "FLOWER REDALiCE Remix"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163341,
+            "level": "12",
+            "perfect": "0",
+            "play": "1",
+            "score": "7967436",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "azuma",
+            "name": "Diamond Dust Black Diamond Dust"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "nov_detail": {
+            "clear": "1",
+            "illust": 163342,
+            "level": "4",
+            "perfect": "0",
+            "play": "1",
+            "score": "9387966",
+            "ultimate": "0"
+        },
+        "song": {
+            "artist": "\u5e7d\u9589\u30ab\u30bf\u30eb\u30b7\u30b9",
+            "name": "RED ZONE NeoClassical Party Remix"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 163830,
+            "level": "9",
+            "perfect": "0",
+            "play": "1",
+            "score": "7781030",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u7121\u529bP",
+            "name": "ALBIDA Powerless Mix"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 164206,
+            "level": "8",
+            "perfect": "0",
+            "play": "1",
+            "score": "8174242",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 1
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 164109,
+            "level": "10",
+            "perfect": "0",
+            "play": "1",
+            "score": "7996254",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "yanagi",
+            "name": "Iterator"
+        }
+    },
+    {
+        "adv_basic": {
+            "play": false
+        },
+        "exh_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "exh_detail": {
+            "clear": "1",
+            "illust": 163347,
+            "level": "8",
+            "perfect": "0",
+            "play": "1",
+            "score": "9483695",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "baker",
+            "name": "good high school"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 2
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163353,
+            "level": "8",
+            "perfect": "0",
+            "play": "1",
+            "score": "8903429",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163354,
+            "level": "13",
+            "perfect": "0",
+            "play": "1",
+            "score": "8607681",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "KN",
+            "name": "smooooch\u30fb\u2200\u30fb KN mix"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 3
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163954,
+            "level": "7",
+            "perfect": "0",
+            "play": "1",
+            "score": "8887434",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u30d2\u30b2\u30c9\u30e9\u30a4\u30d0\u30fc",
+            "name": "PULSE LASER"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 2
+        },
+        "adv_detail": {
+            "clear": "0",
+            "illust": 163365,
+            "level": "10",
+            "perfect": "0",
+            "play": "1",
+            "score": "8745781",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "play": false
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "iroha(sasaki)",
+            "name": "Broken 8cmix"
+        }
+    },
+    {
+        "adv_basic": {
+            "clear": 1,
+            "play": true,
+            "rank": 4
+        },
+        "adv_detail": {
+            "clear": "1",
+            "illust": 163370,
+            "level": "6",
+            "perfect": "0",
+            "play": "1",
+            "score": "9366940",
+            "ultimate": "0"
+        },
+        "exh_basic": {
+            "clear": 0,
+            "play": true,
+            "rank": 0
+        },
+        "exh_detail": {
+            "clear": "0",
+            "illust": 163371,
+            "level": "9",
+            "perfect": "0",
+            "play": "1",
+            "score": "5838898",
+            "ultimate": "0"
+        },
+        "inf_basic": {
+            "play": false
+        },
+        "nov_basic": {
+            "play": false
+        },
+        "song": {
+            "artist": "\u30de\u30c1\u30b2\u30ea\u30fc\u30bf",
+            "name": "\u51db\u3068\u3057\u3066\u54b2\u304f\u82b1\u306e\u5982\u304f \u30b9\u30d7\u30fc\u30ad\u30a3\u30c6\u30eb\u30df\u30a3\u30f3\u30df\u30c3\u30af\u30b9"
+        }
+    }
+]

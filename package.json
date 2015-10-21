@@ -1,0 +1,10 @@
+{
+  "name": "sdvx-azu-viewer",
+  "main": "./index.html",
+  "dependencies": {
+    "dot": "1.x"
+  },
+  "config": {
+    "listen": "/tmp/azu.sock"
+  }
+}
