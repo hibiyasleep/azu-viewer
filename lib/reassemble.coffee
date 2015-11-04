@@ -39,4 +39,6 @@ class module.exports
         else
           ns[fumen] = {}
 
+      nd.push ns
+
     return nd
