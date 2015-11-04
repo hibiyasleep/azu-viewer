@@ -1,4 +1,4 @@
-class module.exports
+module.exports =
   sdvx: (d) ->
     nd = []
     # for 16 levels
