@@ -1,8 +1,9 @@
-request = require 'request'
-#filters = require './filters.coffee'
-config = require '../config.json'
+request     = require 'request'
+#filters     = require './filters.coffee'
+config      = require '../config.json'
+reassemble  = require './reassemble.coffee'
 
-NICK_REGEX = /\/basic_json\/(.*?)\.json/
+NICK_REGEX  = /\/basic_json\/(.*?)\.json/
 
 module.exports = (app, views) ->
 
@@ -20,6 +21,7 @@ module.exports = (app, views) ->
            .render views.error,
                    code: 500
                    error: e
+        res.end()
         return e
 
       if NICK_REGEX.test d
@@ -33,12 +35,14 @@ module.exports = (app, views) ->
       # retrieve basic_json
 
       request config.sdvx.baseuri + config.sdvx.basic_json + '/' + name + '.json',
-        (e, r, d) ->
+        (e, r, basic_d) ->
           if e or r.statuscode is not 200
             res.status 500
                .render views.error,
                        code: 500
                        error: e
+            res.end()
+            return e
 
           # retrieve rest of data
 
@@ -49,19 +53,12 @@ module.exports = (app, views) ->
                    .render views.error,
                            code: 500
                            error: e
+                res.end()
+                return e
 
-              # song: [
-              #   {
-              #     title:
-              #     artist:
-              #     nov: {
-              #       count: { play / clear / uc / puc }
-              #       rank: 0-5 from D to AAA
-              #       clear: 0-4 from F to PUC
-              #       score:
-              #
+              [d, stat] = reassemble.sdvx JSON.parse d
 
-
-              d = JSON.parse d
-
-              reassemble.sdvx(d)
+              res.json
+                meta: JSON.parse basic_d
+                songs: d
+                stat: stat
