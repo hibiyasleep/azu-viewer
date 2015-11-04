@@ -3,14 +3,15 @@
 require 'dot'
         .process path: './views'
 
-sassMiddleware =  require 'node-sass-middleware'
-serveStatic =     require 'serve-static'
-express =         require 'express'
-fs =              require 'fs'
+sassMiddleware  = require 'node-sass-middleware'
+serveStatic     = require 'serve-static'
+express         = require 'express'
+fs              = require 'fs'
 
-config = require './config.json'
-filters = require './lib/filters.coffee'
-routes = require './lib/routes.coffee'
+config          = require './config.json'
+routes          = require './lib/routes.coffee'
+#views =
+#  index: require './views/index.jst'
 
 app = express()
 
@@ -21,7 +22,7 @@ app.use sassMiddleware
 
 app.use serveStatic __dirname + 'public/'
 
-routes app, config
+routes app, views
 
 # listen
 
