@@ -22,7 +22,7 @@ app.use sassMiddleware
 
 app.use serveStatic __dirname + 'public/'
 
-routes app, views
+routes app#, views
 
 # listen
 
