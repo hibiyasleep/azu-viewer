@@ -9,7 +9,7 @@ express         = require 'express'
 fs              = require 'fs'
 
 config          = require './config.json'
-routes          = require './lib/routes.coffee'
+routes          = require './routes'
 views =
   user: require './views/user.js'
 
