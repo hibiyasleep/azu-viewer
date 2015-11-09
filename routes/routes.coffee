@@ -16,7 +16,12 @@ module.exports = (app, views) ->
     if name is '�' then name = ''
 
     fetch name, (b, d, error) ->
+
       unless error
+
+        [rd, stat] = reassemble JSON.parse d
+
         res.send views.user
           meta: b
-          songs: d.map reassemble.sdvx
+          songs: rd
+          stat: stat

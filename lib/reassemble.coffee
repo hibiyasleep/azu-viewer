@@ -1,6 +1,4 @@
-module.exports =
-
-  sdvx: (d) ->
+module.exports = (d, illust) ->
 
     # song: [
     #   {

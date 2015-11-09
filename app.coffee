@@ -10,8 +10,8 @@ fs              = require 'fs'
 
 config          = require './config.json'
 routes          = require './lib/routes.coffee'
-#views =
-#  index: require './views/index.jst'
+views =
+  user: require './views/user.js'
 
 app = express()
 
@@ -20,9 +20,9 @@ app.use sassMiddleware
   dest: __dirname
   indentedSyntax: true
 
-app.use serveStatic __dirname + 'public/'
+app.use '/!/public', serveStatic __dirname + 'public/'
 
-routes app#, views
+routes app, views
 
 # listen
 
