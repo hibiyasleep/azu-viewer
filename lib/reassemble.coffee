@@ -1,3 +1,5 @@
+fumens = ['nov', 'adv', 'exh', 'inf']
+
 module.exports = (d, illust) ->
 
     # song: [
@@ -26,11 +28,12 @@ module.exports = (d, illust) ->
         title: song.song?.name,
         artist: song.song?.artist
 
-      for fumen in ['nov', 'adv', 'exh', 'inf']
+      for fumen in [0..3]
+        current = fumens[fumen]
 
-        if song[fumen + '_basic'].play
+        if song[current + '_basic'].play
 
-          cf = song[fumen + '_detail']
+          cf = song[current + '_detail']
 
           ns[fumen] =
             count: [
@@ -39,13 +42,13 @@ module.exports = (d, illust) ->
             level: cf.level
             score: cf.score
             illust: cf.illust
-            clear: song[fumen + '_basic'].clear
-            rank: song[fumen + '_basic'].rank
+            clear: song[current + '_basic'].clear
+            rank: song[current + '_basic'].rank
 
           stat[cf.level - 1].count += 1
           stat[cf.level - 1].leveltotal += parseInt(cf.score)
-          stat[cf.level - 1].lamp[song[fumen + '_basic'].rank] += 1
-          stat[cf.level - 1].lamp[song[fumen + '_basic'].clear + 6] += 1
+          stat[cf.level - 1].lamp[song[current + '_basic'].rank] += 1
+          stat[cf.level - 1].lamp[song[current + '_basic'].clear + 6] += 1
 
         else
           ns[fumen] = {}

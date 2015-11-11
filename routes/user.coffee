@@ -5,8 +5,6 @@ fetch       = require '../lib/fetch.coffee'
 reassemble  = require '../lib/reassemble.coffee'
 illust      = require '../lib/illust.coffee'
 
-NICK_REGEX  = /\/basic_json\/(.*?)\.json/
-
 module.exports = (app, views) ->
 
   app.get '/:name', (req, res) ->
@@ -15,13 +13,8 @@ module.exports = (app, views) ->
 
     if name is '�' then name = ''
 
-    fetch name, (b, d, error) ->
+    fetch name, (e, d) ->
 
-      unless error
+      unless error?
 
-        [rd, stat] = reassemble JSON.parse d
-
-        res.send views.user
-          meta: b
-          songs: rd
-          stat: stat
+        res.send views.user d

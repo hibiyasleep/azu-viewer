@@ -1,3 +1,4 @@
+{{ fumen_name = ['nov', 'adv', 'exh', 'inf']; }}
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,11 +9,17 @@
   </head>
   <body>
     <main>
-      <ul>
-        {{ for(var song in songs) { }}
-          <li>
-            {{= song.title}}
-          </li>
+      <ul class="list-song">
+        {{ for(var song in it.songs) { }}
+          {{ song = it.songs[song]; }}
+          {{ for(var current = 0; current <= 3; current++) { }}
+            {{ fumen = song[current]; }}
+            <li>
+              {{= song.title }}
+              {{= fumen_name[current] }}
+              {{= fumen.score }}
+            </li>
+          {{ } }}
         {{ } }}
       </ul>
     </main>
