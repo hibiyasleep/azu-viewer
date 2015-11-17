@@ -1,3 +1,5 @@
 node_modules
 config.json
 views/*.js
+public/css/*.css
+public/css/**/*.css
