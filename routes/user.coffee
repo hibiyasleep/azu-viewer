@@ -15,6 +15,8 @@ module.exports = (app, views) ->
 
     fetch name, (e, d) ->
 
-      unless error?
-
+      unless e?
         res.send views.user d
+
+      else
+        console.dir e

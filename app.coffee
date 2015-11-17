@@ -19,8 +19,10 @@ app.use sassMiddleware
   src: __dirname
   dest: __dirname
   indentedSyntax: true
+  debug: 1
+  prefix: '/!'
 
-app.use '/!/public', serveStatic __dirname + 'public/'
+app.use '/!/public', serveStatic __dirname + '/public'
 
 routes app, views
 
