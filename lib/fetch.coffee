@@ -8,11 +8,11 @@ module.exports = (name, callback) ->
 
     r = {}
 
-    request config.sdvx.baseuri + '/' + name, (e, r, d) ->
+    request config.baseuri + '/' + name, (e, r, d) ->
       if e or r.statuscode is not 200
-        callback null,
-                 code: 500
-                 error: e
+        callback
+          code: 500
+          error: e
 
       else
 
@@ -25,7 +25,7 @@ module.exports = (name, callback) ->
 
         # retrieve basic_json
 
-        request config.sdvx.baseuri + config.sdvx.basic_json + '/' + name + '.json',
+        request config.baseuri + config.basic_json + name + '.json',
           (e, r, basic_d) ->
             if e or r.statuscode is not 200
               callback
@@ -34,7 +34,7 @@ module.exports = (name, callback) ->
 
             # retrieve rest of data
 
-            else request config.sdvx.baseuri + config.sdvx.json + '/' + name + '.json',
+            else request config.baseuri + config.json + name + '.json',
               (e, r, d) ->
                 if e or r.statuscode is not 200
                   callback
