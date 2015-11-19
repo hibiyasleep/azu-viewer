@@ -19,7 +19,6 @@ app.use sassMiddleware
   src: __dirname
   dest: __dirname
   indentedSyntax: true
-  debug: 1
   prefix: '/!'
 
 app.use '/!/public', serveStatic __dirname + '/public'
