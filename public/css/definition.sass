@@ -1,0 +1,41 @@
+$body-width: 50rem
+
+$column-height: 6rem
+$column-bottom-height: 2rem
+$column-top-height: $column-height - $column-bottom-height
+
+$column-level-width: 4rem
+$column-sidebar-width: 8rem
+
+$card-border-color: rgba(0, 0, 0, 0.25)
+
+$lamp-border-style: 0.125em solid
+
+$color-nov: lighten(blue, 0.5)
+$color-adv: lighten(yellow, 0.5)
+$color-exh: lighten(red, 0.5)
+$color-inf: lighten(cyan, 0.5)
+
+%card
+  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.25)
+
+%absolute-center
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+  margin: auto
+
+.skew
+  display: inline-block
+
+  -webkit-transform: skew(-20deg)
+  transform: skew(-20deg)
+
+.unskew
+  display: inline-block
+
+  -webkit-transform: skew(20deg)
+  transform: skew(20deg)

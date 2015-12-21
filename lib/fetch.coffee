@@ -19,9 +19,13 @@ module.exports = (name, callback) ->
         if NICK_REGEX.test d
           realname = /\/basic_json\/(.*?)\.json/.exec(d)[1]
         else
+          ###
+          console.log d
           callback
             code: 404
             reason: '존재하지 않는 아이디입니다.'
+          ###
+          realname = name
 
         # retrieve basic_json
 

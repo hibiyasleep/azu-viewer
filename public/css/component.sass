@@ -1,0 +1,94 @@
+@import 'definition'
+
+.list-song
+
+  &> li.song
+    @extend %card
+
+    width: 100%
+    height: $column-height
+
+    margin-top: 1rem
+
+    img.albumart
+      width: $column-height  // + 0.125rem
+      height: $column-height // + 0.125rem
+
+      float: left
+      position: relative
+      z-index: 1000
+
+    //-webkit-clip-path: polygon(1% 1%, 99% 1%, 99% 99%, 1% 99%)
+    //margin-top: -0.0625rem
+    //margin-left: -0.0625rem
+
+    .top
+      width: $body-width - $column-height - $column-sidebar-width
+      height: $column-top-height
+
+      float: left
+
+      border-bottom: 0.1rem solid $card-border-color
+
+      span.level
+        display: block
+        width: $column-level-width
+        height: 100%
+
+        font-size: 2rem
+        text-align: center
+
+        padding-right: 1rem
+
+        line-height: $column-top-height
+
+        float: left
+
+        clip-path: polygon(0% 0%, 100% 0%, 60% 100%, 0% 100%)
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 60% 100%, 0% 100%)
+
+      h1, h2
+        width: calc(100% - $column-level-width)
+
+        font-weight: 300
+        line-height: 1.1rem
+        white-space: nowrap
+
+        margin: 0
+
+        overflow: hidden
+
+      h1
+        font-size: 1.25rem
+        margin-top: 0.75rem
+
+      h2
+        font-size: 0.875rem
+        margin-top: 0.25rem
+
+    .bottom
+      width: $body-width - $column-height - $column-sidebar-width
+      height: $column-bottom-height
+
+      float: left
+
+      > *
+        line-height: 1.75em
+
+      .clear, .rank
+        @extend .skew
+
+        height: 100%
+
+        padding: 0 0.5em
+
+      .clear
+        background: #000
+        color: #fff
+
+        margin-left: -0.5em
+        border: $lamp-border-style #888
+        padding-left: 0.75em
+
+      .rank
+        border: $lamp-border-style transparent

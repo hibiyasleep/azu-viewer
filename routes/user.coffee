@@ -19,4 +19,6 @@ module.exports = (app, views) ->
         res.send views.user d
 
       else
-        console.dir e
+        console.error e
+        res.status e.code
+        res.send views.error e

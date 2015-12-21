@@ -12,6 +12,7 @@ config          = require './config.json'
 routes          = require './routes'
 views =
   user: require './views/user.js'
+  error: require './views/error.js'
 
 app = express()
 
@@ -19,6 +20,7 @@ app.use sassMiddleware
   src: __dirname
   dest: __dirname
   indentedSyntax: true
+  sourceMap: true
   prefix: '/!'
 
 app.use '/!/public', serveStatic __dirname + '/public'

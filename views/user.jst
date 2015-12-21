@@ -1,4 +1,10 @@
-{{ fumen_name = ['nov', 'adv', 'exh', 'inf']; }}
+{{
+  name = {
+    fumen: ['nov', 'adv', 'exh', 'inf'],
+    rank: ['D', 'C', 'B', 'A', 'AA', 'AAA'],
+    clear: ['FAIL', 'CLR', 'H-CLR', 'UC', 'PUC']
+  };
+}}
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,10 +20,24 @@
           {{ song = it.songs[song]; }}
           {{ for(var current = 0; current <= 3; current++) { }}
             {{ fumen = song[current]; }}
-            <li>
-              {{= song.title }}
-              {{= fumen_name[current] }}
-              {{= fumen.score }}
+            {{ if(fumen.score === undefined) continue; }}
+            <li class="song {{= name.fumen[current]}}">
+              <img class="albumart"
+                   src="http://sdvx.azu.kr/albumart/{{= fumen.illust }}.jpg" />
+              <div class="top">
+                <span class="level"> {{= fumen.level }} </span>
+                <h1> {{= song.title }} </h1>
+                <h2> {{= song.artist }} </h2>
+              </div>
+              <div class="bottom">
+                <span class="clear clear-{{= fumen.clear }}">
+                  <span class="unskew"> {{= name.clear[fumen.clear] }} </span>
+                </span><!--
+             --><span class="rank rank-{{= fumen.rank }}">
+                  <span class="unskew"> {{= name.rank[fumen.rank] }} </span>
+                </span>
+                {{= fumen.score }}
+              </div>
             </li>
           {{ } }}
         {{ } }}
