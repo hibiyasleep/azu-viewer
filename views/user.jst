@@ -2,7 +2,8 @@
   name = {
     fumen: ['nov', 'adv', 'exh', 'inf'],
     rank: ['D', 'C', 'B', 'A', 'AA', 'AAA'],
-    clear: ['FAIL', 'CLR', 'H-CLR', 'UC', 'PUC']
+    clear: ['FAIL', 'CLR', 'H-CLR', 'UC', 'PUC'],
+    count: ['PLAY', 'CLEAR', 'UC', 'PUC']
   };
 }}
 <!DOCTYPE html>
@@ -14,16 +15,49 @@
     <link rel="stylesheet" href="/!/public/css/main.css" />
   </head>
   <body>
+    <header>
+      <section class="title">
+        <div class="left">
+          <span class="skill-level" data-skill-level="{{= it.meta.skill_no }}">
+            <span class="skill-level-title">
+              {{= it.meta.skill_name }}
+            </span>
+          </span>
+          <h1>
+            {{= it.meta.name }}
+          </h1>
+        </div>
+        <div class="right">
+          buttons
+        </div>
+      </section>
+      <section class="detail">
+        stat
+      </section>
+    </header>
     <main>
       <ul class="list-song">
         {{ for(var song in it.songs) { }}
-          {{ song = it.songs[song]; }}
+          {{ var song = it.songs[song]; }}
           {{ for(var current = 0; current <= 3; current++) { }}
-            {{ fumen = song[current]; }}
+            {{ var fumen = song[current]; }}
             {{ if(fumen.score === undefined) continue; }}
             <li class="song {{= name.fumen[current]}}">
               <img class="albumart"
                    src="http://sdvx.azu.kr/albumart/{{= fumen.illust }}.jpg" />
+              <div class="side">
+                <dl>
+                  {{ for(var p=0; p<4; p++) { }}
+                    {{ var disabled = (fumen.count[p] == 0)? 'disabled' : ''; }}
+                    <dd class="{{= disabled }}">
+                      {{= name.count[p] }}
+                    </dd>
+                    <dt class="{{= disabled }}">
+                      {{= fumen.count[p] }}
+                    </dt>
+                  {{ } }}
+                </dl>
+              </div>
               <div class="top">
                 <span class="level"> {{= fumen.level }} </span>
                 <h1> {{= song.title }} </h1>
@@ -36,7 +70,9 @@
              --><span class="rank rank-{{= fumen.rank }}">
                   <span class="unskew"> {{= name.rank[fumen.rank] }} </span>
                 </span>
-                {{= fumen.score }}
+                <span class="score">
+                  {{= fumen.score }}
+                </span>
               </div>
             </li>
           {{ } }}

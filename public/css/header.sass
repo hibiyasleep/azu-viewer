@@ -1,0 +1,56 @@
+@import 'definition'
+
+header
+
+  color: white
+
+  section.title
+    @extend %card
+
+    height: 3.625rem
+    background: #37474F
+
+    padding: 0.5rem
+    text-align: justify
+
+    .left
+      float: left
+
+      .skill-level
+        display: inline-block
+
+        width: 9.375em
+        height: 2.625em
+
+        background-size: 100%
+        vertical-align: top
+
+        .skill-level-title
+          display: inline-block
+
+          font-size: 1.25em
+          font-weight: 900
+          text-align: center
+
+          width: 100%
+
+          padding: 0.5em 1em 0 2.5em
+
+      h1
+        display: inline-block
+
+        font-weight: 400
+
+        margin: 0
+        margin-left: 0.5rem
+        vertical-align: -50%
+
+    .right
+      float: right
+
+      padding: 0.75em
+      vertical-align: 75%
+
+  section.detail
+    @extend %card
+    background: #263238
