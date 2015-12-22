@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/!/public/css/main.css" />
   </head>
   <body>
+    <input type="checkbox" id="header-toggle" class="hidden" />
     <header>
       <section class="title">
         <div class="left">
@@ -28,11 +29,29 @@
           </h1>
         </div>
         <div class="right">
-          buttons
+          <dl>
+            <dd>플레이</dd>
+            <dt>{{= it.meta.play }}</dt>
+            <dd>패킷</dd>
+            <dt>{{= it.meta.packet }}</dt>
+            <dd>블럭</dd>
+            <dt>{{= it.meta.block }}</dt>
+          </dl>
+          <label for="header-toggle">
+            <svg class="icon" fill="#fff" width="24" height="24"
+                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6
+              0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6
+              4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/>
+            </svg>
+          </label>
         </div>
       </section>
       <section class="detail">
-        stat
+        <div style="height: 20em">
+          통계 들어갈 자리
+        </div>
+        <label for="header-toggle"> </label>
       </section>
     </header>
     <main>

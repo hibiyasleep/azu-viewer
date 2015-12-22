@@ -1,8 +1,18 @@
 @import 'definition'
 
-header
+#header-toggle:checked + header
+  height: $header-title-height + $header-detail-height + 1.125rem
 
+header
   color: white
+
+  position: relative
+
+  height: $header-title-height
+  transition: height 100ms ease
+
+  section
+    width: 100%
 
   section.title
     @extend %card
@@ -11,7 +21,10 @@ header
     background: #37474F
 
     padding: 0.5rem
-    text-align: justify
+
+    position: absolute
+    top: 0
+    z-index: 101
 
     .left
       float: left
@@ -48,9 +61,49 @@ header
     .right
       float: right
 
-      padding: 0.75em
+      padding: 0.625em
       vertical-align: 75%
+
+      dl
+        display: inline-block
+        width: 18em
+        height: 100%
+
+        line-height: 1.25rem
+        text-align: right
+
+        margin: 0
+        vertical-align: 75%
+
+        dd
+          display: inline-block
+
+          font-weight: lighter
+          color: transparentize(white, 0.25)
+          margin: 0
+          padding: 0
+
+        dt
+          display: inline-block
+
+          margin-right: 0.75rem
 
   section.detail
     @extend %card
     background: #263238
+
+    padding: 0.5em 0.5em 1em 0.5em
+
+    position: absolute
+    bottom: 0
+    z-index: 100
+
+    label
+      width: 100%
+      height: 1em
+
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      text-align: center
