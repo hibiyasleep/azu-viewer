@@ -7,7 +7,7 @@ module.exports = (d, illust) ->
     #     title:
     #     artist:
     #     nov: {
-    #       count: { play / clear / uc / puc }
+    #       count: [ play / clear / uc / puc ]
     #       rank: 0-5 from D to AAA
     #       clear: 0-4 from F to PUC
     #       score:
