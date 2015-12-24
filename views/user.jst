@@ -3,7 +3,11 @@
     fumen: ['nov', 'adv', 'exh', 'inf'],
     rank: ['D', 'C', 'B', 'A', 'AA', 'AAA'],
     clear: ['FAIL', 'CLR', 'H-CLR', 'UC', 'PUC'],
-    count: ['PLAY', 'CLEAR', 'UC', 'PUC']
+    count: {
+      long: ['PLAY', 'CLEAR', 'UC', 'PUC'],
+      short: ['PLAY', 'CL', 'UC', 'PUC'],
+      class: ['play', 'clear', 'uc', 'puc']
+    }
   };
 }}
 <!DOCTYPE html>
@@ -11,6 +15,7 @@
   <head>
     <meta charset="utf-8" />
     <title> asdf </title>
+    <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="/!/public/css/main.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700" />
@@ -18,42 +23,41 @@
   <body>
     <input type="checkbox" id="header-toggle" class="hidden" />
     <header>
-      <section class="title">
-        <div class="left">
-          <span class="skill-level" data-skill-level="{{= it.meta.skill_no }}">
-            <span class="skill-level-title">
-              {{= it.meta.skill_name }}
+      <div class="relative-wrapper">
+        <section class="title">
+          <div class="left">
+            <span class="skill-level" data-skill-level="{{= it.meta.skill_no }}">
+              <span class="skill-level-title">
+                {{= it.meta.skill_name }}
+              </span>
             </span>
-          </span>
-          <h1>
-            {{= it.meta.name }}
-          </h1>
-        </div>
-        <div class="right">
-          <dl>
-            <dd>플레이</dd>
-            <dt>{{= it.meta.play }}</dt>
-            <dd>패킷</dd>
-            <dt>{{= it.meta.packet }}</dt>
-            <dd>블럭</dd>
-            <dt>{{= it.meta.block }}</dt>
-          </dl>
-          <label for="header-toggle">
-            <svg class="icon" fill="#fff" width="24" height="24"
-                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6
-              0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6
-              4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/>
-            </svg>
-          </label>
-        </div>
-      </section>
-      <section class="detail">
-        <div style="height: 20em">
-          통계 들어갈 자리
-        </div>
-        <label for="header-toggle"> </label>
-      </section>
+            <h1>
+              {{= it.meta.name }}
+            </h1>
+          </div>
+          <div class="right">
+            <dl>
+              <dd>플레이</dd>
+              <dt>{{= it.meta.play }}</dt>
+              <dd>패킷</dd>
+              <dt>{{= it.meta.packet }}</dt>
+              <dd>블럭</dd>
+              <dt>{{= it.meta.block }}</dt>
+            </dl>
+            <label for="header-toggle">
+              <svg class="icon" fill="#fff" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/>
+              </svg>
+            </label>
+          </div>
+        </section>
+        <section class="detail">
+          <div style="height: 10em">
+            정렬 들어갈 자리
+          </div>
+          <label for="header-toggle"> </label>
+        </section>
+      </div>
     </header>
     <main>
       <ul class="list-song">
@@ -68,11 +72,12 @@
               <div class="side">
                 <dl>
                   {{ for(var p=0; p<4; p++) { }}
-                    {{ var disabled = (fumen.count[p] == 0)? 'disabled' : ''; }}
+                    {{ var disabled = (p >= 2 && fumen.count[p] == 0)? 'disabled' : ''; }}
+                    {{ var len = (fumen.count[p] > 99)? 'short' : 'long'; }}
                     <dd class="{{= disabled }}">
-                      {{= name.count[p] }}
+                      {{= name.count[len][p] }}
                     </dd>
-                    <dt class="{{= disabled }}">
+                    <dt class="{{= disabled }} count-{{= name.count.class[p] }}">
                       {{= fumen.count[p] }}
                     </dt>
                   {{ } }}

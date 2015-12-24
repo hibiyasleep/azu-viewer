@@ -45,9 +45,15 @@ module.exports = (name, callback) ->
                     code: 500
                     error: e
                 else
-                  [d, stat] = reassemble JSON.parse d
+                  try
+                    [d, stat] = reassemble JSON.parse d
 
-                  callback null,
-                    meta: JSON.parse(basic_d)
-                    songs: d
-                    stat: stat
+                    callback null,
+                      meta: JSON.parse basic_d
+                      songs: d
+                      stat: stat
+
+                  catch e
+                    callback
+                      code: 500
+                      error: e
