@@ -50,23 +50,22 @@
         -webkit-clip-path: polygon(0% 0%, 100% 0%, 60% 100%, 0% 100%)
 
       h1, h2
-        width: calc(100% - $column-level-width)
-
         font-weight: 300
-        line-height: 1.25rem
+        line-height: 1.5rem
         white-space: nowrap
 
         margin: 0
 
-        overflow-x: hidden
+        text-overflow: ellipsis
+        overflow-y: visible
 
       h1
         font-size: 1.25rem
-        margin-top: 0.625rem
+        margin-top: 0.5rem
 
       h2
         font-size: 0.875rem
-        margin-top: 0.25rem
+        margin-top: 0
 
     .bottom
       width: calc(100% - #{$column-height + $column-sidebar-width})

@@ -4,3 +4,5 @@ views/*.js
 *.map
 public/css/*.css
 public/css/**/*.css
+public/css/*.css.map
+public/css/**/*.css.map
