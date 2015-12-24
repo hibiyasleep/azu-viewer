@@ -6,54 +6,24 @@ NICK_REGEX  = /\/basic_json\/(.*?)\.json/
 
 module.exports = (name, callback) ->
 
-    r = {}
-
-    request config.baseuri + '/' + name, (e, r, d) ->
+  request config.baseuri + config.json + name + '.json',
+    (e, r, d) ->
       if e or r.statuscode is not 200
         callback
           code: 500
           error: e
-
+          stack: e.stack
       else
+        try
+          [cdn, user, songs] = reassemble JSON.parse(d).data
 
-        if NICK_REGEX.test d
-          realname = /\/basic_json\/(.*?)\.json/.exec(d)[1]
-        else
-          ###
-          console.log d
+          callback null,
+            cdn: cdn
+            meta: user
+            songs: songs
+
+        catch e
           callback
-            code: 404
-            reason: '존재하지 않는 아이디입니다.'
-          ###
-          realname = name
-
-        # retrieve basic_json
-
-        request config.baseuri + config.basic_json + name + '.json',
-          (e, r, basic_d) ->
-            if e or r.statuscode is not 200
-              callback
-                code: 500
-                error: e
-
-            # retrieve rest of data
-
-            else request config.baseuri + config.json + name + '.json',
-              (e, r, d) ->
-                if e or r.statuscode is not 200
-                  callback
-                    code: 500
-                    error: e
-                else
-                  try
-                    [d, stat] = reassemble JSON.parse d
-
-                    callback null,
-                      meta: JSON.parse basic_d
-                      songs: d
-                      stat: stat
-
-                  catch e
-                    callback
-                      code: 500
-                      error: e
+            code: 500
+            error: e,
+            stack: e.stack

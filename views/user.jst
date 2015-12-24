@@ -63,12 +63,14 @@
       <ul class="list-song">
         {{ for(var song in it.songs) { }}
           {{ var song = it.songs[song]; }}
-          {{ for(var current = 0; current <= 3; current++) { }}
+          {{ for(var f in name.fumen) { }}
+            {{ var current = name.fumen[f]; }}
             {{ var fumen = song[current]; }}
-            {{ if(fumen.score === undefined) continue; }}
-            <li class="song {{= name.fumen[current]}}">
+            {{ var fumenname = }}
+            {{ if(fumen === undefined || fumen.score === undefined) continue; }}
+            <li class="song {{= (song.isGravity && current == 'inf')? 'grv' : current }}">
               <img class="albumart"
-                   src="http://sdvx.azu.kr/albumart/{{= fumen.illust }}.jpg" />
+                   src="http://{{= it.cdn + '/' + fumen.illust }}" />
               <div class="side">
                 <dl>
                   {{ for(var p=0; p<4; p++) { }}

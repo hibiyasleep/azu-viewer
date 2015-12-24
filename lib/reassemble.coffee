@@ -1,6 +1,6 @@
 fumens = ['nov', 'adv', 'exh', 'inf']
 
-module.exports = (d, illust) ->
+module.exports = (d) ->
 
     # song: [
     #   {
@@ -21,38 +21,44 @@ module.exports = (d, illust) ->
       leveltotal: 0
       lamp: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
+    db = d.db
+    dt = d.song
 
-    for song in d
+    for id of dt
+
+      cdb = db[id]
+      song = dt[id]
 
       ns =
-        title: song.song?.name,
-        artist: song.song?.artist
+        title: cdb.title
+        artist: cdb.artist
+        isGravity: not not cdb.grv
 
-      for fumen in [0..3]
-        current = fumens[fumen]
+      for fumen in ['nov', 'adv', 'exh', 'inf']
 
-        if song[current + '_basic'].play
+        if song[fumen].cnt?.play
 
-          cf = song[current + '_detail']
+          cf = song[fumen]
 
           ns[fumen] =
+            id: id
             count: [
-              cf.play, cf.clear, cf.ultimate, cf.perfect
+              cf.cnt.play, cf.cnt.clear, cf.cnt.ultimate, cf.cnt.perfect
             ]
-            level: cf.level
+            level: cdb[fumen]
             score: cf.score
-            illust: cf.illust
-            clear: song[current + '_basic'].clear
-            rank: song[current + '_basic'].rank
+            illust: cdb['albumart_' + fumen]
+            clear: cf.clear
+            rank: cf.rank
 
-          stat[cf.level - 1].count += 1
-          stat[cf.level - 1].leveltotal += parseInt(cf.score)
-          stat[cf.level - 1].lamp[song[current + '_basic'].rank] += 1
-          stat[cf.level - 1].lamp[song[current + '_basic'].clear + 6] += 1
+          stat[cdb[fumen] - 1].count += 1
+          stat[cdb[fumen] - 1].leveltotal += cf.score
+          stat[cdb[fumen] - 1].lamp[cf.rank] += 1
+          stat[cdb[fumen] - 1].lamp[cf.clear + 6] += 1
 
         else
           ns[fumen] = {}
 
       nd.push ns
 
-    return [nd, stat]
+    return [d.api.cdn, d.user, nd]
