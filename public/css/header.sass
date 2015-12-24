@@ -6,7 +6,7 @@
 header
   color: white
 
-  width: $body-width
+  width: 100%
   height: $header-title-height
   transition: height 250ms ease-out
 
@@ -25,13 +25,17 @@ header
   section.title
     @extend %card
 
+    width: 100vw
     height: 3.625rem
     background: #37474F
 
+    margin: 0 auto
     padding: 0.5rem
 
     position: absolute
     top: 0
+    left: 0
+    right: 0
     z-index: 1001
 
     .left
@@ -99,11 +103,15 @@ header
 
   section.detail
     @extend %card
+    width: $body-width
+    max-width: 100vw
+
     background: #263238
 
     padding: 0.5em 0.5em 1em 0.5em
 
     position: absolute
+    right: 0
     bottom: 0
     z-index: 1000
 
