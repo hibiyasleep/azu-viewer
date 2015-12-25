@@ -24,30 +24,32 @@
     <input type="checkbox" id="header-toggle" class="hidden" />
     <header>
       <section class="title">
-        <div class="left">
-          <span class="skill-level" data-skill-level="{{= it.meta.skill_no }}">
-            <span class="skill-level-title">
-              {{= it.meta.skill_name }}
+        <div class="width-container">
+          <div class="left">
+            <span class="skill-level" data-skill-level="{{= it.meta.skill_no }}">
+              <span class="skill-level-title">
+                {{= it.meta.skill_name }}
+              </span>
             </span>
-          </span>
-          <h1>
-            {{= it.meta.name }}
-          </h1>
-        </div>
-        <div class="right">
-          <dl>
-            <dd>플레이</dd>
-            <dt>{{= it.meta.play }}</dt>
-            <dd>패킷</dd>
-            <dt>{{= it.meta.packet }}</dt>
-            <dd>블럭</dd>
-            <dt>{{= it.meta.block }}</dt>
-          </dl>
-          <label for="header-toggle">
-            <svg class="icon" fill="#fff" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/>
-            </svg>
-          </label>
+            <h1>
+              {{= it.meta.name }}
+            </h1>
+          </div>
+          <div class="right">
+            <dl>
+              <dd>플레이</dd>
+              <dt>{{= it.meta.play }}</dt>
+              <dd>패킷</dd>
+              <dt>{{= it.meta.packet }}</dt>
+              <dd>블럭</dd>
+              <dt>{{= it.meta.block }}</dt>
+            </dl>
+            <label for="header-toggle">
+              <svg class="icon" fill="#fff" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/>
+              </svg>
+            </label>
+          </div>
         </div>
       </section>
       <section class="detail">
@@ -64,11 +66,10 @@
           {{ for(var f in name.fumen) { }}
             {{ var current = name.fumen[f]; }}
             {{ var fumen = song[current]; }}
-            {{ var fumenname = }}
             {{ if(fumen === undefined || fumen.score === undefined) continue; }}
             <li class="song {{= (song.isGravity && current == 'inf')? 'grv' : current }}">
               <img class="albumart"
-                   src="http://{{= it.cdn + '/' + fumen.illust }}" />
+                   src="http://{{= it.cdn + fumen.illust }}" />
               <div class="side">
                 <dl>
                   {{ for(var p=0; p<4; p++) { }}

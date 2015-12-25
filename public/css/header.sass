@@ -59,7 +59,7 @@ header
 
           width: 100%
 
-          padding: 0.333333em 1em 0 2.5em
+          padding: 0.333333em 0.75em 0 2.25em
 
       h1
         display: inline-block
@@ -71,6 +71,8 @@ header
         vertical-align: -50%
 
     .right
+      height: 100%
+
       float: right
 
       padding: 0.625em
@@ -103,8 +105,9 @@ header
 
   section.detail
     @extend %card
-    width: $body-width
+    width: $header-sort-width
     max-width: 100vw
+    max-height: calc(100vh - #{$header-title-height})
 
     background: #263238
 

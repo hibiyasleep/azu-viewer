@@ -1,10 +1,8 @@
 @import 'definition'
 
 .list-song
-  width: 100%
-  max-width: $body-width
+  @extend .width-container
 
-  margin: 0 auto
   padding: 0
 
   &> li.song
@@ -21,7 +19,14 @@
 
       float: left
       position: relative
-      z-index: 1000
+      z-index: 1000 // (float mans)
+
+      transform-origin: left top
+      transition: transform 100ms ease
+
+      &:hover, &:active
+        transform: scale(1.75)
+        z-index: 1001
 
     //-webkit-clip-path: polygon(1% 1%, 99% 1%, 99% 99%, 1% 99%)
     //margin-top: -0.0625rem

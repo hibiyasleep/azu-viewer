@@ -5,9 +5,10 @@
   "author": "kuriyama hibiya <kuriyama@hibiya.moe>",
   "dependencies": {
     "node-sass-middleware": "0.9.x",
+    "coffee-script": "1.10.x",
     "serve-static": "1.10.x",
     "express": "4.x",
     "request": "2.x",
-    "doT": "1.x"
+    "dot": "1.x"
   }
 }
