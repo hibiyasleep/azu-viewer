@@ -22,11 +22,12 @@
       z-index: 1000 // (float mans)
 
       transform-origin: left top
-      transition: transform 100ms ease
+      transition: transform 100ms ease, z-index 100ms cubic-bezier(0, 1, 0, 1)
 
       &:hover, &:active
         transform: scale(1.75)
         z-index: 1001
+        transition: transform 100ms ease, z-index 100ms cubic-bezier(1, 0, 1, 0)
 
     //-webkit-clip-path: polygon(1% 1%, 99% 1%, 99% 99%, 1% 99%)
     //margin-top: -0.0625rem

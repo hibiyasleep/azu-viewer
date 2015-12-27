@@ -15,11 +15,12 @@ module.exports = (name, callback) ->
           stack: e.stack
       else
         try
-          [cdn, user, songs] = reassemble JSON.parse(d).data
+          data = JSON.parse(d).data
+          songs = reassemble data
 
           callback null,
-            cdn: cdn
-            meta: user
+            api: data.api
+            meta: data.user
             songs: songs
 
         catch e

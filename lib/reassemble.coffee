@@ -61,4 +61,4 @@ module.exports = (d) ->
 
       nd.push ns
 
-    return [d.api.cdn, d.user, nd]
+    return nd

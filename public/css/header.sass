@@ -4,7 +4,7 @@
   height: $header-title-height + $header-detail-height
 
 header
-  color: white
+  @extend %card
 
   width: 100%
   height: $header-title-height
@@ -13,120 +13,79 @@ header
   position: fixed
   top: 0
 
-  z-index: 1100
+  margin: 0 auto
+  padding: 0.5rem
 
-  div
-    transition: height 250ms ease-out
+  color: white
+  background: #37474F
 
-  section
-    width: 100%
-    transform: translate3d(0, 0, 0)
 
-  section.title
-    @extend %card
+  .left
+    float: left
 
-    width: 100vw
-    height: 3.625rem
-    background: #37474F
+    .skill-level
+      display: inline-block
 
-    margin: 0 auto
-    padding: 0.5rem
+      width: 9.375em
+      height: 2.625em
 
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    z-index: 1001
+      background-size: 100%
+      vertical-align: top
 
-    .left
-      float: left
-
-      .skill-level
+      .skill-level-title
         display: inline-block
 
-        width: 9.375em
-        height: 2.625em
+        font-size: 1.25em
+        font-weight: 900
+        text-align: center
 
-        background-size: 100%
-        vertical-align: top
+        width: 100%
 
-        .skill-level-title
-          display: inline-block
+        padding: 0.333333em 0.75em 0 2.25em
 
-          font-size: 1.25em
-          font-weight: 900
-          text-align: center
+    h1
+      display: inline-block
 
-          width: 100%
+      font-size: 1.5em
+      font-weight: 400
 
-          padding: 0.333333em 0.75em 0 2.25em
 
-      h1
-        display: inline-block
+      margin: 0
+      margin-left: 0.5rem
+      vertical-align: -50%
 
-        font-weight: 400
+  .right
+    height: 100%
 
-        margin: 0
-        margin-left: 0.5rem
-        vertical-align: -50%
+    float: right
 
-    .right
+    padding: 0.625em
+    vertical-align: 75%
+
+    dl
+      display: inline-block
+      width: 18em
       height: 100%
 
-      float: right
+      line-height: 1.25rem
+      text-align: right
 
-      padding: 0.625em
+      margin: 0
       vertical-align: 75%
 
-      dl
+      dd
         display: inline-block
-        width: 18em
-        height: 100%
 
-        line-height: 1.25rem
-        text-align: right
-
+        font-size: 0.875em
+        font-weight: lighter
+        color: transparentize(white, 0.25)
         margin: 0
-        vertical-align: 75%
+        padding: 0
 
-        dd
-          display: inline-block
+      dt
+        display: inline-block
 
-          font-size: 0.875em
-          font-weight: lighter
-          color: transparentize(white, 0.25)
-          margin: 0
-          padding: 0
-
-        dt
-          display: inline-block
-
-          margin-right: 0.75rem
-
-  section.detail
-    @extend %card
-    width: $header-sort-width
-    max-width: 100vw
-    max-height: calc(100vh - #{$header-title-height})
-
-    background: #263238
-
-    padding: 0.5em 0.5em 1em 0.5em
-
-    position: absolute
-    right: 0
-    bottom: 0
-    z-index: 1000
-
-    label
-      width: 100%
-      height: 1em
-
-      position: absolute
-      bottom: 0
-      left: 0
-      right: 0
-      text-align: center
+        margin-right: 0.75rem
 
 main
   margin-top: 5em
