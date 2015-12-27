@@ -1,17 +1,15 @@
 @import 'definition'
 
-#header-toggle:checked + header
-  height: $header-title-height + $header-detail-height
-
 header
   @extend %card
 
   width: 100%
-  height: $header-title-height
+  height: $header-height
   transition: height 250ms ease-out
 
-  position: fixed
-  top: 0
+  position: sticky
+  position: -webkit-sticky
+  top: -$header-height + $nav-height
 
   margin: 0 auto
   padding: 0.5rem
@@ -19,6 +17,7 @@ header
   color: white
   background: #37474F
 
+  z-index: 90
 
   .left
     float: left
@@ -88,4 +87,4 @@ header
         margin-right: 0.75rem
 
 main
-  margin-top: 5em
+  margin-top: -8rem
