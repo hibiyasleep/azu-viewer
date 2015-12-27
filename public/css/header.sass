@@ -15,9 +15,13 @@ header
   padding: 0.5rem
 
   color: white
-  background: #37474F
+  background: #37474F !important // override extend
 
-  z-index: 90
+  z-index: -1
+
+  .container
+    @extend .width-container
+    height: $nav-height - 1rem
 
   .left
     float: left
@@ -78,13 +82,12 @@ header
         font-size: 0.875em
         font-weight: lighter
         color: transparentize(white, 0.25)
-        margin: 0
+        margin: 0 0 0 0.75rem
         padding: 0
 
       dt
         display: inline-block
 
-        margin-right: 0.75rem
 
 main
-  margin-top: -8rem
+  margin-top: -$header-height + $nav-height

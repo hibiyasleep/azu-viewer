@@ -21,8 +21,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700" />
   </head>
   <body>
-    <input type="checkbox" id="header-toggle" class="hidden" />
+    <input type="checkbox" id="menu-toggle" class="hidden" />
+    <input type="checkbox" id="sort-toggle" class="hidden" />
     <nav>
+      <label for="menu-toggle" class="nav-button">
+        <svg class="icon" fill="#fff" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+      </label>
       <label for="sort-toggle" class="nav-button right">
         <svg class="icon" fill="#fff" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/>
@@ -30,7 +36,7 @@
       </label>
     </nav>
     <header>
-      <div class="width-container">
+      <div class="container">
         <div class="left">
           <span class="skill-level" data-skill-level="{{= it.meta.skill_no }}">
             <span class="skill-level-title">
@@ -54,6 +60,9 @@
       </div>
     </header>
     <main>
+      <div class="stat">
+        Sort
+      </div>
       <ul class="list-song">
         {{ for(var song in it.songs) { }}
           {{ var song = it.songs[song]; }}

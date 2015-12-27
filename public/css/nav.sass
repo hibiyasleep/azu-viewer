@@ -1,8 +1,29 @@
 @import 'definition'
 
 nav
+  width: 100%
   height: $nav-height
+
+  padding: 0.5em
+
   position: fixed
   top: 0
 
   z-index: 100
+
+.nav-button
+  display: inline-block
+  height: 100%
+
+  padding: 0.625em
+
+  transition: background 200ms ease
+
+  &:hover
+    background: transparentize(black, 0.75)
+
+  &:active
+    background: transparentize(black, 0.5)
+
+  &.right
+    float: right
