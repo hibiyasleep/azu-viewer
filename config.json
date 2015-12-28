@@ -1,5 +1,5 @@
 {
   "listen": 8080,
-  "baseuri": "http://api.kano.kr",
-  "json": "/playdata/sdvx/"
+  "baseuri": "http://localhost",
+  "json": "/~hibiya/p/git/azu-viewer/dummy/"
 }

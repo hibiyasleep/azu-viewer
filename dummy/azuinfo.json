@@ -1,0 +1,50 @@
+{
+  "data": {
+    "api": {
+      "cdn": "localhost/~hibiya/",
+      "etag": "asdf"
+    },
+    "user": {
+      "play": 345,
+      "name": "HIBIY*S2",
+      "packet": 761,
+      "error": 0,
+      "skill_name": "\u525b\u529b\u7f85",
+      "block": 1282,
+      "skill_no": 10
+    },
+    "db": {
+      "asdf": {
+        "title": "Test data",
+        "artist": "(c) 2015 kuriyama hibiya",
+        "albumart_exh": "asdf_exh.png",
+        "exh": 15,
+        "grv": false
+      }
+    },
+    "song": {
+      "asdf": {
+        "nov": {
+          "cnt": { "play": false }
+        },
+        "adv": {
+          "cnt": { "play": false }
+        },
+        "exh": {
+          "cnt": {
+            "play": 1000,
+            "clear": 2000,
+            "ultimate": 3000,
+            "perfect": 4000
+          },
+          "score": 98765432,
+          "clear": 3,
+          "rank": 3
+        },
+        "inf": {
+          "cnt": { "play": false }
+        }
+      }
+    }
+  }
+}
