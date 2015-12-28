@@ -16,7 +16,8 @@ module.exports = (app, views) ->
     fetch name, (e, d) ->
 
       unless e?
-        res.set 'ETag', d.api.etag
+        res.set 'Cache-Control', 'max-age=0'
+        res.set 'Etag', d.api.etag
         res.send views.user d
 
       else
