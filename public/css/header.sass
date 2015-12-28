@@ -1,27 +1,27 @@
 @import 'definition'
 
-header
-  @extend %card
-
+.toolbar-decorator
   width: 100%
   height: $header-height
-  transition: height 250ms ease-out
+  background: $header-background
 
-  position: sticky
-  position: -webkit-sticky
-  top: -$header-height + $nav-height
+  position: absolute
+  top: 0
+
+header
+  width: 100%
+
+  position: relative
 
   margin: 0 auto
   padding-top: $header-padding-top
 
   color: white
-  background: #37474F !important // override extend
 
-  z-index: -1
-
-  .container
+  .title
     @extend .width-container
-    height: $nav-height - 1rem
+    height: $header-title-height - 1rem
+    margin-bottom: 0.5em !important
 
   .left
     float: left
@@ -87,7 +87,3 @@ header
 
       dt
         display: inline-block
-
-
-main
-  margin-top: -$header-height + $nav-height + $header-padding-top

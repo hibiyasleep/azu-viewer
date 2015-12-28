@@ -1,0 +1,76 @@
+@import 'definition'
+
+// dim keyframes
+
+@keyframes set-dim
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes unset-dim
+  from
+    display: block
+    opacity: 1
+  100%
+    display: block
+  to
+    display: none
+    opacity: 0
+
+
+#menu-toggle:checked ~ aside.left
+  left: 0
+
+#sort-toggle:checked ~ aside.right
+  right: 0
+
+.dim
+  opacity: 0
+  animation: unset-dim 200ms
+
+#menu-toggle:checked ~ .dim, #sort-toggle:checked ~ .dim
+  width: 100%
+  height: 100vh
+
+  display: block
+
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+  opacity: 1
+  background-color: transparentize(black, 0.7)
+
+  animation: set-dim 200ms
+
+aside
+  @extend %card
+  width: $aside-width
+  max-width: 100%
+  height: 100%
+
+  position: fixed
+  top: 0
+  z-index: 200
+
+  fill: black
+
+  transition: left 200ms ease, right 200ms ease
+
+  .nav-header
+    border-bottom: 0.0625rem solid $card-border-color
+
+  &.left
+    left: -$aside-width - 1rem
+
+  &.right
+    right: -$aside-width - 1rem
+
+    .nav-header
+      text-align: right
+
+      .nav-button
+        float: none
