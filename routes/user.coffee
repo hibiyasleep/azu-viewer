@@ -5,7 +5,7 @@ fetch       = require '../lib/fetch.coffee'
 reassemble  = require '../lib/reassemble.coffee'
 illust      = require '../lib/illust.coffee'
 
-module.exports = (app, views) ->
+module.exports = (app) ->
 
   app.get '/sdvx/:name', (req, res) ->
 
@@ -18,9 +18,9 @@ module.exports = (app, views) ->
       unless e?
         res.set 'Cache-Control', 'max-age=0'
         res.set 'Etag', d.api.etag
-        res.send views.user d
+        res.render 'user', d
 
       else
         console.error e
         res.status e.code
-        res.send views.error e
+        res.render 'error', e

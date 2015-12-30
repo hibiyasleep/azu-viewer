@@ -1,4 +1,4 @@
 user = require './user.coffee'
 
-module.exports = (app, views) ->
-  user app, views
+module.exports = (app) ->
+  user app
