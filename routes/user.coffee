@@ -7,7 +7,7 @@ illust      = require '../lib/illust.coffee'
 
 module.exports = (app, views) ->
 
-  app.get '/:name', (req, res) ->
+  app.get '/sdvx/:name', (req, res) ->
 
     name = req.params.name
 
