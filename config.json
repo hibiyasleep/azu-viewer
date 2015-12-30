@@ -1,5 +1,7 @@
 {
   "listen": 8080,
   "baseuri": "http://localhost",
-  "json": "/~hibiya/p/git/azu-viewer/dummy/"
+  "sdvx": {
+    "json": "/~hibiya/p/git/azu-viewer/dummy/"
+  }
 }

@@ -1,4 +1,4 @@
-user = require './user.coffee'
+sdvx = require './sdvx.coffee'
 
 module.exports = (app) ->
-  user app
+  sdvx app
