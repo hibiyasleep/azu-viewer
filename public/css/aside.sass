@@ -74,3 +74,32 @@ aside
 
       .nav-button
         float: none
+
+ul.aside-menu
+  margin: 0
+  padding: 0
+
+  list-style: none
+
+  a
+    color: inherit
+    text-decoration: none
+
+  li
+    height: 3.5em
+    padding: 1em 0.75em
+
+    .icon
+      display: inline-block
+      margin: 0 0.75em
+
+    .label
+      display: inline-block
+      vertical-align: calc(1em / 3)
+      margin: 0 0.625em
+
+    &:hover
+      background-color: transparentize(black, 0.9)
+
+    &:active
+      background-color: transparentize(black, 0.8)
