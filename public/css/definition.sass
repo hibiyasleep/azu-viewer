@@ -30,6 +30,7 @@ $color-grv: lighten(orange, 0.5)
 %card
   box-shadow: 0 0.125em 0.375em rgba(0, 0, 0, 0.5)
   background: #f0f0f0
+  border-radius: 0.1em
 
 %absolute-center
   position: absolute
@@ -39,6 +40,12 @@ $color-grv: lighten(orange, 0.5)
   left: 0
 
   margin: auto
+
+%no-select
+  user-select: none
+  -ms-user-select: none
+  -moz-user-select: none
+  -webkit-user-select: none
 
 .skew
   display: inline-block

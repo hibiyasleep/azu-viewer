@@ -12,15 +12,12 @@ body
 
   font-family: Roboto, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', 'AppleSDGothicNeo', '맑은 고딕', 'Malgun Gothic', sans-serif
 
-  margin: 0 auto
+  margin: 0 auto 1em 0
   overflow-x: hidden
 
 .hidden
   display: none
 
 .icon
+  @extend %no-select
   display: inline-block
-  user-select: none
-  -ms-user-select: none
-  -moz-user-select: none
-  -webkit-user-select: none
