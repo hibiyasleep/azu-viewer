@@ -1,8 +1,5 @@
 #!/usr/bin/env coffee
 
-require 'dot'
-        .process path: './views'
-
 sassMiddleware  = require 'node-sass-middleware'
 serveStatic     = require 'serve-static'
 express         = require 'express'
@@ -25,7 +22,7 @@ app.use sassMiddleware
 
 app.use '/!/public', serveStatic __dirname + '/public'
 
-routes app, views
+routes app
 
 # listen
 

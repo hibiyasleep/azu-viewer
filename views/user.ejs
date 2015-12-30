@@ -1,4 +1,4 @@
-{{
+<%
   name = {
     fumen: ['nov', 'adv', 'exh', 'inf'],
     rank: ['D', 'C', 'B', 'A', 'AA', 'AAA'],
@@ -9,7 +9,7 @@
       class: ['play', 'clear', 'uc', 'puc']
     }
   };
-}}
+%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -28,23 +28,23 @@
     <header>
       <div class="title">
         <div class="left">
-          <span class="skill-level" data-skill-level="{{= it.meta.skill_no }}">
+          <span class="skill-level" data-skill-level="<%= meta.skill_no %>">
             <span class="skill-level-title">
-              {{= it.meta.skill_name }}
+              <%= meta.skill_name %>
             </span>
           </span>
           <h1>
-            {{= it.meta.name }}
+            <%= meta.name %>
           </h1>
         </div>
         <div class="right">
           <dl>
             <dd>플레이</dd>
-            <dt>{{= it.meta.play }}</dt>
+            <dt><%= meta.play %></dt>
             <dd>패킷</dd>
-            <dt>{{= it.meta.packet }}</dt>
+            <dt><%= meta.packet %></dt>
             <dd>블럭</dd>
-            <dt>{{= it.meta.block }}</dt>
+            <dt><%= meta.block %></dt>
           </dl>
         </div>
       </div>
@@ -54,52 +54,52 @@
     </header>
     <main>
       <ul class="list-song">
-        {{ for(var song in it.songs) { }}
-          {{ var song = it.songs[song]; }}
-          {{ for(var f in name.fumen) { }}
-            {{ var current = name.fumen[f]; }}
-            {{ var fumen = song[current]; }}
-            {{ if(fumen === undefined || fumen.score === undefined) continue; }}
-            <li class="song {{= (song.isGravity && current == 'inf')? 'grv' : current }}">
+        <% for(var song in songs) { %>
+          <% var song = songs[song]; %>
+          <% for(var f in name.fumen) { %>
+            <% var current = name.fumen[f]; %>
+            <% var fumen = song[current]; %>
+            <% if(fumen === undefined || fumen.score === undefined) continue; %>
+            <li class="song <%= (song.isGravity && current == 'inf')? 'grv' : current %>">
               <img class="albumart"
-                   src="http://{{= it.api.cdn + fumen.illust }}" />
+                   src="http://<%= api.cdn + fumen.illust %>" />
               <div class="side">
                 <dl>
-                  {{ for(var p=0; p<4; p++) { }}
-                    {{ var disabled = (p >= 2 && fumen.count[p] == 0)? 'disabled' : ''; }}
-                    {{ var len = (fumen.count[p] > 99)? 'short' : 'long'; }}
-                    <dd class="{{= disabled }}">
-                      {{= name.count[len][p] }}
+                  <% for(var p=0; p<4; p++) { %>
+                    <% var disabled = (p >= 2 && fumen.count[p] == 0)? 'disabled' : ''; %>
+                    <% var len = (fumen.count[p] > 99)? 'short' : 'long'; %>
+                    <dd class="<%= disabled %>">
+                      <%= name.count[len][p] %>
                     </dd>
-                    <dt class="{{= disabled }} count-{{= name.count.class[p] }}">
-                      {{= fumen.count[p] }}
+                    <dt class="<%= disabled %> count-<%= name.count.class[p] %>">
+                      <%= fumen.count[p] %>
                     </dt>
-                  {{ } }}
+                  <% } %>
                 </dl>
               </div>
               <div class="top">
                 <span class="level skew">
                   <span class="unskew">
-                    {{= fumen.level }}
+                    <%= fumen.level %>
                   </span>
                 </span>
-                <h1> {{= song.title }} </h1>
-                <h2> {{= song.artist }} </h2>
+                <h1> <%= song.title %> </h1>
+                <h2> <%= song.artist %> </h2>
               </div>
               <div class="bottom">
-                <span class="clear clear-{{= fumen.clear }}">
-                  <span class="unskew"> {{= name.clear[fumen.clear] }} </span>
+                <span class="clear clear-<%= fumen.clear %>">
+                  <span class="unskew"> <%= name.clear[fumen.clear] %> </span>
                 </span><!--
-             --><span class="rank rank-{{= fumen.rank }}">
-                  <span class="unskew"> {{= name.rank[fumen.rank] }} </span>
+             --><span class="rank rank-<%= fumen.rank %>">
+                  <span class="unskew"> <%= name.rank[fumen.rank] %> </span>
                 </span>
                 <span class="score">
-                  {{= fumen.score }}
+                  <%= fumen.score %>
                 </span>
               </div>
             </li>
-          {{ } }}
-        {{ } }}
+          <% } %>
+        <% } %>
       </ul>
     </main>
     <nav>
