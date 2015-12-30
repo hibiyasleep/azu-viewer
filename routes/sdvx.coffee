@@ -1,5 +1,3 @@
-request     = require 'request'
-#filters     = require './filters.coffee'
 config      = require '../config.json'
 fetch       = require '../lib/fetch.coffee'
 illust      = require '../lib/illust.coffee'
@@ -58,6 +56,8 @@ module.exports = (app) ->
               ns[fumen] = {}
 
           songs.push ns
+
+        d.user.nickname = name
 
         res.set 'Cache-Control', 'max-age=0'
         res.set 'Etag', d.api.etag

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      <%- title || '아즈인포' %>
+    </title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/!/public/css/main.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700" />
+  </head>
+  <body>
+    <% if(left) { %>
+      <input type="radio" name="aside" id="menu-toggle" class="hidden" />
+    <% } %>
+    <% if(right) { %>
+      <input type="radio" name="aside" id="sort-toggle" class="hidden" />
+    <% } %>
+    <% if(left || right) { %>
+      <input type="radio" name="aside" id="reset" class="hidden" />
+    <% } %>
+    <div class="toolbar-decorator"> </div>
