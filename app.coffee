@@ -6,15 +6,15 @@ require 'dot'
 sassMiddleware  = require 'node-sass-middleware'
 serveStatic     = require 'serve-static'
 express         = require 'express'
+ejs             = require 'ejs'
 fs              = require 'fs'
 
 config          = require './config.json'
 routes          = require './routes'
-views =
-  user: require './views/user.js'
-  error: require './views/error.js'
 
 app = express()
+
+app.set 'view engine', 'ejs'
 
 app.use sassMiddleware
   src: __dirname
