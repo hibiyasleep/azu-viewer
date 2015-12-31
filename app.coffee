@@ -2,6 +2,7 @@
 
 sassMiddleware  = require 'node-sass-middleware'
 serveStatic     = require 'serve-static'
+session         = require 'express-session'
 express         = require 'express'
 ejs             = require 'ejs'
 fs              = require 'fs'
