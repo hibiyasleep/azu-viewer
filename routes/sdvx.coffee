@@ -59,7 +59,6 @@ module.exports = (app) ->
 
         d.user.nickname = name
 
-        res.set 'Cache-Control', 'max-age=0'
         res.set 'Etag', d.api.etag
         res.render 'sdvx',
           api: d.api,

@@ -11,6 +11,12 @@ routes          = require './routes'
 
 app = express()
 
+app.get '/*', (req, res, next) ->
+  res.set 'X-XSS-Protection', 0
+  res.set 'Cache-Control', 'max-age=0'
+
+  next()
+
 app.set 'view engine', 'ejs'
 
 app.use sassMiddleware
