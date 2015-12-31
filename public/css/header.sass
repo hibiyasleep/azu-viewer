@@ -18,8 +18,41 @@ header
 
   color: white
 
-  h1
+  &> h1
     font-weight: 200
+    margin-left: 1.5rem
+    margin-right: 1.5rem
+
+  ol
+    line-height: 2em
+
+  form.login
+    text-align: center
+
+    padding-bottom: 0.5em
+
+    .ssid
+      width: 100%
+      max-width: 30rem
+
+      font-family: monospace
+      font-size: 1.5em
+      text-align: center
+
+
+  pre
+    width: calc(100% - 2em)
+
+    margin: 1.5em
+    padding: 1em
+    background: transparentize(black, 0.8)
+    white-space: normal
+    word-break: break-all
+
+  .card-container
+    color: black
+
+  // game page
 
   .title
     @extend .width-container

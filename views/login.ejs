@@ -1,6 +1,49 @@
 <%- include('partial/header', {
   left: true,
-  right: true
+  right: true,
+  title: '아즈인포 - 로그인'
 }) %>
-
+<% if(typeof baseuri === 'string') { %>
+<script>
+window.BaseURI = '<%- baseuri %>'
+</script>
+<% } %>
+<header class="width-container">
+  <h1> 로그인 </h1>
+  <div class="card-container">
+    <ol>
+      <li>
+        <a href="http://p.eagate.573.jp/">eAMUSEMENT</a> 페이지에 로그인합니다.
+      </li>
+      <li>
+        아래 코드를 복사해 주소창에 붙여넣습니다.
+        <br />
+        <b>Chrome 주의</b>: 붙여넣을 때 앞의 <code>javascript:</code>가 날아가기
+        때문에, 직접 다시 입력해야 합니다.
+      </li>
+    </ol>
+    <pre onclick="prompt('Ctrl/Cmd-C를 눌러 복사하세요', this.textContent)"
+      >javascript:try{prompt('Ctrl/Cmd-C를 눌러 복사하세요', /M573SSID=([0-9a-f\-]{36})/.exec(document.cookie)[1])}catch(e){alert(e)}
+    </pre>
+    <ol start="3">
+      <li>
+        복사해온 코드를 아래 입력창에 넣습니다.
+      </li>
+    </ol>
+    <form class="login" action="./login" method="post">
+      <p>
+        <input class="ssid" name="session" type="text" maxlength="36"
+               pattern="[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}"
+               placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
+      </p>
+      <p>
+        <input type="submit" class="btn btn-large btn-primary" value="로그인" />
+      </p>
+    </form>
+  </div>
+</header>
+<%- include('partial/nav', {
+  left: true,
+  right: false
+}) %>
 <%- include('partial/footer') %>

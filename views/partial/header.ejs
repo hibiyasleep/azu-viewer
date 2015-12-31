@@ -3,12 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <title>
-      <%- title || '아즈인포' %>
+      <%- 'title' in global? title : '아즈인포' %>
     </title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
 
     <link rel="stylesheet" href="/!/public/css/main.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700" />
+    <% if(typeof css === 'object' && css instanceof Array) { %>
+      <% for(var i in css) { %>
+        <link rel="stylesheet" href="<%- css[i] %>" />
+      <% } %>
+    <% } %>
+    <% if(typeof js === 'object' && js instanceof Array) { %>
+      <% for(var i in js) { %>
+        <script src="<%- css[i] %>"> </script>
+      <% } %>
+    <% } %>
   </head>
   <body>
     <% if(left) { %>
