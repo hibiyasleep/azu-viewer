@@ -1,6 +1,5 @@
 config      = require '../config.json'
 fetch       = require '../lib/fetch.coffee'
-illust      = require '../lib/illust.coffee'
 
 module.exports = (app) ->
 
