@@ -1,4 +1,5 @@
-config = require '../config.json'
+request = require 'request'
+config  = require '../config.json'
 
 module.exports =
   get: (uri, session, callback) ->
