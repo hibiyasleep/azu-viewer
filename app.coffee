@@ -27,6 +27,9 @@ app.use sassMiddleware
   sourceMap: true
   prefix: '/!'
 
+app.use session
+  secret: '64KY64qUIOywqe2VmOuLpAo='
+
 app.use '/!/public', serveStatic __dirname + '/public'
 
 routes app
