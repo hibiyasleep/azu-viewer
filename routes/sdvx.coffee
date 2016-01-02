@@ -1,5 +1,5 @@
-config      = require '../config.json'
-fetch       = require '../lib/fetch.coffee'
+config  = require '../config.json'
+azuinfo = require '../lib/api.coffee'
 
 module.exports = (app) ->
 
@@ -9,9 +9,16 @@ module.exports = (app) ->
 
     if name is '�' then name = ''
 
-    fetch name, 'sdvx', (e, d) ->
+    azuinfo.get '/playdata/sdvx', name, (e, d) ->
 
-      unless e?
+      if e
+        switch e.resCode?
+          when -5, -6, -7, -8
+            res.render '404'
+          else
+            res.render 'error', e
+
+      else
 
         songs = []
 
@@ -63,8 +70,3 @@ module.exports = (app) ->
           api: d.api,
           meta: d.user,
           songs: songs
-
-      else
-        console.error e
-        res.status e.code
-        res.render 'error', e
