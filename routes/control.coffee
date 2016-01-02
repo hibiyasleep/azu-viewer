@@ -8,17 +8,23 @@ config = require '../config.json'
 error = require '../lib/error.coffee'
 
 handle = (res, name, callback) ->
+
   if not callback
+
     callback = (d) ->
       res.render name,
         baseuri: config.baseuri,
         d: d || {}
+
   else if typeof callback is 'string'
+
     target = callback
+
     callback = (d) ->
       res.redirect target
 
   return (e, d) ->
+
     if e
       res.render 'error', e
 
@@ -31,10 +37,11 @@ handle = (res, name, callback) ->
       callback d
 
 checkLogin = (req, res, next) ->
-  console.log req.session, req.session.sess
+
   unless req.session.sess
     res.redirect './login#not-logged-in'
     res.end()
+
   else
     next()
 
@@ -42,7 +49,9 @@ control.get '/', checkLogin, (req, res) ->
   azuinfo.get '/userdata', req.session.sess, handle res, 'control'
 
 control.get '/login', (req, res) ->
+
   if req.query.session
+
     unless /^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test req.query.session
       res.render 'login',
         baseuri: config.baseuri,
@@ -50,11 +59,14 @@ control.get '/login', (req, res) ->
 
     else
       azuinfo.get '/userdata/konami', req.query.session, handle res, 'login', (d) ->
+
         req.session.sess = d.session
 
         azuinfo.get '/userdata', d.session, handle res, 'login', (d) ->
+
           if d.nickname is null
             res.redirect './nickname#register'
+
           else
             res.redirect '.'
 
@@ -63,7 +75,9 @@ control.get '/login', (req, res) ->
       baseuri: config.baseuri
 
 control.get '/nickname', checkLogin, (req, res) ->
+
   if req.query.nickname
+
     unless /^[0-9a-zA-Z_]{2,16}$/.test req.query.nickname
       res.render 'nickname',
         baseuri: config.baseuri,
@@ -79,6 +93,7 @@ control.get '/nickname', checkLogin, (req, res) ->
                    handle res, 'nickname', './#nickname'
 
 control.get '/logout', checkLogin, (req, res) ->
+
   if req.session.sess
     req.session.destroy()
 
