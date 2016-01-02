@@ -1,0 +1,26 @@
+<%- include('partial/header', {
+  left: true,
+  right: true,
+  title: '아즈인포 - 닉네임 설정'
+}) %>
+<% if(typeof baseuri === 'string') { %>
+<script>
+window.BaseURI = '<%- baseuri %>'
+</script>
+<% } %>
+<header>
+  <h1> 닉네임 설정 </h1>
+</header>
+<main>
+  <div class="card-container">
+    <form action="./nickname" method="post">
+      <input type="text" name="nickname" pattern="^[0-9a-zA-Z_]{2,16}$" maxlength="16" placeholder="새 닉네임" />
+      <input type="submit" value="확인" />
+    </form>
+  </div>
+</main>
+<%- include('partial/nav', {
+  left: true,
+  right: false
+}) %>
+<%- include('partial/footer') %>

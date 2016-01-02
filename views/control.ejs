@@ -1,0 +1,23 @@
+<%- include('partial/header', {
+  left: true,
+  right: true,
+  title: '아즈인포 - 로그인'
+}) %>
+<% if(typeof baseuri === 'string') { %>
+<script>
+window.BaseURI = '<%- baseuri %>'
+</script>
+<% } %>
+<header>
+  <h1> 제어판 </h1>
+</header>
+<main>
+  <div class="card-container">
+    TODO
+  </div>
+</main>
+<%- include('partial/nav', {
+  left: true,
+  right: false
+}) %>
+<%- include('partial/footer') %>
