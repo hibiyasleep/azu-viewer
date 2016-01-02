@@ -30,12 +30,16 @@ handle = (res, name, callback) ->
     else
       callback d
 
-control.get '/', (req, res) ->
-  unless req.session?.id
-    res.redirect './login'
-
+checkLogin = (req, res, next) ->
+  console.log req.session, req.session.sess
+  unless req.session.sess
+    res.redirect './login#not-logged-in'
+    res.end()
   else
-    azuinfo.get '/userdata', req.session.id, handle res, 'control'
+    next()
+
+control.get '/', checkLogin, (req, res) ->
+  azuinfo.get '/userdata', req.session.sess, handle res, 'control'
 
 control.get '/login', (req, res) ->
   if req.query.session
@@ -46,7 +50,7 @@ control.get '/login', (req, res) ->
 
     else
       azuinfo.get '/userdata/konami', req.query.session, handle res, 'login', (d) ->
-        req.session.id = d.session
+        req.session.sess = d.session
 
         azuinfo.get '/userdata', d.session, handle res, 'login', (d) ->
           if d.nickname is null
@@ -58,23 +62,27 @@ control.get '/login', (req, res) ->
     res.render 'login',
       baseuri: config.baseuri
 
-control.get '/nickname', (req, res) ->
+control.get '/nickname', checkLogin, (req, res) ->
   if req.query.nickname
     unless /^[0-9a-zA-Z_]{2,16}$/.test req.query.nickname
       res.render 'nickname',
         baseuri: config.baseuri,
         error: '허용되지 않는 닉네임입니다.'
 
-    else unless req.session.id
+    else unless req.session.sess
       res.redirect './login'
 
     else
       azuinfo.post '/userdata/nickname',
                    nickname: req.query.nickname,
-                   req.session.id,
+                   req.session.sess,
                    handle res, 'nickname', './#nickname'
 
+control.get '/logout', checkLogin, (req, res) ->
+  if req.session.sess
+    req.session.destroy()
 
+  res.redirect './login#logged-out'
 
 module.exports = (app) ->
   app.use '/control', control
