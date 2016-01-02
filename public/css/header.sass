@@ -9,7 +9,7 @@
   top: 0
 
 header
-  width: 100%
+  @extend .width-container
 
   position: relative
 
@@ -23,30 +23,6 @@ header
     margin-left: 1.5rem
     margin-right: 1.5rem
 
-  ol
-    line-height: 2em
-
-  form.login
-    text-align: center
-
-    .ssid
-      width: 100%
-      max-width: 30rem
-
-      font-family: monospace
-      font-size: 1.5em
-      text-align: center
-
-
-  pre
-    width: calc(100% - 2em)
-
-    margin: 1.5em
-    padding: 1em
-    background: transparentize(black, 0.8)
-    white-space: normal
-    word-break: break-all
-
   .card-container
     min-height: 12em
 
@@ -55,7 +31,7 @@ header
   // game page
 
   .title
-    @extend .width-container
+    width: 100%
     height: $header-title-height - 1rem
     margin-bottom: 0.5em !important
 

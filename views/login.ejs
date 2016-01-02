@@ -10,6 +10,8 @@ window.BaseURI = '<%- baseuri %>'
 <% } %>
 <header class="width-container">
   <h1> 로그인 </h1>
+</header>
+<main>
   <div class="card-container">
     <ol>
       <li>
@@ -30,7 +32,7 @@ window.BaseURI = '<%- baseuri %>'
         복사해온 코드를 아래 입력창에 넣습니다.
       </li>
     </ol>
-    <form class="login" action="./login" method="post">
+    <form class="login" action="./login" method="get">
       <p>
         <input class="ssid" name="session" type="text" maxlength="36"
                pattern="[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}"
@@ -41,7 +43,7 @@ window.BaseURI = '<%- baseuri %>'
       </p>
     </form>
   </div>
-</header>
+</main>
 <%- include('partial/nav', {
   left: true,
   right: false

@@ -24,3 +24,30 @@ body
 .icon
   @extend %no-select
   display: inline-block
+
+main
+  position: relative
+
+  ol
+    line-height: 2em
+
+  form.login
+    text-align: center
+
+    .ssid
+      width: 100%
+      max-width: 30rem
+
+      font-family: monospace
+      font-size: 1.5em
+      text-align: center
+
+
+  pre
+    width: calc(100% - 2em)
+
+    margin: 1.5em
+    padding: 1em
+    background: transparentize(black, 0.8)
+    white-space: normal
+    word-break: break-all
