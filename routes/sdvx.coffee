@@ -12,7 +12,7 @@ module.exports = (app) ->
     azuinfo.get '/playdata/sdvx', name, (e, d) ->
 
       if e
-        switch e.resCode?
+        switch e.resCode
           when -5, -6, -7, -8
             res.render '404'
           else
