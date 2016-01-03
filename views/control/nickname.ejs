@@ -1,13 +1,9 @@
 <%- include('../partial/header', {
   left: true,
   right: true,
-  title: '아즈인포 - 닉네임 설정'
+  title: '아즈인포 - 닉네임 설정',
+  baseuri: typeof baseuri === 'string' && baseuri
 }) %>
-<% if(typeof baseuri === 'string') { %>
-<script>
-window.BaseURI = '<%- baseuri %>'
-</script>
-<% } %>
 <header>
   <h1> 닉네임 설정 </h1>
 </header>

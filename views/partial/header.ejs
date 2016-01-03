@@ -19,6 +19,11 @@
         <script src="<%- css[i] %>"> </script>
       <% } %>
     <% } %>
+    <% if(typeof baseuri === 'string') { %>
+      <script>
+window.BaseURI = '<%- baseuri %>'
+      </script>
+    <% } %>
   </head>
   <body>
     <% if(left) { %>
