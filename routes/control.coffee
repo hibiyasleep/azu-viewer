@@ -46,23 +46,22 @@ checkLogin = (req, res, next) ->
     next()
 
 control.get '/', checkLogin, (req, res) ->
-  azuinfo.get '/userdata', req.session.sess, handle res, 'control'
+  azuinfo.get '/userdata', req.session.sess, handle res, 'control/index'
 
 control.get '/login', (req, res) ->
 
   if req.query.session
-
     unless /^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test req.query.session
-      res.render 'login',
+      res.render 'control/login',
         baseuri: config.baseuri,
         error: '잘못된 값입니다.'
 
     else
-      azuinfo.get '/userdata/konami', req.query.session, handle res, 'login', (d) ->
+      azuinfo.get '/userdata/konami', req.query.session, handle res, 'control/login', (d) ->
 
         req.session.sess = d.session
 
-        azuinfo.get '/userdata', d.session, handle res, 'login', (d) ->
+        azuinfo.get '/userdata', d.session, handle res, 'control/login', (d) ->
 
           if d.nickname is null
             res.redirect './nickname#register'
@@ -71,13 +70,12 @@ control.get '/login', (req, res) ->
             res.redirect '.'
 
   else
-    res.render 'login',
+    res.render 'control/login',
       baseuri: config.baseuri
 
 control.get '/nickname', checkLogin, (req, res) ->
 
   if req.query.nickname
-
     unless /^[0-9a-zA-Z_]{2,16}$/.test req.query.nickname
       res.render 'nickname',
         baseuri: config.baseuri,
@@ -90,7 +88,7 @@ control.get '/nickname', checkLogin, (req, res) ->
       azuinfo.post '/userdata/nickname',
                    nickname: req.query.nickname,
                    req.session.sess,
-                   handle res, 'nickname', './#nickname'
+                   handle res, 'control/nickname', './#nickname'
 
 control.get '/logout', checkLogin, (req, res) ->
 
