@@ -19,6 +19,7 @@ module.exports = (app) ->
             res.render 'error', e
 
       else
+        d = d.data
 
         songs = []
 
