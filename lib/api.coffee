@@ -8,7 +8,8 @@ preserved = (callback) ->
 
     else if r.statusCode is not 200
       callback
-        code: r.statusCode
+        code: r.statusCode,
+        stack: 'API Server has responded with status code ' + r.statusCode + '.'
       , null
 
     else
