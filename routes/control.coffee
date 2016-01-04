@@ -26,6 +26,7 @@ handle = (res, name, callback) ->
   return (e, d) ->
 
     if e
+      console.dir e
       res.render 'error', e
 
     else if d.resCode? < 0
@@ -88,7 +89,12 @@ control.get '/nickname', checkLogin, (req, res) ->
       azuinfo.post '/userdata/nickname',
                    nickname: req.query.nickname,
                    req.session.sess,
-                   handle res, 'control/nickname', './#nickname'
+                   handle res, 'control/nickname', ->
+                     res.redirect './#nickname'
+
+  else
+    res.render 'nickname',
+      baseuri: config.baseuri
 
 control.get '/logout', checkLogin, (req, res) ->
 
