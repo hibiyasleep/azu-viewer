@@ -26,7 +26,12 @@ body
   display: inline-block
 
 main
+  @extend .width-container
   position: relative
+
+.content
+  @extend %card
+  padding: 0.5em 1em
 
   ol
     line-height: 2em
@@ -42,7 +47,6 @@ main
       font-size: 1.5em
       text-align: center
 
-
   pre
     width: calc(100% - 2em)
 
@@ -51,3 +55,6 @@ main
     background: transparentize(black, 0.8)
     white-space: normal
     word-break: break-all
+
+  h2
+    font-weight: lighter
