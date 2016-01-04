@@ -6,6 +6,11 @@ preserved = (callback) ->
     if e
       callback e, null
 
+    else if r.statusCode is not 200
+      callback
+        code: r.statusCode
+      , null
+
     else
       j = JSON.parse d
 
