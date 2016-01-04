@@ -32,6 +32,7 @@ app.use session
 
 app.use '/!/public', serveStatic __dirname + '/public'
 
+app.get '/', (req, res) -> res.render 'index'
 routes app
 
 # listen
