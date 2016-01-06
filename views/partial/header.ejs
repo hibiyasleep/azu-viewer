@@ -3,36 +3,39 @@
   <head>
     <meta charset="utf-8" />
     <title>
-      <%- 'title' in global? title : '아즈인포' %>
+      <%- typeof title === 'string'? title : '아즈인포' %>
     </title>
     <meta name="viewport" content="width=device-width" />
 
     <link rel="stylesheet" href="/!/public/css/main.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700" />
-    <% if(typeof css === 'object' && css instanceof Array) { %>
+    <script>
+window.BaseURI = '<%- baseuri %>'
+<% if(locals.session) { %>
+window.session = '<%- session %>'
+<% } %>
+    </script>
+
+    <script src="/!/public/js/lib.js"> </script>
+    <% if(locals.css) { %>
       <% for(var i in css) { %>
         <link rel="stylesheet" href="<%- css[i] %>" />
       <% } %>
     <% } %>
-    <% if(typeof js === 'object' && js instanceof Array) { %>
-      <% for(var i in js) { %>
-        <script src="<%- css[i] %>"> </script>
+    <% if(locals.script) { %>
+      <% for(var i in script) { %>
+        <script src="<%- script[i] %>"> </script>
       <% } %>
-    <% } %>
-    <% if(typeof baseuri === 'string') { %>
-      <script>
-window.BaseURI = '<%- baseuri %>'
-      </script>
     <% } %>
   </head>
   <body>
-    <% if(left) { %>
+    <% if(locals.left && left) { %>
       <input type="radio" name="aside" id="menu-toggle" class="hidden" />
     <% } %>
-    <% if(right) { %>
+    <% if(locals.right && right) { %>
       <input type="radio" name="aside" id="sort-toggle" class="hidden" />
     <% } %>
-    <% if(left || right) { %>
+    <% if(locals.left && left || locals.right && right) { %>
       <input type="radio" name="aside" id="reset" class="hidden" />
     <% } %>
     <div class="toolbar-decorator"> </div>
