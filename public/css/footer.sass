@@ -1,0 +1,23 @@
+@keyframes error-hide
+  from
+    bottom: 0
+  96%
+    bottom: 0
+  98%
+    bottom: -5em
+  to
+    bottom: -5em
+    display: none
+
+footer.error
+  width: 100%
+
+  padding: 1em
+
+  position: fixed
+  left: 0
+  right: 0
+  animation: error-hide 5s forwards
+
+  background: #323232
+  color: #eee
