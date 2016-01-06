@@ -7,7 +7,6 @@ azuinfo = require '../lib/api.coffee'
 config = require '../config.json'
 error = require '../lib/error.coffee'
 
-<<<<<<< Updated upstream
 handle = (res, name, callback) ->
 
   if not callback
@@ -37,6 +36,7 @@ handle = (res, name, callback) ->
       callback d
 
 checkLogin = (req, res, next) ->
+
   unless req.session.sess
     res.redirect './login#not-logged-in'
     res.end()
@@ -64,12 +64,14 @@ control.get '/', checkLogin, (req, res) ->
           user: d,
           refresh: refresh.data
 
-    else
-      callback d
+control.get '/login', (req, res) ->
 
   res.login_uri = req.protocol + '://' + req.get('Host') + config.login
 
-  if req.query.session
+  if req.session.sess
+    res.redirect './'
+
+  else if req.query.session
     unless /^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test req.query.session
       res.render 'control/login',
         baseuri: config.baseuri,
