@@ -7,6 +7,7 @@ azuinfo = require '../lib/api.coffee'
 config = require '../config.json'
 error = require '../lib/error.coffee'
 
+<<<<<<< Updated upstream
 handle = (res, name, callback) ->
 
   if not callback
@@ -63,7 +64,8 @@ control.get '/', checkLogin, (req, res) ->
           user: d,
           refresh: refresh.data
 
-control.get '/login', (req, res) ->
+    else
+      callback d
 
   res.login_uri = req.protocol + '://' + req.get('Host') + config.login
 
