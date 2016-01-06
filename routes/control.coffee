@@ -8,6 +8,8 @@ azuinfo = require '../lib/api.coffee'
 config = require '../config.json'
 error = require '../lib/error.coffee'
 
+moment.locale 'ko'
+
 control.locals =
   moment: moment
   baseuri: config.baseuri
