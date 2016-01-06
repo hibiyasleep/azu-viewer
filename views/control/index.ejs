@@ -2,8 +2,11 @@
   left: true,
   right: true,
   title: '아즈인포 - 제어판',
-  baseuri: typeof baseuri === 'string' && baseuri
+  script: ['/!/public/js/control.js']
 }) %>
+<script>
+window.session = '<%- session %>'
+</script>
 <header>
   <h1> 제어판 </h1>
 </header>
@@ -12,13 +15,13 @@
     <h2> 기록 </h2>
     <p> 최근 5개의 기록만 보여집니다. </p>
     <ol>
-      <% console.log(refresh) %>
       <% var c = (refresh.length > 5)? 5 : refresh.length %>
       <% for(var i=0; i<c; i++) { %>
         <% var r = refresh[i] %>
         <li value="<%= r.id %>">
-          <%= new Date(r.start * 1000).toString() %>에 시작,
-          <%= new Date(r.end * 1000).toString() %>에 끝,
+          <%= moment(r.request * 1000).calendar() %>에 요청,
+          <%= moment(r.start * 1000).calendar() %>에 시작,
+          <%= moment(r.end * 1000).calendar() %>에 끝,
           기종 <%= r.device %>,
           오류 <%= r.error %>,
           상태 <%= r.status %>
@@ -28,12 +31,23 @@
     <h2> 갱신 </h2>
     <p>
       <label for="card"> 카드 번호 </label>
-      <input id="card" type="text" value="불러오기" disabled />
+      <input type="text" id="card" placeholder="xxxxxxxxxxxxxxxx" disabled />
+      <span id="card-load"> 불러오기 </span>
     </p>
     <p>
       <label for="password"> 비밀번호 </label>
-      <input id="password" type="number" min="1" max="9998" />
+      <input type="number" id="password" min="1" max="9998" />
     </p>
+    <p>
+      <label> 기종 </label>
+      <input type="checkbox" id="device_1" class="input-devices" value="1" />
+      <label for="device_1"> 사볼 </label>
+      <input type="checkbox" id="device_2" class="input-devices" value="2" />
+      <label for="device_2"> 팝픈 (현재 조회 불가) </label>
+    </p>
+    <button id="request" class="btn btn-primary"> 갱신 요청 </button>
+    <span id="loading" class="hidden"> 로드 중... </span>
+    <span id="error" class="hidden"> </span>
   </div>
 </main>
 <%- include('../partial/nav', {
