@@ -70,4 +70,5 @@ module.exports = (app) ->
         res.render 'sdvx',
           api: d.api,
           meta: d.user,
+          stat: stat,
           songs: songs
