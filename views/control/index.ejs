@@ -8,9 +8,32 @@
   <h1> 제어판 </h1>
 </header>
 <main>
-  <div class="card-container">
-    <h2> 갱신 기록 <h2>
-      
+  <div class="content">
+    <h2> 기록 </h2>
+    <p> 최근 5개의 기록만 보여집니다. </p>
+    <ol>
+      <% console.log(refresh) %>
+      <% var c = (refresh.length > 5)? 5 : refresh.length %>
+      <% for(var i=0; i<c; i++) { %>
+        <% var r = refresh[i] %>
+        <li value="<%= r.id %>">
+          <%= new Date(r.start * 1000).toString() %>에 시작,
+          <%= new Date(r.end * 1000).toString() %>에 끝,
+          기종 <%= r.device %>,
+          오류 <%= r.error %>,
+          상태 <%= r.status %>
+        </li>
+      <% } %>
+    </ol>
+    <h2> 갱신 </h2>
+    <p>
+      <label for="card"> 카드 번호 </label>
+      <input id="card" type="text" value="불러오기" disabled />
+    </p>
+    <p>
+      <label for="password"> 비밀번호 </label>
+      <input id="password" type="number" min="1" max="9998" />
+    </p>
   </div>
 </main>
 <%- include('../partial/nav', {

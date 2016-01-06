@@ -10,14 +10,12 @@ error = require '../lib/error.coffee'
 handle = (res, name, callback) ->
 
   if not callback
-
     callback = (d) ->
       res.render name,
         baseuri: config.baseuri,
         d: d || {}
 
   else if typeof callback is 'string'
-
     target = callback
 
     callback = (d) ->
@@ -25,20 +23,19 @@ handle = (res, name, callback) ->
 
   return (e, d) ->
 
-    if e
-      console.dir e
-      res.render 'error', e
-
-    else if d.resCode? < 0
-      res.render name
+    if e and e.resCode < 0
+      res.render name || error,
         baseuri: config.baseuri,
-        error: error[d.resCode] || '알 수 없는 에러. (' + d.resCode + ')'
+        login_uri: res.login_uri || ''
+        error: error[e.resCode] || '알 수 없는 에러. (' + d.resCode + ')'
+
+    else if e and not e.resCode
+      res.render 'error', e
 
     else
       callback d
 
 checkLogin = (req, res, next) ->
-
   unless req.session.sess
     res.redirect './login#not-logged-in'
     res.end()
@@ -47,14 +44,34 @@ checkLogin = (req, res, next) ->
     next()
 
 control.get '/', checkLogin, (req, res) ->
-  azuinfo.get '/userdata', req.session.sess, handle res, 'control/index'
+
+  azuinfo.get '/userdata', req.session.sess, (e, d) ->
+
+    if e
+      if e.resCode is -2
+        res.redirect './login#not-logged-in'
+      else
+        res.render 'error', e
+
+    else unless d.nickname
+      res.redirect './nickname#register'
+
+    else
+      azuinfo.get '/userdata/refresh', req.session.sess, handle res, null, (refresh) ->
+        res.render 'control/index',
+          baseuri: config.baseuri,
+          user: d,
+          refresh: refresh.data
 
 control.get '/login', (req, res) ->
+
+  res.login_uri = req.protocol + '://' + req.get('Host') + config.login
 
   if req.query.session
     unless /^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test req.query.session
       res.render 'control/login',
         baseuri: config.baseuri,
+        login_uri: res.login_uri
         error: '잘못된 값입니다.'
 
     else
@@ -72,13 +89,14 @@ control.get '/login', (req, res) ->
 
   else
     res.render 'control/login',
-      baseuri: config.baseuri
+      baseuri: config.baseuri,
+      login_uri: res.login_uri
 
 control.get '/nickname', checkLogin, (req, res) ->
 
   if req.query.nickname
     unless /^[0-9a-zA-Z_]{2,16}$/.test req.query.nickname
-      res.render 'nickname',
+      res.render 'control/nickname',
         baseuri: config.baseuri,
         error: '허용되지 않는 닉네임입니다.'
 

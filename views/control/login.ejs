@@ -2,13 +2,14 @@
   left: true,
   right: true,
   title: '아즈인포 - 로그인',
-  baseuri: typeof baseuri === 'string' && baseuri
+  baseuri: typeof baseuri === 'string' && baseuri,
+  script: '/!/public/js/loginpage.js'
 }) %>
 <header class="width-container">
   <h1> 로그인 </h1>
 </header>
 <main>
-  <div class="card-container">
+  <div class="content">
     <ol>
       <li>
         <a href="http://p.eagate.573.jp/">eAMUSEMENT</a> 페이지에 로그인합니다.
@@ -21,25 +22,15 @@
       </li>
     </ol>
     <pre onclick="prompt('Ctrl/Cmd-C를 눌러 복사하세요', this.textContent)"
-      >javascript:try{location.href=<% %>/M573SSID=([0-9a-f\-]{36})/.exec(document.cookie)[1])}catch(e){alert(e)}
+      >javascript:try{location.href='<%= login_uri %>?session='+/M573SSID=([0-9a-f\-]{36})/.exec(document.cookie)[1]}catch(e){alert(e)}
     </pre>
-    <ol start="3">
-      <li>
-        복사해온 코드를 아래 입력창에 넣습니다.
-      </li>
-    </ol>
-    <form class="login" action="./login" method="get">
-      <p>
-        <input class="ssid" name="session" type="text" maxlength="36"
-               pattern="[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}"
-               placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
-      </p>
-      <p>
-        <input type="submit" class="btn btn-large btn-primary" value="로그인" />
-      </p>
-    </form>
   </div>
 </main>
+<% if(typeof error === 'string') { %>
+  <%- include('../partial/error', {
+        error: error
+      }) %>
+<% } %>
 <%- include('../partial/nav', {
   left: true,
   right: false

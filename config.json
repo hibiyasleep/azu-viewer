@@ -1,6 +1,7 @@
 {
   "listen": 8080,
   "baseuri": "http://api.kano.kr",
+  "login": "/control/login",
   "sdvx": {
     "json": "/playdata/sdvx/"
   }
