@@ -2,17 +2,21 @@ express = require 'express'
 control = express()
 
 request = require 'request'
+moment  = require 'moment'
 azuinfo = require '../lib/api.coffee'
 
 config = require '../config.json'
 error = require '../lib/error.coffee'
+
+control.locals =
+  moment: moment
+  baseuri: config.baseuri
 
 handle = (res, name, callback) ->
 
   if not callback
     callback = (d) ->
       res.render name,
-        baseuri: config.baseuri,
         d: d || {}
 
   else if typeof callback is 'string'
@@ -25,7 +29,6 @@ handle = (res, name, callback) ->
 
     if e and e.resCode < 0
       res.render name || error,
-        baseuri: config.baseuri,
         login_uri: res.login_uri || ''
         error: error[e.resCode] || '알 수 없는 에러. (' + d.resCode + ')'
 
@@ -59,8 +62,10 @@ control.get '/', checkLogin, (req, res) ->
 
     else
       azuinfo.get '/userdata/refresh', req.session.sess, handle res, null, (refresh) ->
+        res.locals =
+          session: req.session.sess
+
         res.render 'control/index',
-          baseuri: config.baseuri,
           user: d,
           refresh: refresh.data
 
@@ -74,7 +79,6 @@ control.get '/login', (req, res) ->
   else if req.query.session
     unless /^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test req.query.session
       res.render 'control/login',
-        baseuri: config.baseuri,
         login_uri: res.login_uri
         error: '잘못된 값입니다.'
 
@@ -93,7 +97,6 @@ control.get '/login', (req, res) ->
 
   else
     res.render 'control/login',
-      baseuri: config.baseuri,
       login_uri: res.login_uri
 
 control.get '/nickname', checkLogin, (req, res) ->
@@ -101,13 +104,15 @@ control.get '/nickname', checkLogin, (req, res) ->
   if req.query.nickname
     unless /^[0-9a-zA-Z_]{2,16}$/.test req.query.nickname
       res.render 'control/nickname',
-        baseuri: config.baseuri,
         error: '허용되지 않는 닉네임입니다.'
 
     else unless req.session.sess
       res.redirect './login'
 
     else
+      res.locals =
+        session: req.session.sess
+
       azuinfo.post '/userdata/nickname',
                    nickname: req.query.nickname,
                    req.session.sess,
@@ -115,8 +120,7 @@ control.get '/nickname', checkLogin, (req, res) ->
                      res.redirect './#nickname'
 
   else
-    res.render 'nickname',
-      baseuri: config.baseuri
+    res.render 'nickname'
 
 control.get '/logout', checkLogin, (req, res) ->
 
