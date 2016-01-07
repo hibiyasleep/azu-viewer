@@ -19,7 +19,7 @@ window.addEventListener('load', function() {
 
   $('#card-load').addEventListener('click', function() {
     var card = $('#card')
-    card.removeEventListener('click')
+    card.removeEventListener('click', this)
 
     var xhr = new XMLHttpRequest()
     xhr.open('GET', BaseURI + '/userdata/card/' + session + '.json', true)
@@ -31,7 +31,7 @@ window.addEventListener('load', function() {
             location.reload()
             return
           }
-          card.value = res.card
+          card.value = res.card || res.res
         }
       }
     }
