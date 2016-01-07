@@ -74,7 +74,7 @@ control.get '/', checkLogin, (req, res) ->
 
 control.get '/login', (req, res) ->
 
-  res.login_uri = req.protocol + '://' + req.get('X-Forwarded-Host') or req.get('Host') + config.login
+  res.login_uri = req.protocol + '://' + config.login
 
   if req.session.sess
     res.redirect './'
