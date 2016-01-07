@@ -1,6 +1,6 @@
 {
   "listen": 8080,
   "baseuri": "http://api.kano.kr",
-  "static": "/!",
+  "static": "/!/public",
   "login": "/control/login"
 }

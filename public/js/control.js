@@ -3,11 +3,13 @@
 window.addEventListener('load', function() {
   var e = $('#error')
   var s = $('#loading')
+
   var error = function(string) {
     s.className = 'hidden'
     e.className = ''
     e.textContent = string
   }
+
   var loadState = function(state) {
     if(!state) {
       s.className = 'hidden'
@@ -22,7 +24,9 @@ window.addEventListener('load', function() {
     card.removeEventListener('click', this)
 
     var xhr = new XMLHttpRequest()
+
     xhr.open('GET', BaseURI + '/userdata/card/' + session + '.json', true)
+
     xhr.onload = function() {
       if(xhr.readyState === 4) {
         if(xhr.status === 200) {
@@ -35,6 +39,7 @@ window.addEventListener('load', function() {
         }
       }
     }
+
     xhr.send(null)
   })
 
@@ -59,7 +64,7 @@ window.addEventListener('load', function() {
       var data = 'card=' + card.value +
                  '&password=' + password.value +
                  '&device=' + device +
-                 '&swap=0'
+                 '&swap=1'
 
       var xhr = new XMLHttpRequest()
       xhr.open('POST', BaseURI + '/userdata/refresh/' + session + '.json', true)
@@ -89,7 +94,6 @@ window.addEventListener('load', function() {
 
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
       xhr.send(data)
-      console.log(data)
     }
   })
 })
