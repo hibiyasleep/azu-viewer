@@ -87,6 +87,7 @@ window.addEventListener('load', function() {
         error(xhr.statusText)
       }
 
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
       xhr.send(data)
       console.log(data)
     }
