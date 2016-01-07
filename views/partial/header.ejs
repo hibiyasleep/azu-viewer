@@ -7,7 +7,7 @@
     </title>
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="/!/public/css/main.css" />
+    <link rel="stylesheet" href="<%- static %>/css/main.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700" />
     <script>
 window.BaseURI = '<%- baseuri %>'
@@ -16,15 +16,15 @@ window.session = '<%- session %>'
 <% } %>
     </script>
 
-    <script src="/!/public/js/lib.js"> </script>
+    <script src="<%- static %>/js/lib.js"> </script>
     <% if(locals.css) { %>
       <% for(var i in css) { %>
-        <link rel="stylesheet" href="<%- css[i] %>" />
+        <link rel="stylesheet" href="<%- static %><%- css[i] %>" />
       <% } %>
     <% } %>
     <% if(locals.script) { %>
       <% for(var i in script) { %>
-        <script src="<%- script[i] %>"> </script>
+        <script src="<%- static %><%- script[i] %>"> </script>
       <% } %>
     <% } %>
   </head>

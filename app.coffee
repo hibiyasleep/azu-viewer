@@ -13,6 +13,10 @@ routes          = require './routes'
 
 app = express()
 
+app.locals =
+  static: config.static
+  baseuri: config.baseuri
+
 app.get '/*', (req, res, next) ->
   res.set 'X-XSS-Protection', 0
   res.set 'Cache-Control', 'max-age=0'

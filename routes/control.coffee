@@ -12,6 +12,7 @@ moment.locale 'ko'
 
 control.locals =
   moment: moment
+  static: config.static
   baseuri: config.baseuri
 
 handle = (res, name, callback) ->

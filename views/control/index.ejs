@@ -2,11 +2,14 @@
   left: true,
   right: true,
   title: '아즈인포 - 제어판',
-  script: ['/!/public/js/control.js']
+  script: [
+    '/js/control.js'
+  ]
 }) %>
 <script>
 window.session = '<%- session %>'
 </script>
+<% console.log(session) %>
 <header>
   <h1> 제어판 </h1>
 </header>
@@ -36,7 +39,7 @@ window.session = '<%- session %>'
     </p>
     <p>
       <label for="password"> 비밀번호 </label>
-      <input type="number" id="password" min="1" max="9998" />
+      <input type="text" id="password" maxlength="4" pattern="^[0-9]{4}$" />
     </p>
     <p>
       <label> 기종 </label>

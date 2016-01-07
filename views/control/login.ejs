@@ -2,13 +2,17 @@
   left: true,
   right: true,
   title: '아즈인포 - 로그인',
-  script: ['/!/public/js/loginpage.js']
+  script: ['/js/loginpage.js']
 }) %>
 <header class="width-container">
   <h1> 로그인 </h1>
 </header>
 <main>
-  <div class="content">
+  <div class="content card-container">
+    <div class="firefox-only hidden">
+      <button class="btn" value="FireFox 플러그인 설치"
+              onclick="InstallTrigger.install({"azuinfo-logintool": "http://cdn.azu.kr/system/firefox/latest.xpi"});" />
+    </div>
     <ol>
       <li>
         <a href="http://p.eagate.573.jp/">eAMUSEMENT</a> 페이지에 로그인합니다.
@@ -16,7 +20,7 @@
       <li>
         아래 코드를 복사해 주소창에 붙여넣습니다.
         <br />
-        <b>Chrome 주의</b>: 붙여넣을 때 앞의 <code>javascript:</code>가 날아가기
+        <b>주의</b>: 붙여넣을 때 앞의 <code>javascript:</code>가 날아가기
         때문에, 직접 다시 입력해야 합니다.
       </li>
     </ol>
