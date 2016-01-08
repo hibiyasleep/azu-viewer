@@ -6,6 +6,18 @@
     '/js/control.js'
   ]
 }) %>
+<%
+var fdate = function(ts) {
+  if(ts) {
+    var m = moment(ts * 1000)
+    var c = moment().subtract(2, 'hours')
+    if(m > c)
+      return m.fromNow()
+    else
+      return m.calendar()
+  } else return '-'
+}
+%>
 <header>
   <h1> 제어판 </h1>
 </header>
@@ -13,14 +25,15 @@
   <div class="content">
     <h2> 기록 </h2>
     <p> 최근 5개의 기록만 보여집니다. </p>
+    <p> 상태 0: 시작 안 함, 1: 진행 중, 2: 완료. </p>
     <ol>
       <% var c = (refresh.length > 5)? 5 : refresh.length %>
       <% for(var i=0; i<c; i++) { %>
         <% var r = refresh[i] %>
         <li value="<%= r.id %>">
-          <%= moment(r.request * 1000).calendar() %>에 요청,
-          <%= moment(r.start * 1000).calendar() %>에 시작,
-          <%= moment(r.end * 1000).calendar() %>에 끝,
+          <b><%= fdate(r.request) %></b>에 요청,
+          <b><%= fdate(r.start) %></b>에 시작,
+          <b><%= fdate(r.end) %></b>에 끝,
           기종 <%= r.device %>,
           오류 <%= r.error %>,
           상태 <%= r.status %>
