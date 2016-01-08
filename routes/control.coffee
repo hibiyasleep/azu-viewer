@@ -123,7 +123,7 @@ control.get '/nickname', checkLogin, (req, res) ->
                      res.redirect './#nickname'
 
   else
-    res.render 'nickname'
+    res.render 'control/nickname'
 
 control.get '/logout', checkLogin, (req, res) ->
 
