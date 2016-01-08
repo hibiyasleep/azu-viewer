@@ -103,6 +103,9 @@ control.get '/login', (req, res) ->
       login_uri: res.login_uri
 
 control.get '/nickname', checkLogin, (req, res) ->
+  res.render 'control/nickname'
+
+control.post '/nickname', checkLogin, (req, res) ->
 
   if req.query.nickname
     unless /^[0-9a-zA-Z_]{2,16}$/.test req.query.nickname
@@ -110,7 +113,7 @@ control.get '/nickname', checkLogin, (req, res) ->
         error: '허용되지 않는 닉네임입니다.'
 
     else unless req.session.sess
-      res.redirect './login'
+      res.redirect './login#not-logged-in'
 
     else
       res.locals =
@@ -120,7 +123,7 @@ control.get '/nickname', checkLogin, (req, res) ->
                    nickname: req.query.nickname,
                    req.session.sess,
                    handle res, 'control/nickname', ->
-                     res.redirect './#nickname'
+                     res.redirect './#register-success'
 
   else
     res.render 'control/nickname'
