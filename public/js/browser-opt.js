@@ -1,7 +1,7 @@
 'use strict'
 
 window.addEventListener('load', function() {
-  if(bowser.chrome) {
+  if(bowser.chrome && !(bowser.android || bowser.ios)) {
     [].forEach.call($('.opt-chrome'), function(o) {
       o.className = o.className.replace('hidden', '')
     })
