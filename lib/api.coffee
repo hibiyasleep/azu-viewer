@@ -25,4 +25,7 @@ module.exports =
     request config.baseuri + uri + '/' + session + '.json', preserved callback
 
   post: (uri, form, session, callback) ->
-    request.post config.baseuri + uri + '/' + session + '.json', form, preserved callback
+    request.post
+      url: config.baseuri + uri + '/' + session + '.json'
+      form: form,
+      preserved callback
