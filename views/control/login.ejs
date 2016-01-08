@@ -2,16 +2,30 @@
   left: true,
   right: true,
   title: '아즈인포 - 로그인',
-  script: ['/js/loginpage.js']
+  script: [
+    '/js/bowser.min.js',
+    '/js/browser-opt.js'
+  ]
 }) %>
 <header class="width-container">
   <h1> 로그인 </h1>
 </header>
 <main>
-  <div class="content card-container">
-    <div class="firefox-only hidden">
-      <button class="btn" value="FireFox 플러그인 설치"
-              onclick="InstallTrigger.install({"azuinfo-logintool": "http://cdn.azu.kr/system/firefox/latest.xpi"});" />
+  <div class="content">
+    <div class="plugin-content">
+      <div class="opt opt-chrome hidden">
+        <a href="https://chrome.google.com/webstore/detail/bgbbmehmfgomgnlapkigehemakghfbpj">
+          Chrome 플러그인 설치
+        </a>
+      </div>
+      <div class="opt opt-firefox hidden">
+        <button class="btn" onclick="InstallTrigger.install({'azuinfo-logintool': 'http://cdn.azu.kr/system/firefox/latest.xpi'});">
+          FireFox 플러그인 설치
+        </button>
+      </div>
+    </div>
+    <div class="opt opt-chrome opt-firefox opt-plugin hidden">
+      또는
     </div>
     <ol>
       <li>
