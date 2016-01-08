@@ -2,6 +2,7 @@
 
 sassMiddleware  = require 'node-sass-middleware'
 serveStatic     = require 'serve-static'
+bodyParser      = require 'body-parser'
 session         = require 'express-session'
 express         = require 'express'
 moment          = require 'moment'
@@ -34,6 +35,8 @@ app.use sassMiddleware
 
 app.use session
   secret: '64KY64qUIOywqe2VmOuLpAo='
+
+app.use bodyParser bodyParser.urlencoded extended: true
 
 app.use '/!/public', serveStatic __dirname + '/public'
 

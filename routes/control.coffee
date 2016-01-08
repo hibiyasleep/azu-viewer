@@ -33,7 +33,7 @@ handle = (res, name, callback) ->
     if e and e.resCode < 0
       res.render name || error,
         login_uri: res.login_uri || ''
-        error: error[e.resCode] || '알 수 없는 에러. (' + d.resCode + ')'
+        error: error[e.resCode] || '알 수 없는 에러. (' + e.res + ')'
 
     else if e and not e.resCode
       res.render 'error', e
@@ -103,12 +103,13 @@ control.get '/login', (req, res) ->
       login_uri: res.login_uri
 
 control.get '/nickname', checkLogin, (req, res) ->
+
   res.render 'control/nickname'
 
 control.post '/nickname', checkLogin, (req, res) ->
 
-  if req.query.nickname
-    unless /^[0-9a-zA-Z_]{2,16}$/.test req.query.nickname
+  if req.body.nickname
+    unless /^[0-9a-zA-Z_]{2,16}$/.test req.body.nickname
       res.render 'control/nickname',
         error: '허용되지 않는 닉네임입니다.'
 
@@ -120,7 +121,7 @@ control.post '/nickname', checkLogin, (req, res) ->
         session: req.session.sess
 
       azuinfo.post '/userdata/nickname',
-                   nickname: req.query.nickname,
+                   nickname: req.body.nickname
                    req.session.sess,
                    handle res, 'control/nickname', ->
                      res.redirect './#register-success'
