@@ -3,10 +3,11 @@ config  = require '../config.json'
 
 preserved = (callback) ->
   (e, r, d) ->
+    console.log r.statusCode
     if e
       callback e, null
 
-    else if r.statusCode is not 200
+    else if r.statusCode isnt 200
       callback
         code: r.statusCode,
         stack: 'API Server has responded with status code ' + r.statusCode + '.'
