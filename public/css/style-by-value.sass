@@ -1,5 +1,12 @@
-.song
+$color-nov: lighten(blue, 0.5)
+$color-adv: lighten(yellow, 0.5)
+$color-exh: lighten(red, 0.5)
+$color-inf: lighten(cyan, 0.5)
+$color-grv: lighten(orange, 0.5)
 
+$rank-color: #233, #567, #9aa, #fa0, #fc0, #fe3
+
+.song
   &.nov
     .level
       background: transparentize($color-nov, 0.5)
@@ -29,14 +36,13 @@
     background: transparentize(yellow, 0.75)
 
 .clear
-
   &.clear-0
     border-color: #888
     color: #888
 
   &.clear-1
-    border-color: darken(#0da, 0.5)
-    color: #0da
+    border-color: darken(#0bc, 0.5)
+    color: #0bc
 
   &.clear-2
     border-color: #a0d
@@ -69,3 +75,27 @@
   &[data-skill-level='12']
     background-image: url('http://cdn.azu.kr/sdvx/skill/skill_inf.gif')
     color: #ff3
+
+.statbar
+
+  .stat-clear-0
+    background: #888
+
+  .stat-clear-1
+    background: #4ba
+
+  .stat-clear-2
+    background: #a0d
+
+  .stat-clear-3
+    background: #f48
+
+  .stat-clear-4
+    background: #ff3
+
+  .stat-rank-0
+    color: white
+
+  @for $i from 0 through 5
+    .stat-rank-#{$i} // D
+      background: nth($rank-color, $i + 1)

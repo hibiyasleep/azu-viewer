@@ -25,7 +25,8 @@ header
     margin-right: 1rem
 
   .card-container
-    min-height: 12em
+    height: 18em
+    overflow-y: scroll
 
     color: black
 
@@ -101,3 +102,38 @@ header
 
       dt
         display: inline-block
+
+  // statistics
+  .statistics
+    width: 100%
+
+    margin: 0
+    padding: 0
+    list-style: none
+
+    overflow-x: hidden
+
+    h4
+      font-size: 1em
+      font-weight: lighter
+
+      margin: 0
+
+    .statbar
+      width: 100%
+      height: 2em
+
+      .stat
+        display: inline-block
+        height: 100%
+
+        padding-top: 0.1666em
+
+        font-size: 0.75em
+        text-align: center
+
+        overflow: hidden
+        float: left
+
+    .statbar + .statbar
+      margin-bottom: 1em

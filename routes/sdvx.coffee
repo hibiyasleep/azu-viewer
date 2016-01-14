@@ -26,8 +26,9 @@ module.exports = (app) ->
         stat = Array.apply null, new Array 16
                     .map () ->
           count: 0
-          leveltotal: 0
-          lamp: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          total: 0
+          rank: [0, 0, 0, 0, 0, 0]
+          clear: [0, 0, 0, 0, 0]
 
         for id of d.song
           cdb = d.db[id]    # current db
@@ -55,9 +56,9 @@ module.exports = (app) ->
                 rank: cf.rank
 
               stat[cdb[fumen] - 1].count += 1
-              stat[cdb[fumen] - 1].leveltotal += cf.score
-              stat[cdb[fumen] - 1].lamp[cf.rank] += 1
-              stat[cdb[fumen] - 1].lamp[cf.clear + 6] += 1
+              stat[cdb[fumen] - 1].total += cf.score
+              stat[cdb[fumen] - 1].rank[cf.rank] += 1
+              stat[cdb[fumen] - 1].clear[cf.clear] += 1
 
             else
               ns[fumen] = {}

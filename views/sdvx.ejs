@@ -3,6 +3,7 @@
     fumen: ['nov', 'adv', 'exh', 'inf'],
     rank: ['D', 'C', 'B', 'A', 'AA', 'AAA'],
     clear: ['FAIL', 'CLR', 'H-CLR', 'UC', 'PUC'],
+    clear_short: 'FCHUP',
     count: {
       long: ['PLAY', 'CLEAR', 'UC', 'PUC'],
       short: ['PLAY', 'CL', 'UC', 'PUC'],
@@ -39,7 +40,42 @@
     </div>
   </div>
   <div class="card-container">
-    <%- JSON.stringify(stat).replace(/\},\{/g, '<br />') %>
+    <ol class="statistics" start="16" reversed>
+      <% for(var i = 15; i >= 0; i--) { %>
+        <% var level = stat[i] %>
+        <h4>
+          lv.<big><%= i + 1 %></big>
+          × <%= level.count %>,
+          평균 <%= ~~(level.total / level.count) %>
+        </h4>
+        <div class="statbar">
+          <% for(var j in level.clear) { %>
+            <% if(level.clear[j]) { %>
+              <div class="stat stat-clear-<%= j %>"
+                   style="width: <%= level.clear[j] / level.count * 100 %>%">
+                <%= name.clear_short[j] %><br />
+                <%= level.clear[j] %>
+                /
+                <%= (level.clear[j] / level.count * 100).toFixed(1) %>%
+              </div>
+            <% } %>
+          <% } %>
+        </div>
+        <div class="statbar">
+          <% for(var j in level.rank) { %>
+            <% if(level.rank[j]) { %>
+              <div class="stat stat-rank-<%= j %>"
+                   style="width: <%= level.rank[j] / level.count * 100 %>%">
+                <%= name.rank[j] %><br />
+                <%= level.rank[j] %>
+                /
+                <%= (level.rank[j] / level.count * 100).toFixed(1) %>%
+              </div>
+            <% } %>
+          <% } %>
+        </div>
+      <% } %>
+    </ol>
   </div>
 </header>
 <main>
