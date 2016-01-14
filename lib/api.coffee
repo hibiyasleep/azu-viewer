@@ -3,7 +3,6 @@ config  = require '../config.json'
 
 preserved = (callback) ->
   (e, r, d) ->
-    console.log r.statusCode
     if e
       callback e, null
 
