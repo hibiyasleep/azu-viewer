@@ -56,6 +56,7 @@ control.get '/', checkLogin, (req, res) ->
 
     if e
       if e.resCode is -2
+        req.session.destroy()
         res.redirect './login#not-logged-in'
       else
         res.render 'error', e
@@ -114,6 +115,7 @@ control.post '/nickname', checkLogin, (req, res) ->
         error: '허용되지 않는 닉네임입니다.'
 
     else unless req.session.sess
+      req.session.destroy()
       res.redirect './login#not-logged-in'
 
     else
