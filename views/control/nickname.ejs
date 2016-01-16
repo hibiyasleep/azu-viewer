@@ -1,7 +1,7 @@
 <%- include('../partial/header', {
   left: true,
   right: true,
-  title: '아즈인포 - 닉네임 설정',
+  title: '닉네임 설정',
   baseuri: typeof baseuri === 'string' && baseuri
 }) %>
 <header>
@@ -15,6 +15,11 @@
     </form>
   </div>
 </main>
+<% if(typeof error === 'string') { %>
+  <%- include('../partial/error', {
+        error: error
+      }) %>
+<% } %>
 <%- include('../partial/nav', {
   left: true,
   right: false

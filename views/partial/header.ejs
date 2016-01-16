@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>
-      <%- typeof title === 'string'? title : '아즈인포' %>
+      아즈인포 - <%- typeof title === 'string'? title : '' %>
     </title>
     <meta name="viewport" content="width=device-width" />
 
     <link rel="stylesheet" href="<%- static %>/css/main.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,700" />
     <script>
 window.BaseURI = '<%- baseuri %>'
 <% if(locals.session) { %>

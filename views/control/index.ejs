@@ -1,7 +1,7 @@
 <%- include('../partial/header', {
   left: true,
   right: true,
-  title: '아즈인포 - 제어판',
+  title: '제어판',
   script: [
     '/js/control.js'
   ]
@@ -17,6 +17,14 @@ var fdate = function(ts) {
       return m.calendar()
   } else return '-'
 }
+var fddate = function(from, to, processing, complete) {
+  if(!to) {
+    return processing
+  } else {
+    var diff = moment(moment(to * 1000) - moment(from * 1000))
+    return diff.format('')
+  }
+}
 %>
 <header>
   <h1> 제어판 </h1>
@@ -30,10 +38,11 @@ var fdate = function(ts) {
       <% var c = (refresh.length > 5)? 5 : refresh.length %>
       <% for(var i=0; i<c; i++) { %>
         <% var r = refresh[i] %>
+        <% console.log(r) %>
         <li value="<%= r.id %>">
           <b><%= fdate(r.request) %></b>에 요청,
-          <b><%= fdate(r.start) %></b>에 시작,
-          <b><%= fdate(r.end) %></b>에 끝,
+          <b><%= fdate(r.start) %></b>부터
+          <b><%= fddate(r.start, r.end, '진행 중', '소요') %></b>
           기종 <%= r.device %>,
           오류 <%= r.error %>,
           상태 <%= r.status %>
