@@ -23,8 +23,9 @@ module.exports = (app) ->
 
         songs = []
 
-        stat = Array.apply null, new Array 16
+        stat = Array.apply null, new Array 17
                     .map () ->
+          totalcount: 0
           count: 0
           total: 0
           rank: [0, 0, 0, 0, 0, 0]
@@ -41,6 +42,10 @@ module.exports = (app) ->
 
           for fumen in ['nov', 'adv', 'exh', 'inf']
 
+            stat[16].totalcount += 1
+            if cdb[fumen]
+              stat[cdb[fumen] - 1].totalcount += 1
+
             if song[fumen].cnt?.play
               cf = song[fumen]
 
@@ -54,6 +59,11 @@ module.exports = (app) ->
                 illust: cdb['albumart_' + fumen]
                 clear: cf.clear
                 rank: cf.rank
+
+              stat[16].count += 1
+              stat[16].total += cf.score
+              stat[16].rank[cf.rank] += 1
+              stat[16].clear[cf.clear] += 1
 
               stat[cdb[fumen] - 1].count += 1
               stat[cdb[fumen] - 1].total += cf.score
