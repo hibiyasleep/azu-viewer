@@ -30,50 +30,55 @@
     </div>
     <div class="right">
       <dl>
-        <dd>플레이</dd>
-        <dt><%= meta.play %></dt>
-        <dd>패킷</dd>
-        <dt><%= meta.packet %></dt>
-        <dd>블럭</dd>
-        <dt><%= meta.block %></dt>
+        <dt>플레이</dt>
+        <dd><%= meta.play %></dd>
+        <dt>패킷</dt>
+        <dd><%= meta.packet %></dd>
+        <dt>블럭</dt>
+        <dd><%= meta.block %></dd>
       </dl>
     </div>
   </div>
   <div class="card-container">
-    <ol class="statistics" start="16" reversed>
-      <% for(var i = 15; i >= 0; i--) { %>
-        <% var level = stat[i] %>
-        <h4>
-          lv.<big><%= i + 1 %></big>
-          × <%= level.count %>,
-          평균 <%= ~~(level.total / level.count) %>
-        </h4>
-        <div class="statbar">
-          <% for(var j in level.clear) { %>
-            <% if(level.clear[j]) { %>
-              <div class="stat stat-clear-<%= j %>"
-                   style="width: <%= level.clear[j] / level.count * 100 %>%">
-                <%= name.clear_short[j] %><br />
-                <%= level.clear[j] %>
-                /
-                <%= (level.clear[j] / level.count * 100).toFixed(1) %>%
-              </div>
+    <ol class="statistics" start="17" reversed>
+      <% for(var i = 16; i >= 0; i--) { %>
+        <li>
+          <% var level = stat[i] %>
+          <h4>
+            <big><%= i === 16? 'Overview' : 'lv.' + (i + 1) %></big>
+            × ??? 중
+            <%= level.count %> /
+            <%= level.totalcount %>,
+            순회율 <%= (level.count / level.totalcount * 100).toFixed(1) %>% |
+            평균 <%= ~~(level.total / level.count) %>
+          </h4>
+          <div class="statbar">
+            <% for(var j in level.clear) { %>
+              <% if(level.clear[j]) { %>
+                <div class="stat stat-clear-<%= j %>"
+                     style="width: <%= level.clear[j] / level.count * 100 %>%">
+                  <%= name.clear_short[j] %><br />
+                  <%= level.clear[j] %>
+                  /
+                  <%= (level.clear[j] / level.count * 100).toFixed(1) %>%
+                </div>
+              <% } %>
             <% } %>
-          <% } %>
-        </div>
-        <div class="statbar">
-          <% for(var j in level.rank) { %>
-            <% if(level.rank[j]) { %>
-              <div class="stat stat-rank-<%= j %>"
-                   style="width: <%= level.rank[j] / level.count * 100 %>%">
-                <%= name.rank[j] %><br />
-                <%= level.rank[j] %>
-                /
-                <%= (level.rank[j] / level.count * 100).toFixed(1) %>%
-              </div>
+          </div>
+          <div class="statbar">
+            <% for(var j in level.rank) { %>
+              <% if(level.rank[j]) { %>
+                <div class="stat stat-rank-<%= j %>"
+                     style="width: <%= level.rank[j] / level.count * 100 %>%">
+                  <%= name.rank[j] %><br />
+                  <%= level.rank[j] %>
+                  /
+                  <%= (level.rank[j] / level.count * 100).toFixed(1) %>%
+                </div>
+              <% } %>
             <% } %>
-          <% } %>
-        </div>
+          </div>
+        </li>
       <% } %>
     </ol>
   </div>
@@ -94,12 +99,12 @@
               <% for(var p=0; p<4; p++) { %>
                 <% var disabled = (p >= 2 && fumen.count[p] == 0)? 'disabled' : ''; %>
                 <% var len = (fumen.count[p] > 99)? 'short' : 'long'; %>
-                <dd class="<%= disabled %>">
+                <dt class="<%= disabled %>">
                   <%= name.count[len][p] %>
-                </dd>
-                <dt class="<%= disabled %> count-<%= name.count.class[p] %>">
-                  <%= fumen.count[p] %>
                 </dt>
+                <dd class="<%= disabled %> count-<%= name.count.class[p] %>">
+                  <%= fumen.count[p] %>
+                </dd>
               <% } %>
             </dl>
           </div>
