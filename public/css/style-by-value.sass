@@ -1,17 +1,14 @@
-$color-nov: lighten(blue, 0.5)
-$color-adv: lighten(yellow, 0.5)
-$color-exh: lighten(red, 0.5)
-$color-inf: lighten(cyan, 0.5)
-$color-grv: lighten(orange, 0.5)
+$level-color: lighten(blue, 0.5), lighten(yellow, 0.5), lighten(red, 0.5), lighten(cyan, 0.5), lighten(orange, 0.5)
+$level-name: nov, adv, exh, inf, grv
 
 $rank-color: #233, #567, #9aa, #fa0, #fc0, #fe3
 $clear-color: #666, #4ba, #a0d, #f48, #ff3
 
 .song
-  @for $i in nov, adv, exh, inf, grv
-    &.#{$i}
+  @for $i from 0 to 4
+    &.#{nth($level-name, $i + 1)}
       .level
-        background: transparentize($color-#{$i}, 0.5)
+        background: transparentize(nth($level-color, $i + 1), 0.5)
 
 .rank
   &.rank-0, &.rank-1, &.rank-2
