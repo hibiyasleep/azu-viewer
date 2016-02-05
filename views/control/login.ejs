@@ -1,6 +1,4 @@
 <%- include('../partial/header', {
-  left: true,
-  right: true,
   title: '로그인',
   script: [
     '/js/bowser.min.js',
@@ -48,8 +46,6 @@
         error: error
       }) %>
 <% } %>
-<%- include('../partial/nav', {
-  left: true,
-  right: false
-}) %>
+<%- include('../partial/nav') %>
+<%- include('../partial/aside/control') %>
 <%- include('../partial/footer') %>

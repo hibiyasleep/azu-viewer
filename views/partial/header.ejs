@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>
-      아즈인포 - <%- typeof title === 'string'? title : '' %>
+      아즈인포 - <%- locals.title? title : '' %>
     </title>
     <meta name="viewport" content="width=device-width" />
 
@@ -29,13 +29,8 @@ window.session = '<%- session %>'
     <% } %>
   </head>
   <body>
-    <% if(locals.left && left) { %>
+    <% if(!(locals.noHamburger && noHamburger)) { %>
       <input type="radio" name="aside" id="menu-toggle" class="hidden" />
-    <% } %>
-    <% if(locals.right && right) { %>
-      <input type="radio" name="aside" id="sort-toggle" class="hidden" />
-    <% } %>
-    <% if(locals.left && left || locals.right && right) { %>
       <input type="radio" name="aside" id="reset" class="hidden" />
     <% } %>
     <div class="toolbar-decorator"> </div>

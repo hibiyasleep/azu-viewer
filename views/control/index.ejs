@@ -1,6 +1,4 @@
 <%- include('../partial/header', {
-  left: true,
-  right: true,
   title: '제어판',
   script: [
     '/js/control.js'
@@ -52,8 +50,7 @@ var fddate = function(from, to, processing, complete) {
     <h2> 갱신 </h2>
     <p>
       <label for="card"> 카드 번호 </label>
-      <input type="text" id="card" placeholder="xxxxxxxxxxxxxxxx" disabled />
-      <button class="btn" id="card-load"> 불러오기 </button>
+      <input type="text" id="card" placeholder="터치해서 불러오기..." disabled />
     </p>
     <p>
       <label for="password"> 비밀번호 </label>
@@ -71,8 +68,6 @@ var fddate = function(from, to, processing, complete) {
     <span id="error" class="hidden"> </span>
   </div>
 </main>
-<%- include('../partial/nav', {
-  left: true,
-  right: false
-}) %>
+<%- include('../partial/nav') %>
+<%- include('../partial/aside/control') %>
 <%- include('../partial/footer') %>

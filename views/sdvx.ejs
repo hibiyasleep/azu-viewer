@@ -12,8 +12,6 @@
   };
 %>
 <%- include('partial/header', {
-  left: true,
-  right: true,
   title: '아즈인포 - ' + meta.nickname
 }) %>
 <header>
@@ -133,20 +131,5 @@
     <% } %>
   </ul>
 </main>
-<%- include('partial/nav', {
-  left: true,
-  right: true
-}) %>
-<aside class="right">
-  <div class="nav-header">
-    <span class="title">
-      정렬
-    </span>
-    <label for="reset" class="nav-button right">
-      <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/>
-      </svg>
-    </label>
-  </div>
-</aside>
+<%- include('partial/nav') %>
 <%- include('partial/footer') %>

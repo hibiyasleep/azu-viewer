@@ -19,7 +19,7 @@ window.addEventListener('load', function() {
     }
   }
 
-  $('#card-load').addEventListener('click', function() {
+  $('#card').addEventListener('click', function() {
     var card = $('#card')
     card.removeEventListener('click', this)
 
@@ -35,7 +35,12 @@ window.addEventListener('load', function() {
             location.reload()
             return
           }
-          card.value = res.card || res.res
+          if(res.card) {
+            card.value = res.card
+          } else {
+            card.className += ' input-error'
+            card.value = res.res
+          }
         }
       }
     }
