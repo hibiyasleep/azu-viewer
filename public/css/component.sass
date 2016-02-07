@@ -19,7 +19,7 @@
   width: 100%
   height: $column-height
 
-  margin-top: 1rem
+  margin-top: 1em
 
   img.albumart
     width: $column-height  // + 0.125rem
@@ -38,8 +38,8 @@
       z-index: 20
 
   //-webkit-clip-path: polygon(1% 1%, 99% 1%, 99% 99%, 1% 99%)
-  //margin-top: -0.0625rem
-  //margin-left: -0.0625rem
+  //margin-top: -0.0625em
+  //margin-left: -0.0625em
 
   .top
     width: calc(100% - #{$column-height + $column-sidebar-width})
@@ -48,28 +48,28 @@
     float: left
     overflow: hidden
 
-    border-bottom: 0.1rem solid $card-border-color
+    border-bottom: 0.1em solid $card-border-color
 
     span.level
       display: block
-      width: $column-level-width
+      width: $column-level-width / 2
       height: 100%
 
-      font-size: 2rem
+      font-size: 2em
       text-align: center
 
-      margin-left: -0.75rem // (skew)
-      padding-left: 1.125rem
-      padding-right: 1rem
-      margin-right: 1rem
+      margin-left: calc(-0.75em / 2) // (skew)
+      padding-left: calc(1.125em / 2)
+      padding-right: 0.5em
+      margin-right: 0.5em
 
-      line-height: $column-top-height
+      line-height: $column-top-height / 2
 
       float: left
 
     h1, h2
       font-weight: 300
-      line-height: 1.5rem
+      line-height: 1.5em
       white-space: nowrap
 
       margin: 0
@@ -78,11 +78,11 @@
       overflow-y: visible
 
     h1
-      font-size: 1.25rem
-      margin-top: 0.5rem
+      font-size: 1.25em
+      margin-top: 0.25em
 
     h2
-      font-size: 0.875rem
+      font-size: 0.875em
       margin-top: 0
 
   .bottom
@@ -93,21 +93,21 @@
     overflow: hidden
 
     > *
-      line-height: 1.75rem
+      line-height: 1.75em
 
     .clear, .rank
       @extend .skew
 
       height: 100%
 
-      padding: 0 0.5rem
+      padding: 0 0.5em
 
     .clear
       background: #000
 
-      margin-left: -0.5rem
+      margin-left: -0.5em
       border: $lamp-border-style
-      padding-left: 0.75rem
+      padding-left: 0.75em
 
     .rank
       border: $lamp-border-style transparent
@@ -116,7 +116,7 @@
     width: $column-sidebar-width
     height: 100%
 
-    border-left: 0.1rem solid $card-border-color
+    border-left: 0.1em solid $card-border-color
 
     float: right
 
@@ -125,25 +125,26 @@
       height: 100%
 
       font-weight: bold
-      font-size: 0.75em
-      line-height: 1.25rem
 
       margin: 0
-      padding: 0.5rem
+      padding: 0.5em
+
+      overflow-x: hidden
+
+      dt, dd
+        display: inline-block
+
+        font-size: 0.75em
+        line-height: 1.5em
+
+        margin: 0
 
       dt
         width: 50%
-        display: inline-block
-
-        margin: 0
         padding: 0
 
       dd
         width: 40%
-        display: inline-block
-
-        margin: 0
-
         text-align: right
 
       .disabled

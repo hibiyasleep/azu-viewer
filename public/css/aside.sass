@@ -75,9 +75,15 @@ aside
       .nav-button
         float: none
 
-ul.aside-menu
+.nav-header + .aside-menu
+  height: calc(100% - #{$nav-height})
+
+.aside-menu
   margin: 0
   padding: 0
+
+  height: 100%
+  overflow-y: scroll
 
   list-style: none
 
@@ -86,20 +92,34 @@ ul.aside-menu
     text-decoration: none
 
   li
-    height: 3.5em
-    padding: 1em 0.75em
+    height: 3em
+    padding: 0.75em 0.75em
+
+    transition: background-color 100ms ease
 
     .icon
       display: inline-block
       margin: 0 0.75em
+      fill: rgba(0, 0, 0, 0.87)
 
     .label
+      @extend %no-select
       display: inline-block
-      vertical-align: calc(1em / 3)
+      vertical-align: 0.375em
       margin: 0 0.625em
 
     &:hover
       background-color: transparentize(black, 0.9)
 
-    &:active
+    &.sort.asc, &.sort.desc, &:active
       background-color: transparentize(black, 0.8)
+
+  .menu-title
+    margin-top: 0.5em
+    padding: 1em 1.25em
+    color: rgba(0, 0, 0, 0.5)
+
+    border-top: 0.0625em solid rgba(0, 0, 0, 0.125)
+
+    &:hover, &:active
+      background-color: inherit
