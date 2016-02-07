@@ -14,6 +14,7 @@ control.locals =
   moment: moment
   static: config.static
   baseuri: config.baseuri
+  login_uri: config.login_uri
 
 handle = (res, name, callback) ->
 
@@ -100,8 +101,7 @@ control.get '/login', (req, res) ->
             res.redirect '.'
 
   else
-    res.render 'control/login',
-      login_uri: res.login_uri
+    res.render 'control/login'
 
 control.get '/nickname', checkLogin, (req, res) ->
 

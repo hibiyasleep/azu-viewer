@@ -17,6 +17,7 @@ app = express()
 app.locals =
   static: config.static
   baseuri: config.baseuri
+  login_uri: config.login
 
 app.get '/*', (req, res, next) ->
   res.set 'X-XSS-Protection', 0
