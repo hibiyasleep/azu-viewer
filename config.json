@@ -2,5 +2,8 @@
   "listen": 8080,
   "baseuri": "http://api.kano.kr",
   "static": "/!/public",
-  "login": "localhost:8080/control/login"
+  "login": "localhost:8080/control/login",
+  "sdvx": {
+    "json": "/playdata/sdvx"
+  }
 }

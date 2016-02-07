@@ -9,7 +9,7 @@ module.exports = (app) ->
 
     if name is '�' then name = ''
 
-    azuinfo.get '/playdata/sdvx', name, (e, d) ->
+    azuinfo.get config.sdvx.json, name, (e, d) ->
 
       if e
         switch e.resCode
