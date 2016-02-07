@@ -15,31 +15,31 @@
     },
     "db": {
       "asdf0": {
-        "title": "Test data",
+        "title": "VILE CAT",
         "artist": "(c) 2015 kuriyama hibiya",
         "albumart_exh": "7Mh.jpg",
         "exh": 15,
         "grv": false
       },
       "asdf1": {
-        "title": "Test data",
+        "title": "pandora (Maozon Remix)",
         "artist": "(c) 2015 kuriyama hibiya",
         "albumart_exh": "CDG.jpg",
-        "exh": 15,
+        "exh": 14,
         "grv": false
       },
       "asdf2": {
-        "title": "Test data",
+        "title": "Ganymede kamome mix",
         "artist": "(c) 2015 kuriyama hibiya",
         "albumart_exh": "Pch.jpg",
-        "exh": 15,
+        "exh": 13,
         "grv": false
       },
       "asdf3": {
-        "title": "Test data",
+        "title": "Qubism",
         "artist": "(c) 2015 kuriyama hibiya",
         "albumart_exh": "ahU.jpg",
-        "exh": 15,
+        "exh": 12,
         "grv": false
       }
     },
@@ -48,7 +48,7 @@
         "nov": { "cnt": { "play": false } },
         "adv": { "cnt": { "play": false } },
         "exh": {
-          "cnt": { "play": 1000, "clear": 2000, "ultimate": 3000, "perfect": 4000 }, "score": 98765432, "clear": 3, "rank": 3
+          "cnt": { "play": 4000, "clear": 3000, "ultimate": 2000, "perfect": 1000 }, "score": 8765432, "clear": 3, "rank": 3
         },
         "inf": { "cnt": { "play": false } }
       },
@@ -56,7 +56,7 @@
         "nov": { "cnt": { "play": false } },
         "adv": { "cnt": { "play": false } },
         "exh": {
-          "cnt": { "play": 1000, "clear": 2000, "ultimate": 3000, "perfect": 4000 }, "score": 98765432, "clear": 3, "rank": 3
+          "cnt": { "play": 3500, "clear": 3000, "ultimate": 2000, "perfect": 1000 }, "score": 765432, "clear": 2, "rank": 2
         },
         "inf": { "cnt": { "play": false } }
       },
@@ -64,7 +64,7 @@
         "nov": { "cnt": { "play": false } },
         "adv": { "cnt": { "play": false } },
         "exh": {
-          "cnt": { "play": 1000, "clear": 2000, "ultimate": 3000, "perfect": 4000 }, "score": 98765432, "clear": 3, "rank": 3
+          "cnt": { "play": 3200, "clear": 3000, "ultimate": 2000, "perfect": 1000 }, "score": 65432, "clear": 1, "rank": 1
         },
         "inf": { "cnt": { "play": false } }
       },
@@ -72,7 +72,7 @@
         "nov": { "cnt": { "play": false } },
         "adv": { "cnt": { "play": false } },
         "exh": {
-          "cnt": { "play": 1000, "clear": 2000, "ultimate": 3000, "perfect": 4000 }, "score": 98765432, "clear": 3, "rank": 3
+          "cnt": { "play": 3100, "clear": 3000, "ultimate": 2000, "perfect": 1000 }, "score": 432, "clear": 0, "rank": 0
         },
         "inf": { "cnt": { "play": false } }
       }
