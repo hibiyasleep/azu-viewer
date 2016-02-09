@@ -14,7 +14,7 @@ control.locals =
   moment: moment
   static: config.static
   baseuri: config.baseuri
-  login_uri: config.login_uri
+  login_uri: config.login
 
 handle = (res, name, callback) ->
 
@@ -58,7 +58,7 @@ control.get '/', checkLogin, (req, res) ->
     if e
       if e.resCode is -2
         req.session.destroy()
-        res.redirect './login#not-logged-in'
+        res.redirect config.login + '#not-logged-in'
       else
         res.render 'error', e
 
