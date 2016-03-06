@@ -56,6 +56,8 @@ aside
   top: 0
   z-index: 200
 
+  border-radius: 0
+
   fill: black
 
   transition: left 200ms ease, right 200ms ease
@@ -108,10 +110,10 @@ aside
       vertical-align: 0.375em
       margin: 0 0.625em
 
-    &:hover
+    &:hover, &.sort.asc, &.sort.desc
       background-color: transparentize(black, 0.9)
 
-    &.sort.asc, &.sort.desc, &:active
+    &:active:active
       background-color: transparentize(black, 0.8)
 
   .menu-title
