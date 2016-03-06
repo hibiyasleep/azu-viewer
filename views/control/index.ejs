@@ -50,7 +50,10 @@ var fddate = function(from, to, processing, complete) {
     <h2> 갱신 </h2>
     <p>
       <label for="card"> 카드 번호 </label>
-      <input type="text" id="card" placeholder="터치해서 불러오기..." disabled />
+      <span style="display: inline-block; position: relative;" id="card-wrapper">
+        <input type="text" id="card" placeholder="터치해서 불러오기..." disabled />
+        <span style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;"> </span>
+      </span>
     </p>
     <p>
       <label for="password"> 비밀번호 </label>

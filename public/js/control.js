@@ -19,9 +19,8 @@ window.addEventListener('load', function() {
     }
   }
 
-  $('#card').addEventListener('click', function() {
+  $('#card-wrapper').addEventListener('click', function() {
     var card = $('#card')
-    card.removeEventListener('click', this)
 
     var xhr = new XMLHttpRequest()
 
@@ -36,15 +35,16 @@ window.addEventListener('load', function() {
             return
           }
           if(res.card) {
+            card.className = ''
             card.value = res.card
           } else {
-            card.className += ' input-error'
+            card.className += 'input-error'
             card.value = res.res
           }
         }
       }
     }
-
+    card.value = '불러오는 중..'
     xhr.send(null)
   })
 
