@@ -5,6 +5,6 @@
     "dot": "1.x"
   },
   "config": {
-    "listen": 8080
+    "listen": "/home/azu/sock/hibiya.sock"
   }
 }
