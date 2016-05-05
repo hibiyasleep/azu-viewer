@@ -10,7 +10,6 @@ fs = require('fs')
 app = express()
 
 config = require('./package.json').config
-illust = require('./json/illust.json')
 fnSet = { // Functions for in-template use
   score: function(n){
     if(!n)
@@ -44,116 +43,132 @@ app.get('/:nickname', function(req, res){
   if(name === '�'){
     name = ''
   }
-  request('http://sdvx.azu.kr/json/' + name + '.json', function(e, d){
-    if(e || d.statusCode !== 200 && d.statusCode !== 404){
+  request('http://api.kano.kr/playdata/sdvx/' + name + '.json', function(e, d){
+    if(e){
       res.sendFile(__dirname + '/public/error.html')
       res.end()
       return
-    } else if(d.statusCode === 404){
-      res.sendFile(__dirname + '/public/404.html')
+    }
+    try {
+      var j = JSON.parse(d.body)
+    } catch(e) {
+      res.sendFile(__dirname + '/public/error.html')
       return
     }
-    request('http://sdvx.azu.kr/basic_json/' + name + '.json', function(e, d_basic){
-      if(e || d.statusCode !== 200 && d.statusCode !== 404){
-        res.sendFile(__dirname + '/public/error.html')
-        res.end()
-        return
-      }
-      try {
-        var j = JSON.parse(d.body)
-        var j_basic = JSON.parse(d_basic.body)
-      } catch(e) {
-        res.sendFile(__dirname + '/public/error.html')
-        return
-      }
 
-      var overview = Array.apply(null, new Array(16)).map(function(){
-        return {
-          'count': 0,
-          'leveltotal': 0,
-          'lamp': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] // AAA AA A B C D c C C U P
+    if(j.resCode!=0){
+      res.sendFile(__dirname + '/public/error.html')
+      return;
+    }
+
+    var j_basic = {"play": j.data.user.play, "name": j.data.user.name, "packet": j.data.user.packet, "error": 0, "skill_name": j.data.user.skill_name, "block": j.data.user.block, "skill_no": j.data.user.skill_no};
+
+    j = (function(data){
+      var convert = [];
+      var diff_db = ["nov","adv","exh","inf"];
+
+      for(var target in data["data"]["song"]){
+        var output = {};
+
+        for(var i=0;i<diff_db.length;i++){
+          var diff = diff_db[i];
+
+          if(data["data"]["song"][target][diff]["cnt"]){
+            if(data["data"]["song"][target][diff]["cnt"]["play"]==0)
+              output[diff+"_basic"] = {"play": false};
+            else{
+              output[diff+"_basic"] = {"play": true, "clear": data["data"]["song"][target][diff]["clear"], "rank": data["data"]["song"][target][diff]["rank"]};
+              output[diff+"_detail"] = {"perfect": data["data"]["song"][target][diff]["cnt"]["perfect"], "play": data["data"]["song"][target][diff]["cnt"]["play"], "level": data["data"]["db"][target][diff], "clear": data["data"]["song"][target][diff]["cnt"]["clear"], "score": data["data"]["song"][target][diff]["score"], "ultimate": data["data"]["song"][target][diff]["cnt"]["ultimate"], "illust": data["data"]["db"][target]["albumart_"+diff]};
+            }
+          }
+          else
+            output[diff+"_basic"] = {"play": false};
         }
-      })
-      res.send(index({
-        body: j.map(function(o){
-          var r = {
-            d: [{}, {}, {}],
-            title: o.song.name,
-            artist: o.song.artist,
-          }
-          // song data
-          // NOV
-          if(o.nov_basic.play){
-            overview[o.nov_detail.level-1].count += 1
-            overview[o.nov_detail.level-1].leveltotal += parseInt(o.nov_detail.score)
-            overview[o.nov_detail.level-1].lamp[5 - o.nov_basic.rank] += 1
-            overview[o.nov_detail.level-1].lamp[6 + o.nov_basic.clear] += 1
-            r.d[0] = o.nov_detail
-            r.d[0].cleartype = o.nov_basic.clear
-            r.d[0].rank = o.nov_basic.rank
-          }
-          // ADV
-          if(o.adv_basic.play){
-            overview[o.adv_detail.level-1].count += 1
-            overview[o.adv_detail.level-1].leveltotal += parseInt(o.adv_detail.score)
-            overview[o.adv_detail.level-1].lamp[5 - o.adv_basic.rank] += 1
-            overview[o.adv_detail.level-1].lamp[6 + o.adv_basic.clear] += 1
-            r.d[1] = o.adv_detail
-            r.d[1].cleartype = o.adv_basic.clear
-            r.d[1].rank = o.adv_basic.rank
-          }
-          // EXH
-          if(o.exh_basic.play){
-            overview[o.exh_detail.level-1].count += 1
-            overview[o.exh_detail.level-1].leveltotal += parseInt(o.exh_detail.score)
-            overview[o.exh_detail.level-1].lamp[5 - o.exh_basic.rank] += 1
-            overview[o.exh_detail.level-1].lamp[6 + o.exh_basic.clear] += 1
-            r.d[2] = o.exh_detail
-            r.d[2].cleartype = o.exh_basic.clear
-            r.d[2].rank = o.exh_basic.rank
-          }
-          // INF
-          if(o.inf_basic && o.inf_basic.play){
-            overview[o.inf_detail.level-1].count += 1
-            overview[o.inf_detail.level-1].leveltotal += parseInt(o.inf_detail.score)
-            overview[o.inf_detail.level-1].lamp[5 - o.inf_basic.rank] += 1
-            overview[o.inf_detail.level-1].lamp[6 + o.inf_basic.clear] += 1
-            r.last = 'inf'
-            r.d[3] = o.inf_detail
-            r.d[3].cleartype = o.inf_basic.clear
-            r.d[3].rank = o.inf_basic.rank
-          // GRV (oh mom please)
-          } else if(o.grv_basic && o.grv_basic.play){
-            overview[o.grv_detail.level-1].count += 1
-            overview[o.grv_detail.level-1].leveltotal += parseInt(o.grv_detail.score)
-            overview[o.grv_detail.level-1].lamp[5 - o.grv_basic.rank] += 1
-            overview[o.grv_detail.level-1].lamp[6 + o.grv_basic.clear] += 1
-            r.last = 'grv'
-            r.d[3] = o.grv_detail
-            r.d[3].cleartype = o.grv_basic.clear
-            r.d[3].rank = o.grv_basic.rank
-          }
-          if(r.title in illust){
-            r.d[0].illust = illust[r.title][0]
-            r.d[1].illust = illust[r.title][1]
-            r.d[2].illust = illust[r.title][2]
-            if(!r.d[3] && illust[r.title].length == 4){
-              r.d[3] = {}
-              r.last = 'inf'
-            }
-            if(r.d[3]){
-              r.d[3].illust = illust[r.title][3] || undefined
-            }
-          }
-          return r
-        }),
-        name: name,
-        basic: j_basic,
-        overview: overview,
-        fn: fnSet
-      }))
-      res.end()
+
+        output["song"] = {"name": data["data"]["db"][target]["title"], "artist": data["data"]["db"][target]["artist"]};
+
+        convert.push(output);
+      }
+      return convert;
+    })(j);
+
+    var overview = Array.apply(null, new Array(16)).map(function(){
+      return {
+        'count': 0,
+        'leveltotal': 0,
+        'lamp': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] // AAA AA A B C D c C C U P
+      }
     })
+    res.send(index({
+      body: j.map(function(o){
+        var r = {
+          d: [{}, {}, {}],
+          title: o.song.name,
+          artist: o.song.artist,
+        }
+        // song data
+        // NOV
+        if(o.nov_basic.play){
+          overview[o.nov_detail.level-1].count += 1
+          overview[o.nov_detail.level-1].leveltotal += parseInt(o.nov_detail.score)
+          overview[o.nov_detail.level-1].lamp[5 - o.nov_basic.rank] += 1
+          overview[o.nov_detail.level-1].lamp[6 + o.nov_basic.clear] += 1
+          r.d[0] = o.nov_detail
+          r.d[0].cleartype = o.nov_basic.clear
+          r.d[0].rank = o.nov_basic.rank
+          r.d[0].illust = "http://cdn.azu.kr"+o.nov_detail.illust
+        }
+        else
+          r.d[0].illust = "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=";
+        // ADV
+        if(o.adv_basic.play){
+          overview[o.adv_detail.level-1].count += 1
+          overview[o.adv_detail.level-1].leveltotal += parseInt(o.adv_detail.score)
+          overview[o.adv_detail.level-1].lamp[5 - o.adv_basic.rank] += 1
+          overview[o.adv_detail.level-1].lamp[6 + o.adv_basic.clear] += 1
+          r.d[1] = o.adv_detail
+          r.d[1].cleartype = o.adv_basic.clear
+          r.d[1].rank = o.adv_basic.rank
+          r.d[1].illust = "http://cdn.azu.kr"+o.adv_detail.illust
+        }
+        else
+          r.d[1].illust = "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=";
+        // EXH
+        if(o.exh_basic.play){
+          overview[o.exh_detail.level-1].count += 1
+          overview[o.exh_detail.level-1].leveltotal += parseInt(o.exh_detail.score)
+          overview[o.exh_detail.level-1].lamp[5 - o.exh_basic.rank] += 1
+          overview[o.exh_detail.level-1].lamp[6 + o.exh_basic.clear] += 1
+          r.d[2] = o.exh_detail
+          r.d[2].cleartype = o.exh_basic.clear
+          r.d[2].rank = o.exh_basic.rank
+          r.d[2].illust = "http://cdn.azu.kr"+o.exh_detail.illust
+        }
+        else
+          r.d[2].illust = "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=";
+        // INF
+        if(o.inf_basic && o.inf_basic.play){
+          overview[o.inf_detail.level-1].count += 1
+          overview[o.inf_detail.level-1].leveltotal += parseInt(o.inf_detail.score)
+          overview[o.inf_detail.level-1].lamp[5 - o.inf_basic.rank] += 1
+          overview[o.inf_detail.level-1].lamp[6 + o.inf_basic.clear] += 1
+          r.last = 'inf'
+          r.d[3] = o.inf_detail
+          r.d[3].cleartype = o.inf_basic.clear
+          r.d[3].rank = o.inf_basic.rank
+          r.d[3].illust = "http://cdn.azu.kr"+o.inf_detail.illust
+        // GRV (oh mom please)
+        }
+        else
+          r.d[3] = {illust: "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="};
+        return r
+      }),
+      name: name,
+      basic: j_basic,
+      overview: overview,
+      fn: fnSet
+    }))
+    res.end()
   })
 })
 

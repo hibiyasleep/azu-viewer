@@ -5,6 +5,6 @@
     "dot": "1.x"
   },
   "config": {
-    "listen": "/tmp/azu.sock"
+    "listen": "/home/azu/sock/hibiya.sock"
   }
 }

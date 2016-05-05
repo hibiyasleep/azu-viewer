@@ -18,14 +18,14 @@
         {{ if (it.basic.error) { }}
         <span class="notice">
           폭룡천인데 에러가 뜬다면
-          <a href="http://sdvx.azu.kr/system/control">갱신을 시도</a>해주세요
+          <a href="http://azu.kano.kr">갱신을 시도</a>해주세요
         </span>
         {{ } }}
         <div class="buttons">
           <!--input type="text" id="moveto_id" />
           <a href="/404">이동</a-->
-          <a href="http://sdvx.azu.kr/system/control">갱신</a>
-          <a href="http://sdvx.azu.kr/system/register/">등록</a>
+          <a href="http://azu.kano.kr">갱신</a>
+          <a href="http://azu.kano.kr">등록</a>
         </div>
       </div>
       <div class="profile">
@@ -227,10 +227,10 @@
             </div><!--
             NOV
          --><div class="pattern nov">
-              <img class="albumart lazy-load" data-src="http://sdvx.azu.kr/albumart/{{= song.d[0].illust }}.jpg"
+              <img class="albumart lazy-load" data-src="{{= song.d[0].illust }}"
                    src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="
                    alt="{{= song.title}} NOVICE"/><noscript>
-                <img class="albumart" src="http://sdvx.azu.kr/albumart/{{= song.d[0].illust }}.jpg"
+                <img class="albumart" src="{{= song.d[0].illust }}"
                      alt="{{= song.title}} NOVICE"/>
               </noscript><div class="upper">
                 <span class="song-level list-nov-level">
@@ -263,10 +263,10 @@
             </div><!--
             ADV
          --><div class="pattern adv">
-              <img class="albumart lazy-load" data-src="http://sdvx.azu.kr/albumart/{{= song.d[1].illust }}.jpg"
+              <img class="albumart lazy-load" data-src="{{= song.d[1].illust }}"
                    src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="
                    alt="{{= song.title}} ADVANCED" /><noscript>
-                <img class="albumart" src="http://sdvx.azu.kr/albumart/{{= song.d[1].illust }}.jpg"
+                <img class="albumart" src="{{= song.d[1].illust }}"
                      alt="{{= song.title}} ADVANCED" />
               </noscript><div class="upper">
                 <span class="song-level list-adv-level">
@@ -299,10 +299,10 @@
             </div><!--
             EXH
         --><div class="pattern exh">
-              <img class="albumart lazy-load" data-src="http://sdvx.azu.kr/albumart/{{= song.d[2].illust }}.jpg"
+              <img class="albumart lazy-load" data-src="{{= song.d[2].illust }}"
                    src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="
                    alt="{{= song.title}} EXHAUST" /><noscript>
-                <img class="albumart" src="http://sdvx.azu.kr/albumart/{{= song.d[2].illust }}.jpg"
+                <img class="albumart" src="{{= song.d[2].illust }}"
                      alt="{{= song.title}} EXHAUST" />
               </noscript><div class="upper">
                 <span class="song-level list-exh-level">
@@ -336,10 +336,10 @@
             EXTRA
          --><div class="pattern pattern-extra {{= song.last || ''}}">
               {{? song.d[3] }}
-                <img class="albumart lazy-load" data-src="http://sdvx.azu.kr/albumart/{{= song.d[3].illust }}.jpg"
+                <img class="albumart lazy-load" data-src="{{= song.d[3].illust }}"
                      src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="
                      alt="{{= song.title}} INFINITE/GRAVITY" /><noscript>
-                  <img class="albumart" src="http://sdvx.azu.kr/albumart/{{= song.d[3].illust }}.jpg"
+                  <img class="albumart" src="{{= song.d[3].illust }}"
                        alt="{{= song.title}} INFINITE/GRAVITY" />
                 </noscript><div class="upper">
                   <span class="song-level list-ext-level">
