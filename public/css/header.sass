@@ -2,7 +2,7 @@
 
 .toolbar-decorator
   width: 100%
-  height: $header-height - $header-padding-top
+  height: $header-height
   background: $header-background
 
   position: absolute
@@ -11,7 +11,7 @@
 header
   @extend .width-container
 
-  height: $header-height
+  height: $header-height + $header-padding-top
 
   position: relative
 
@@ -22,13 +22,13 @@ header
     @extend %card
 
     display: inline-block
-    height: 100%
+    height: $header-height
 
     float: left
 
   .left
 
-    width: 18em
+    width: $header-left-width
 
     margin-right: 1em
 
@@ -93,8 +93,8 @@ header
           border-right: none
 
   .right
-    width: calc(100% - 19em) /* 31em */
-    min-width: 25em
+    width: calc(100% - #{$header-left-width + 1em}) // 31em
+    min-width: $header-right-min-width
 
     .header
       width: 100%

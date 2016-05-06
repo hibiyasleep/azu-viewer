@@ -63,6 +63,9 @@ var statdata = <%- JSON.stringify(stat) %>
         <% } %>
       </select>
       <span class="pull-right">
+        <span class="text-muted"> 평균 </span>
+        <span id="v_average"> <%= ~~(stat[16].total / stat[16].count) %> </span>
+        /
         <span class="text-muted"> 플레이 </span>
         <span id="v_count"> <%= stat[16].count %> </span>
         /
@@ -71,12 +74,9 @@ var statdata = <%- JSON.stringify(stat) %>
       </span>
     </div>
     <div class="body">
-      <h2> 랭크
-        <span class="text-muted"> AAA의 갯수에 >990은 포함되지 않습니다 </span>
-        <span class="pull-right">
-          평균
-          <span id="v_average"> <%= ~~(stat[16].total / stat[16].count) %> </span>
-        </span>
+      <h2>
+        랭크
+        <span class="text-muted pull-right"> AAA의 갯수에 >990은 포함되지 않습니다 </span>
       </h2>
       <div class="statbar">
         <% for(var i=0; i<=6; i++) { %>

@@ -9,9 +9,16 @@ var $ = function $(selector) {
 }
 
 var animateNumber = function animateNumber(element, to, timeout, float) {
+  if(typeof element === 'string') {
+    element = $(element)
+    if(element[0]) {
+      element = element[0]
+    }
+  }
+
   var from = float? parseFloat(element.textContent) : parseInt(element.textContent)
-  var step = (from - to) / (timeout / 10)
-  var current = from
+  var step = (from - to) / (timeout / 20)
+  var current = from - step
 
   var set = function(v) {
     element.textContent = float? v.toFixed(1) : ~~v
@@ -23,7 +30,7 @@ var animateNumber = function animateNumber(element, to, timeout, float) {
     if(current == to) {
       clearInterval(interval)
     }
-  }, 10)
+  }, 20)
 
   setTimeout(function() {
     clearInterval(interval)
