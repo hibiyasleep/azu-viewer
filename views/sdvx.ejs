@@ -2,6 +2,7 @@
   name = {
     fumen: ['nov', 'adv', 'exh', 'inf'],
     rank: ['D', 'C', 'B', 'A', 'AA', 'AAA', '990'],
+    rank2: ['D', 'C', 'B', 'A', 'AA', 'AAA<99', '99≤'],
     clear: ['FAIL', 'CLR', 'H-CLR', 'UC', 'PUC'],
     clear_short: 'FCHUP',
     count: {
@@ -43,14 +44,14 @@ var statdata = <%- JSON.stringify(stat) %>
     </div>
     <ul class="stat">
       <li>
-        <span class="value"> <%= meta.play %> </span>
-        <span class="label"> 플레이 </span>
+        <span class="value"> <%= meta.play %> </span><!--
+     --><span class="label"> 플레이 </span>
       </li><li>
-        <span class="value"> <%= meta.packet %> </span>
-        <span class="label"> 패킷 </span>
+        <span class="value"> <%= meta.packet %> </span><!--
+     --><span class="label"> 패킷 </span>
       </li><li>
-        <span class="value"> <%= meta.block %> </span>
-        <span class="label"> 블럭 </span>
+        <span class="value"> <%= meta.block %> </span><!--
+     --><span class="label"> 블럭 </span>
       </li>
     </ul>
   </div> <!-- /left -->
@@ -62,6 +63,7 @@ var statdata = <%- JSON.stringify(stat) %>
           <option value="<%= i - 1 %>"> 레벨 <%= i %> </option>
         <% } %>
       </select>
+      <label fpr="stat_level" class="caret"> </label>
       <span class="pull-right">
         <span class="text-muted"> 평균 </span>
         <span id="v_average"> <%= ~~(stat[16].total / stat[16].count) %> </span>
@@ -76,7 +78,7 @@ var statdata = <%- JSON.stringify(stat) %>
     <div class="body">
       <h2>
         랭크
-        <span class="text-muted pull-right"> AAA의 갯수에 >990은 포함되지 않습니다 </span>
+        <span class="text-muted pull-right"> AAA의 갯수에 99≤는 포함되지 않습니다 </span>
       </h2>
       <div class="statbar">
         <% for(var i=0; i<=6; i++) { %>
@@ -91,7 +93,7 @@ var statdata = <%- JSON.stringify(stat) %>
           <li class="summary rank-<%= i %>">
             <span class="value rank-<%= i %>"> <%= stat[16].rank[i] %> </span>
             <span class="label">
-              <%= name.rank[i] %><br />
+              <%= name.rank2[i] %><br />
               <span id="p_rank<%= i %>">
                 <%= (stat[16].rank[i] / stat[16].count * 100).toFixed(1) || 0 %>
               </span>%
@@ -270,6 +272,12 @@ var statdata = <%- JSON.stringify(stat) %>
    --><span class="label">
         클리어 / 시도 횟수
       </span>
+    </li>
+    <li class="menu-title">
+      필터
+    </li>
+    <li>
+      //
     </li>
   </ul>
 </aside>

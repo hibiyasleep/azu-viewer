@@ -68,6 +68,7 @@ header
       padding: 1.5em 0
 
       text-align: center
+      font-weight: lighter
       list-style: none
       background-color: #263238
 
@@ -94,6 +95,12 @@ header
     width: calc(100% - #{$header-left-width + 1em}) // 31em
     min-width: $header-right-min-width
 
+    &.banseong
+      background-position: left bottom
+      background-image: url('../img/banseong.svg')
+      background-repeat: no-repeat
+      background-size: 75%
+
     .header
       width: 100%
       height: 3em
@@ -102,11 +109,11 @@ header
       padding: 0.5em
 
       select
-        font-size: 1em
         width: 5em
 
         border: none
-        border-radius: 0.125em
+        border-radius: 0
+        border-bottom: 0.08em solid rgba(0, 0, 0, 0.1)
         padding: 0.25em 0.5em
 
         apparence: none
@@ -122,6 +129,11 @@ header
           display: inline-block
           font-size: 0.5em
           content: '▼'
+
+      .caret
+        position: relative
+        top: 0.75em
+        left: -1em
 
       &> span
         margin: 0.375em
@@ -148,16 +160,18 @@ header
         li
           display: inline-block
           float: left
-
           height: 100%
 
           border-bottom-width: 0.25em
           border-bottom-style: solid
           border-right: 0.08em solid rgba(0, 0, 0, 0.1)
-          padding: 0.5em 0
+          padding: 0.5em 0 0.5em 0.25em
 
-          text-align: center
+          opacity: 1
+          transition: opaticy 300ms ease
 
+          &.text-muted
+            opacity: 0.5
 
           .value
             display: block
@@ -173,7 +187,7 @@ header
           border-right: none
 
       ul.rank li
-        width: calc(100% / 7)
+        width: calc(100% / 7 - 0.1px)
 
       ul.clear li
         width: calc(100% / 5)

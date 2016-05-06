@@ -24,6 +24,12 @@ window.addEventListener('load', function() {
 
       animateNumber('#p_rank' + i     , row.rank[i] / row.count * 100 , timeout, true)
       animateNumber('.value.rank-' + i, row.rank[i]                   , timeout)
+
+      if(row.rank[i] == 0) {
+        $('.summary.rank-' + i)[0].classList.add('text-muted')
+      } else {
+        $('.summary.rank-' + i)[0].classList.remove('text-muted')
+      }
     }
 
     for(var i=0; i<=4; i++) {
@@ -35,6 +41,20 @@ window.addEventListener('load', function() {
       animateNumber('#p_clear' + i     , row.clear[i] / row.count * 100, timeout, true)
       animateNumber('.value.clear-' + i, row.clear[i]                  , timeout)
     }
+
+    if(row.count === 0) {
+      var segments = $('.segment')
+      for(var i=0; i<segments.length; i++) {
+        segments[i].style.width = '0'
+      }
+      $('.segment.clear-0')[0].style.width = '100%'
+      $('.segment.rank-0')[0].style.width = '100%'
+    } else if(row.count === row.clear[4] && val >= 12) {
+      $('.right')[0].classList.add('banseong')
+    } else {
+      $('.right')[0].classList.remove('banseong')
+    }
+
   }
 
   $('#stat_level').addEventListener('change', statSwitch)
