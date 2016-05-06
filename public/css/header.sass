@@ -2,7 +2,7 @@
 
 .toolbar-decorator
   width: 100%
-  height: $header-height
+  height: $header-height - $header-padding-top
   background: $header-background
 
   position: absolute
@@ -11,129 +11,189 @@
 header
   @extend .width-container
 
+  height: $header-height
+
   position: relative
 
   margin: 0 auto
   padding-top: $header-padding-top
 
-  color: white
+  .left, .right
+    @extend %card
 
-  &> h1
-    font-weight: 200
-
-    margin-left: 1rem
-    margin-right: 1rem
-
-  .card-container
-    overflow-y: scroll
-
-    color: black
-
-  // game page
-
-  .title
-    width: 100%
-    height: $header-title-height - 1rem
-    margin-bottom: 0.5em !important
-
-  .left
-    float: left
-
-    .skill-level
-      @extend %card
-      display: inline-block
-
-      width: 9em
-      height: 2.5em
-
-      background-size: 100%
-      vertical-align: top
-
-      .skill-level-title
-        display: inline-block
-
-        font-size: 1.25em
-        font-weight: 900
-        text-align: center
-
-        width: 100%
-
-        padding: 0.333333em 0.75em 0 2.25em
-
-    h1
-      display: inline-block
-
-      font-size: 1.5em
-      font-weight: 400
-
-
-      margin: 0
-      margin-left: 0.5rem
-      vertical-align: -50%
-
-  .right
+    display: inline-block
     height: 100%
 
-    float: right
+    float: left
 
-    padding: 0.625em
-    vertical-align: 75%
+  .left
 
-    dl
-      display: inline-block
-      width: 20em
-      height: 100%
+    width: 18em
 
-      line-height: 1.25rem
-      text-align: right
+    margin-right: 1em
+
+    background-color: #006064 !important
+    color: white
+
+    .class
+      width: 100%
+      height: 3em
+
+      padding: 0 0.75em
+
+      line-height: 3.25em
+
+      span
+        font-size: 1.5em
+
+    .name
+      width: 100%
+      height: 15em
+
+      text-align: center
+
+      padding-top: 1.5em
+
+      img
+        width: (100 / 16) * 1em
+        height: (127 / 16) * 1em
+
+      h1
+        font-size: 2em
+        font-weight: lighter
+
+    ul.stat /* ul */
+      width: 100%
+      height: 7em
 
       margin: 0
-      vertical-align: 75%
+      padding: 1.5em 0
 
-      dt
+      text-align: center
+      list-style: none
+      background-color: #263238
+
+      li
         display: inline-block
+        width: calc(100% / 3 - 0.08em)
 
-        font-size: 0.875em
-        font-weight: lighter
-        color: transparentize(white, 0.25)
-        margin: 0 0 0 0.75rem
+        border-right: 0.08em solid white
+
+        .value
+          display: block
+          font-size: 1.5em
+          margin-top: 0.25em
+
+        .label
+          display: block
+          margin-top: 0.25em
+          margin-bottom: 0.375em
+
+        &:last-child
+          border-right: none
+
+  .right
+    width: calc(100% - 19em) /* 31em */
+    min-width: 25em
+
+    .header
+      width: 100%
+      height: 3em
+
+      border-bottom: 0.08em solid rgba(0, 0, 0, 0.1)
+      padding: 0.5em
+
+      select
+        font-size: 1em
+        width: 5em
+
+        border: none
+        border-radius: 0.125em
+        padding: 0.25em 0.5em
+
+        apparence: none
+        -webkit-appearance: none
+        background: none
+
+        transition: background 200ms ease
+
+        &:hover
+          background: rgba(0, 0, 0, 0.1)
+
+        &:after
+          display: inline-block
+          font-size: 0.5em
+          content: '▼'
+
+      &> span
+        margin: 0.375em
+
+    .body
+      width: 100%
+
+      overflow-x: scroll
+
+      h2
+        font-size: 1em
+        margin: 1em
+
+        font-weight: normal
+
+      ul
+        width: 100%
+        height: 4.5em
+        list-style: none
+
+        margin: 0.75em 0
         padding: 0
 
-      dd
-        display: inline-block
-        margin: 0
+        li
+          display: inline-block
+          float: left
 
-  // statistics
-  .statistics
-    width: 100%
+          height: 100%
 
-    margin: 0
-    padding: 0
-    list-style: none
+          border-bottom-width: 0.25em
+          border-bottom-style: solid
+          border-right: 0.08em solid rgba(0, 0, 0, 0.1)
+          padding: 0.5em 0
 
+          text-align: center
+
+
+          .value
+            display: block
+            font-size: 1.25em
+
+          .label
+            display: block
+            font-size: 0.75em
+            margin-top: 0.25em
+            margin-bottom: 0.375em
+
+        li:last-child
+          border-right: none
+
+      ul.rank li
+        width: calc(100% / 7)
+
+      ul.clear li
+        width: calc(100% / 5)
+
+.statbar
+  width: calc(100% - 1em)
+  height: 2.5em
+
+  margin: 0 0.5em
+
+  overflow-x: hidden
+
+  .segment
+    height: 100%
+    float: left
+
+    transition: width 300ms ease
+
+    line-height: 2.5em
+    text-align: center
     overflow-x: hidden
-
-    h4
-      font-size: 1em
-      font-weight: 200
-
-      margin: 0
-
-    .statbar
-      width: 100%
-      height: 2em
-
-      .stat
-        display: inline-block
-        height: 100%
-
-        padding-top: 0.166666em
-
-        font-size: 0.75em
-        text-align: center
-
-        overflow: hidden
-        float: left
-
-    .statbar + .statbar
-      margin-bottom: 0.375em

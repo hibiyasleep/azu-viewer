@@ -1,7 +1,8 @@
 $level-color: lighten(blue, 0.5), lighten(yellow, 0.5), lighten(red, 0.5), lighten(cyan, 0.5), lighten(orange, 0.5)
 $level-name: nov, adv, exh, inf, grv
 
-$rank-color: #233, #567, #9aa, #fa0, #fc0, #fe3
+// blue gray 800, gray 600, blue gray 200, amber 800, 600, 300, 100 (for 990)
+$rank-color: #37474F, #757575, #B0BEC5, #FF8F00, #FFB300, #FFD54F, #FFECB3
 $clear-color: #666, #4ba, #a0d, #f48, #ff3
 
 .song
@@ -24,34 +25,66 @@ $clear-color: #666, #4ba, #a0d, #f48, #ff3
       color: nth($clear-color, $i + 1)
 
 /*   skill level */
-.skill-level
-  color: rgba(0, 0, 0, 0.75)
-  background-image: url('http://cdn.azu.kr/sdvx/skill/skill_nolv.gif')
+.class
 
-  @for $i from 0 through 9
-    &[data-skill-level='#{$i}']
-      background-image: url('http://cdn.azu.kr/sdvx/skill/skill_0#{$i}.gif')
+  background: #222
+
+  &[data-skill-level='1']
+    background: #3E2723 // brown 900
+
+  &[data-skill-level='2']
+    background: #303F9F // indigo 700
+
+  &[data-skill-level='3']
+    background: #F9A825 // yellow 800
+
+  &[data-skill-level='4']
+    background: #B0BEC5 // blue gray 200
+
+  &[data-skill-level='5']
+    background: #039BE5 // light blue 600
+
+  &[data-skill-level='6']
+    background: #4DB6AC // teal 300
+
+  &[data-skill-level='7']
+    background: #EC407A // pink 400
+
+  &[data-skill-level='8']
+    color: black
+    background: #F48FB1 // pink 200
+
+  &[data-skill-level='9']
+    color: black
+    background: #EEEEEE // grey 200
 
   &[data-skill-level='10']
-    background-image: url('http://cdn.azu.kr/sdvx/skill/skill_10.gif')
+    color: black
+    background: #FBC02D // yellow 700
 
   &[data-skill-level='11']
-    background-image: url('http://cdn.azu.kr/sdvx/skill/skill_11.gif')
-    color: rgba(255, 255, 51, 0.75)
+    color: #ff3
+    background: #F4511E // deep orange 600
 
   &[data-skill-level='12']
-    background-image: url('http://cdn.azu.kr/sdvx/skill/skill_inf.gif')
     color: #ff3
+    background: #5E35B1 // deep purple 600
 
-.statbar
+// segment
 
-  .stat-clear-0, .stat-clear-2, .stat-clear-3, .stat-rank-0, .stat-rank-1
-    color: white
+.segment.clear-0, .segment.clear-2, .segment.clear-3, .segment.rank-0, .segment.rank-1
+  color: white
 
-  @for $i from 0 through 4
-    .stat-clear-#{$i}
-      background: nth($clear-color, $i + 1)
+@for $i from 0 through 4
+  .segment.clear-#{$i}
+    background: nth($clear-color, $i + 1)
 
-  @for $i from 0 through 5
-    .stat-rank-#{$i} // D
-      background: nth($rank-color, $i + 1)
+  .summary.clear-#{$i}
+    border-color: nth($clear-color, $i + 1)
+
+@for $i from 0 through 6
+  .segment.rank-#{$i}
+    background: nth($rank-color, $i + 1)
+
+  .summary.rank-#{$i}
+    border-color: nth($rank-color, $i + 1)

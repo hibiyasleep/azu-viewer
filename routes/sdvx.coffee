@@ -28,7 +28,7 @@ module.exports = (app) ->
           totalcount: 0
           count: 0
           total: 0
-          rank: [0, 0, 0, 0, 0, 0]
+          rank: [0, 0, 0, 0, 0, 0, 0]
           clear: [0, 0, 0, 0, 0]
 
         for id of d.song
@@ -61,13 +61,19 @@ module.exports = (app) ->
                 rank: cf.rank
 
               stat[16].count += 1
-              stat[16].total += cf.score
-              stat[16].rank[cf.rank] += 1
-              stat[16].clear[cf.clear] += 1
-
               stat[cdb[fumen] - 1].count += 1
+
+              stat[16].total += cf.score
               stat[cdb[fumen] - 1].total += cf.score
-              stat[cdb[fumen] - 1].rank[cf.rank] += 1
+
+              if cf.score >= 9900000
+                stat[16].rank[6] += 1
+                stat[cdb[fumen] - 1].rank[6] += 1
+              else
+                stat[16].rank[cf.rank] += 1
+                stat[cdb[fumen] - 1].rank[cf.rank] += 1
+
+              stat[16].clear[cf.clear] += 1
               stat[cdb[fumen] - 1].clear[cf.clear] += 1
 
             else

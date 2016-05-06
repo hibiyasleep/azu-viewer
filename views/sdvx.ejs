@@ -1,7 +1,7 @@
 <%
   name = {
     fumen: ['nov', 'adv', 'exh', 'inf'],
-    rank: ['D', 'C', 'B', 'A', 'AA', 'AAA'],
+    rank: ['D', 'C', 'B', 'A', 'AA', 'AAA', '990'],
     clear: ['FAIL', 'CLR', 'H-CLR', 'UC', 'PUC'],
     clear_short: 'FCHUP',
     count: {
@@ -18,74 +18,111 @@
   title: meta.nickname,
   script: [
     '/js/list-1.1.1.min.js',
-    '/js/sdvx-list.js'
+    '/js/sdvx-list.js',
+    '/js/sdvx-stat.js'
   ]
 }) %>
+<script>
+var statdata = <%- JSON.stringify(stat) %>
+</script>
 <header>
-  <div class="title">
-    <div class="left">
-      <span class="skill-level" data-skill-level="<%= meta.skill_no %>">
-        <span class="skill-level-title">
-          <%= meta.skill_name %>
-        </span>
+  <div class="left">
+    <div class="class" data-skill-level="<%= meta.skill_no %>">
+      <span>
+        Class Lv. <%= meta.skill_no == 12? '∞' : meta.skill_no %>
       </span>
+      <span class="pull-right">
+        <%= meta.skill_name %>
+      </span>
+    </div>
+    <div class="name">
+      <img src="//<%= api.cdn + meta.apcard %>" />
       <h1>
         <%= meta.name %>
       </h1>
     </div>
-    <div class="right">
-      <dl>
-        <dt>플레이</dt>
-        <dd><%= meta.play %></dd>
-        <dt>패킷</dt>
-        <dd><%= meta.packet %></dd>
-        <dt>블럭</dt>
-        <dd><%= meta.block %></dd>
-      </dl>
+    <ul class="stat">
+      <li>
+        <span class="value"> <%= meta.play %> </span>
+        <span class="label"> 플레이 </span>
+      </li><li>
+        <span class="value"> <%= meta.packet %> </span>
+        <span class="label"> 패킷 </span>
+      </li><li>
+        <span class="value"> <%= meta.block %> </span>
+        <span class="label"> 블럭 </span>
+      </li>
+    </ul>
+  </div> <!-- /left -->
+  <div class="right">
+    <div class="header">
+      <select id="stat_level">
+        <option value="16"> 모두 </option>
+        <% for(var i=1; i<=16; i++) { %>
+          <option value="<%= i - 1 %>"> 레벨 <%= i %> </option>
+        <% } %>
+      </select>
+      <span class="pull-right">
+        <span class="text-muted"> 플레이 </span>
+        <span id="v_count"> <%= stat[16].count %> </span>
+        /
+        <span class="text-muted"> 해금 </span>
+        <span id="v_totalcount"> <%= stat[16].totalcount %> </span>
+      </span>
     </div>
-  </div>
-  <div class="card-container">
-    <ol class="statistics" start="17" reversed>
-      <% for(var i = 16; i >= 0; i--) { %>
-        <li>
-          <% var level = stat[i] %>
-          <h4>
-            <big><%= i === 16? 'Overview' : 'lv.' + (i + 1) %></big>
-            × ??? 중
-            <%= level.count %> /
-            <%= level.totalcount %>,
-            평균 <%= ~~(level.total / level.count) %>
-          </h4>
-          <div class="statbar">
-            <% for(var j in level.clear) { %>
-              <% if(level.clear[j]) { %>
-                <div class="stat stat-clear-<%= j %>"
-                     style="width: <%= level.clear[j] / level.count * 100 %>%">
-                  <%= name.clear_short[j] %><br />
-                  <%= level.clear[j] %>
-                  /
-                  <%= (level.clear[j] / level.count * 100).toFixed(1) %>%
-                </div>
-              <% } %>
-            <% } %>
+    <div class="body">
+      <h2> 랭크
+        <span class="text-muted"> AAA의 갯수에 >990은 포함되지 않습니다 </span>
+        <span class="pull-right">
+          평균
+          <span id="v_average"> <%= ~~(stat[16].total / stat[16].count) %> </span>
+        </span>
+      </h2>
+      <div class="statbar">
+        <% for(var i=0; i<=6; i++) { %>
+          <div class="segment rank-<%= i %>"
+               style="width: <%= stat[16].rank[i] / stat[16].count * 100 %>%">
+            <%= stat[16].rank[i] %>
           </div>
-          <div class="statbar">
-            <% for(var j in level.rank) { %>
-              <% if(level.rank[j]) { %>
-                <div class="stat stat-rank-<%= j %>"
-                     style="width: <%= level.rank[j] / level.count * 100 %>%">
-                  <%= name.rank[j] %><br />
-                  <%= level.rank[j] %>
-                  /
-                  <%= (level.rank[j] / level.count * 100).toFixed(1) %>%
-                </div>
-              <% } %>
-            <% } %>
+        <% } %>
+      </div>
+      <ul class="rank">
+        <% for(var i=0; i<=6; i++) { %>
+          <li class="summary rank-<%= i %>">
+            <span class="value rank-<%= i %>"> <%= stat[16].rank[i] %> </span>
+            <span class="label">
+              <%= name.rank[i] %><br />
+              <span id="p_rank<%= i %>">
+                <%= (stat[16].rank[i] / stat[16].count * 100).toFixed(1) || 0 %>
+              </span>%
+            </span>
+          </li>
+        <% } %>
+      </ul>
+
+      <h2> 클리어 </h2>
+      <div class="statbar">
+        <% for(var i=0; i<=4; i++) { %>
+          <div class="segment clear-<%= i %>"
+               style="width: <%= stat[16].clear[i] / stat[16].count * 100 %>%">
+            <%= stat[16].clear[i] %>
           </div>
-        </li>
-      <% } %>
-    </ol>
-  </div>
+        <% } %>
+      </div>
+      <ul class="clear">
+        <% for(var i=0; i<=4; i++) { %>
+          <li class="summary clear-<%= i %>">
+            <span class="value clear-<%= i %>"> <%= stat[16].clear[i] %> </span>
+            <span class="label">
+              <%= name.clear[i] %><br />
+              <span id="p_clear<%= i %>">
+                <%= (stat[16].clear[i] / stat[16].count * 100).toFixed(1) || 0 %>
+              </span>%
+            </span>
+          </li>
+        <% } %>
+      </ul>
+  </div> <!-- /right -->
 </header>
 <main>
   <ul class="list-song list">
@@ -210,10 +247,10 @@
         클리어램프
       </span>
     </li>
-    <li class="sort" data-sort="list-score"><!--
+    <li class="sort" data-sort="list-score">
       <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M23 12l-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12zm-10 5h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-      </svg>
+          <path d="M1.9,12.9c2.1,0,3.4-1.1,3.5-3.2c-1,1.3-3,1.3-4.1,0.2c-1-1.1-1.1-3-0.5-4.3c0.7-1.4,2.3-2,3.7-1.5c1.6,0.5,2.1,2.3,2.1,3.9 v0.5c0,1.4-0.2,3-1.1,4.2C4.7,13.6,3.3,14,1.9,14H1.8v-1.1H1.9z M3.5,9.6c0.9,0,1.7-0.6,2-1.4V7.7c0-0.9-0.2-1.9-1-2.5 C3.8,4.8,2.8,4.9,2.2,5.5C1.2,6.7,1.5,9.6,3.5,9.6z M15.3,4.7L11.2,14H9.8L14,5.1H8.6V4h6.7V4.7z M23.7,4.7L19.6,14h-1.3l4.1-8.8H17 V4h6.7V4.7z M3,17H0v3h3V17z M8,17H5v3h3V17z M24,17H10v3h14V17z"/>
+      </svg><!--
    --><span class="label">
         점수
       </span>
