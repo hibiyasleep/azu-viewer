@@ -30,6 +30,13 @@ window.addEventListener('load', function() {
     }
   }
 
+  window.filterBorder = function(score, rank) {
+    l.filter(function(item) {
+      var v = item.values()
+      return parseInt(v['score']) >= score && parseInt(v['rank']) == rank
+    })
+  }
+
   $('#stat_level').addEventListener('change', filterLevel)
   $('#stat_level').addEventListener('onkeyup', filterLevel)
 
