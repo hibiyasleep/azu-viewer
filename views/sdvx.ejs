@@ -35,7 +35,7 @@ var statdata = <%- JSON.stringify(stat) %>
         Class Lv. <%= meta.skill_no == 12? '∞' : meta.skill_no %>
       </span>
       <span class="pull-right">
-        <%= meta.skill_name %>
+        <%= typeof meta.skill_name == 'string'? meta.skill_name.replace(' ', '') : '' %>
       </span>
     </div>
     <div class="name">
