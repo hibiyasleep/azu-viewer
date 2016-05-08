@@ -41,13 +41,20 @@ window.statSwitch = function statSwitch(v) {
 
   if(row.count === 0) {
     var segments = $('.segment')
+    var summaries = $('.summary')
+
+    // same length
     for(var i=0; i<segments.length; i++) {
       segments[i].style.width = '0'
+      summaries[i].classList.add('text-muted')
     }
+
     $('.segment.clear-0')[0].style.width = '100%'
     $('.segment.rank-0')[0].style.width = '100%'
+
   } else if(row.count === row.clear[4] && val >= 12) {
     $('.right')[0].classList.add('banseong')
+
   } else {
     $('.right')[0].classList.remove('banseong')
   }
