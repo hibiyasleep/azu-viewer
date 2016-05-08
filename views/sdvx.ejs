@@ -18,7 +18,7 @@
 <%- include('partial/header', {
   title: meta.nickname,
   script: [
-    '/js/list-1.1.1.min.js',
+    '/js/list-1.2.0.min.js',
     '/js/sdvx-list.js',
     '/js/sdvx-stat.js'
   ]
@@ -90,7 +90,7 @@ var statdata = <%- JSON.stringify(stat) %>
       </div>
       <ul class="rank">
         <% for(var i=0; i<=6; i++) { %>
-          <li class="summary rank-<%= i %>">
+          <li class="summary rank-<%= i %> <%= stat[16].rank[i]? '' : 'text-muted' %>">
             <span class="value rank-<%= i %>"> <%= stat[16].rank[i] %> </span>
             <span class="label">
               <%= name.rank2[i] %><br />
@@ -113,7 +113,7 @@ var statdata = <%- JSON.stringify(stat) %>
       </div>
       <ul class="clear">
         <% for(var i=0; i<=4; i++) { %>
-          <li class="summary clear-<%= i %>">
+          <li class="summary clear-<%= i %> <%= stat[16].clear[i]? '' : 'text-muted' %>">
             <span class="value clear-<%= i %>"> <%= stat[16].clear[i] %> </span>
             <span class="label">
               <%= name.clear[i] %><br />
@@ -134,7 +134,11 @@ var statdata = <%- JSON.stringify(stat) %>
         <% var current = name.fumen[f]; %>
         <% var fumen = song[current]; %>
         <% if(fumen === undefined || fumen.score === undefined) continue; %>
-        <li class="song <%= (song.isGravity && current == 'inf')? 'grv' : current %>">
+        <li class="song <%= (song.isGravity && current == 'inf')? 'grv' : current %>"
+            data-clear="<%= fumen.clear %>"
+            data-rank="<%= fumen.rank %>"
+            data-score="<%= fumen.score %>"
+            data-clearrate="<%= zfill_p(fumen.count[1] / fumen.count[0]) %>">
           <img class="albumart"
                src="http://<%= api.cdn + fumen.illust %>" />
           <div class="side">
@@ -170,13 +174,6 @@ var statdata = <%- JSON.stringify(stat) %>
             <span class="score">
               <%= fumen.score %>
             </span>
-          </div>
-          <div class="hidden" style="visibility: hidden;">
-            <span class="list-clear"> <%= fumen.clear %> </span>
-            <span class="list-rank"> <%= fumen.rank %> </span>
-            <span class="list-score"> <%= fumen.score %> </span>
-            <span class="list-played"> <%= fumen.count[0] %> </span>
-            <span class="list-clearrate"> <%= zfill_p(fumen.count[1] / fumen.count[0]) %> </span>
           </div>
         </li>
       <% } %>
@@ -233,7 +230,7 @@ var statdata = <%- JSON.stringify(stat) %>
         레벨
       </span>
     </li>
-    <li class="sort" data-sort="list-rank">
+    <li class="sort" data-sort="rank">
       <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M12.45 16h2.09L9.43 3H7.57L2.46 16h2.09l1.12-3h5.64l1.14 3zm-6.02-5L8.5 5.48 10.57 11H6.43zm15.16.59l-8.09 8.09L9.83 16l-1.41 1.41 5.09 5.09L23 13l-1.41-1.41z"/>
       </svg><!--
@@ -241,7 +238,7 @@ var statdata = <%- JSON.stringify(stat) %>
         랭크
       </span>
     </li>
-    <li class="sort" data-sort="list-clear">
+    <li class="sort" data-sort="clear">
       <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M23 12l-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12zm-10 5h-2v-2h2v2zm0-4h-2V7h2v6z"/>
       </svg><!--
@@ -249,7 +246,7 @@ var statdata = <%- JSON.stringify(stat) %>
         클리어램프
       </span>
     </li>
-    <li class="sort" data-sort="list-score">
+    <li class="sort" data-sort="score">
       <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.9,12.9c2.1,0,3.4-1.1,3.5-3.2c-1,1.3-3,1.3-4.1,0.2c-1-1.1-1.1-3-0.5-4.3c0.7-1.4,2.3-2,3.7-1.5c1.6,0.5,2.1,2.3,2.1,3.9 v0.5c0,1.4-0.2,3-1.1,4.2C4.7,13.6,3.3,14,1.9,14H1.8v-1.1H1.9z M3.5,9.6c0.9,0,1.7-0.6,2-1.4V7.7c0-0.9-0.2-1.9-1-2.5 C3.8,4.8,2.8,4.9,2.2,5.5C1.2,6.7,1.5,9.6,3.5,9.6z M15.3,4.7L11.2,14H9.8L14,5.1H8.6V4h6.7V4.7z M23.7,4.7L19.6,14h-1.3l4.1-8.8H17 V4h6.7V4.7z M3,17H0v3h3V17z M8,17H5v3h3V17z M24,17H10v3h14V17z"/>
       </svg><!--
@@ -257,7 +254,7 @@ var statdata = <%- JSON.stringify(stat) %>
         점수
       </span>
     </li>
-    <li class="sort" data-sort="list-played">
+    <li class="sort" data-sort="count-play">
       <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M8 5v14l11-7z"/>
       </svg><!--
@@ -265,7 +262,7 @@ var statdata = <%- JSON.stringify(stat) %>
         플레이카운트
       </span>
     </li>
-    <li class="sort" data-sort="list-clearrate">
+    <li class="sort" data-sort="clearrate">
       <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M20,5l-1-1L4,19l1,1 M8.7,8c-0.1,0.9-0.4,1.6-1,2.1s-1.3,0.8-2.3,0.8c-1,0-1.8-0.3-2.4-1S2.1,8.4,2.1,7.3V5.7 c0-1.1,0.3-1.9,0.9-2.6s1.4-1,2.4-1c1,0,1.8,0.3,2.3,0.8s0.9,1.2,1,2.2H7.3C7.2,4.5,7.1,4,6.8,3.7S6.1,3.3,5.5,3.3 C4.9,3.3,4.4,3.5,4.1,4S3.6,5,3.6,5.7v1.6c0,0.7,0.2,1.3,0.5,1.8s0.8,0.7,1.4,0.7c0.6,0,1-0.1,1.3-0.4S7.2,8.6,7.3,8H8.7z M21.9,14.5h-2.7v7.4h-1.4v-7.4h-2.7v-1.1h6.7V14.5z"/>
       </svg><!--

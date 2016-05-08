@@ -1,11 +1,22 @@
 'use strict';
 
+var l
+var filters = []
+
 window.addEventListener('load', function() {
   l = new List('body', {
     valueNames: [
-      'list-title', 'list-artist', 'list-level', 'list-played',
-      'list-clear', 'list-rank', 'list-score', 'list-clearrate'
+      'list-title',
+      'list-artist',
+      'list-level',
+      'count-play',
+      { data: [
+        'clear',
+        'rank',
+        'score',
+        'clearrate'
+      ] }
     ],
-    count: 5000
+    page: 5000
   })
 })
