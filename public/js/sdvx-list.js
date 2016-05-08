@@ -22,7 +22,7 @@ window.addEventListener('load', function() {
 
   var filterLevel = function() {
     var val = typeof v === 'number'? v : parseInt(this.value) + 1
-    console.log(val)
+
     if(val == 17) {
       l.filter(function() { return true })
     } else {
