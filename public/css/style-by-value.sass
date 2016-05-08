@@ -6,7 +6,7 @@ $rank-color: #37474F, #757575, #B0BEC5, #FF8F00, #FFB300, #FFD54F, #FFECB3
 $clear-color: #666, #4ba, #a0d, #f48, #ff3
 
 .song
-  @for $i from 0 to 4
+  @for $i from 0 to 5
     &.#{nth($level-name, $i + 1)}
       .level
         background: transparentize(nth($level-color, $i + 1), 0.5)
