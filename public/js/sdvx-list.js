@@ -19,4 +19,18 @@ window.addEventListener('load', function() {
     ],
     page: 5000
   })
+
+  var filterLevel = function() {
+    var val = typeof v === 'number'? v : parseInt(this.value) + 1
+    console.log(val)
+    if(val == 17) {
+      l.filter(function() { return true })
+    } else {
+      l.filter(function(item) { return parseInt(item.values()['list-level']) == val })
+    }
+  }
+
+  $('#stat_level').addEventListener('change', filterLevel)
+  $('#stat_level').addEventListener('onkeyup', filterLevel)
+
 })

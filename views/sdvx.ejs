@@ -58,18 +58,16 @@ var statdata = <%- JSON.stringify(stat) %>
   </div> <!-- /left -->
   <div class="right">
     <div class="header">
+      <b>필터</b>:
       <select id="stat_level">
         <option value="16"> 모두 </option>
         <% for(var i=1; i<=16; i++) { %>
           <option value="<%= i - 1 %>"> 레벨 <%= i %> </option>
         <% } %>
       </select>
-      <label fpr="stat_level" class="caret"> </label>
       <span class="pull-right">
-        <span class="text-muted"> 플레이 </span>
         <span id="v_count"> <%= stat[16].count %> </span>
         /
-        <span class="text-muted"> 해금 </span>
         <span id="v_totalcount"> <%= stat[16].totalcount %> </span>
       </span>
     </div>
