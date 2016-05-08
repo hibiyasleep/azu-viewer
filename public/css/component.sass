@@ -35,6 +35,13 @@
       transform: scale(1.75)
       z-index: 20
 
+  .lazy-load, .lazy-loaded
+    transition: opacity 300ms ease
+    opacity: 0
+
+  .lazy-loaded
+    opacity: 1
+
   //-webkit-clip-path: polygon(1% 1%, 99% 1%, 99% 99%, 1% 99%)
   //margin-top: -0.0625em
   //margin-left: -0.0625em
