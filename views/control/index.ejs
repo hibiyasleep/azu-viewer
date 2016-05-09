@@ -36,7 +36,6 @@ var fddate = function(from, to, waiting, processing, complete) {
       <% var c = (refresh.length > 5)? 5 : refresh.length %>
       <% for(var i=0; i<c; i++) { %>
         <% var r = refresh[i] %>
-        <% console.log(r) %>
         <li value="<%= r.id %>">
           <b><%= fdate(r.request) %></b>에 요청,
           갱신

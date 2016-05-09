@@ -111,7 +111,7 @@ module.exports = (app) ->
     if name2 is '�' then name2 = ''
 
     if name1 is name2
-      res.redirect '../../'
+      res.redirect '../'
       return
 
     azuinfo.get config.sdvx.json, name1, (e, d1) ->
