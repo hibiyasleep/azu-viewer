@@ -3,21 +3,35 @@
   header
     height: calc(#{$header-height * 2 + $header-padding-top} + 1em)
 
-    .left
-      width: 100%
-      margin-right: 0
+    .profile
+      width: calc(50% - 0.5em)
+      margin-right: 1em
       margin-bottom: 1em
 
-    .right
+    &> .stat.stat
       width: 100%
       min-width: 100%
 
-@media (max-width: 28rem)
+      margin-bottom: 1em
 
+    .profile ~ .profile
+      margin-right: 0
+
+@media (max-width: 32rem)
+
+  header
+
+    &.vs
+      height: calc(#{$header-height * 3 + $header-padding-top} + 2em) 
+
+    .profile
+      width: 100%
+      margin-right: 0
+
+@media (max-width: 28rem)
   main
     font-size: calc(100vw / 28)
 
 @media (max-width: 24rem)
-
   html
     font-size: calc(100vw / 24)

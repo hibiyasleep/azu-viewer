@@ -115,20 +115,20 @@ aside
       background-color: transparentize(black, 0.8)
 
   .menu-title
-    margin-top: 0.5em
-    padding: 1em 1.25em
+    font-size: 0.875em
+    margin-top: (0.5em / 0.875)
+    padding: (1em / 0.875) (1.25em / 0.875)
     color: rgba(0, 0, 0, 0.5)
 
-    border-top: 0.0625em solid rgba(0, 0, 0, 0.125)
+    border-top: 0.1em solid rgba(0, 0, 0, 0.125)
 
     &:hover, &:active
       background-color: inherit
 
+  .menu-title + .menu-title
+    border-top: none
+
   .filter
-
-    ul
-
-      li
 
     &:hover, &.sort.asc, &.sort.desc
       background: none

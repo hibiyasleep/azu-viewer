@@ -16,7 +16,7 @@ header
   margin: 0 auto
   padding-top: $header-padding-top
 
-  .left, .right
+  .profile, .stat
     @extend %card
 
     display: inline-block
@@ -24,7 +24,7 @@ header
 
     float: left
 
-  .left
+  .profile
 
     width: $header-left-width
 
@@ -61,7 +61,7 @@ header
         font-size: 2em
         font-weight: lighter
 
-    ul.stat /* ul */
+    ul.stat
       width: 100%
       height: 7em
 
@@ -92,9 +92,16 @@ header
         &:last-child
           border-right: none
 
-  .right
+  &> .stat
     width: calc(100% - #{$header-left-width + 1em}) // 31em
     min-width: $header-right-min-width
+
+    &.vs
+      width: calc(100% - #{$header-left-width * 2 + 2em})
+      min-width: 6em
+
+      .body ul
+        margin-top: -0.75em
 
     &.banseong
       background-position: left bottom
@@ -140,7 +147,7 @@ header
 
         font-weight: normal
 
-      ul
+      ul.rank, ul.clear, ul.vs
         width: 100%
         height: 4.5em
         list-style: none
@@ -182,6 +189,33 @@ header
 
       ul.clear li
         width: calc(100% / 5)
+
+      ul.vs li
+        width: calc(100% / 3)
+
+    ul.links
+      margin: 0
+      padding: 0
+
+      a
+        color: inherit
+        text-decoration: none
+
+      li
+        height: 2.875em
+        padding: 0.625em 0.25em 0.625em 0.625em
+
+        transition: background-color 100ms ease
+
+        &:hover
+          background-color: transparentize(black, 0.9)
+
+        .label
+          @extend %no-select
+          display: inline-block
+          vertical-align: 0.375em
+          margin: 0
+          margin-left: 0.625em
 
 .statbar
   width: calc(100% - 1em)

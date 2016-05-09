@@ -72,7 +72,8 @@ $clear-color: #666, #4ba, #a0d, #f48, #ff3
 
 // segment
 
-.segment.clear-0, .segment.clear-2, .segment.clear-3, .segment.rank-0, .segment.rank-1
+.segment.clear-0, .segment.clear-2, .segment.clear-3,
+.segment.rank-0, .segment.rank-1, .segment.vs-0, .segment.vs-2
   color: white
 
 @for $i from 0 through 4
@@ -88,3 +89,23 @@ $clear-color: #666, #4ba, #a0d, #f48, #ff3
 
   .summary.rank-#{$i}
     border-color: nth($rank-color, $i + 1)
+
+.segment
+  &.vs-0
+    background: #2196F3 // blue 500
+
+  &.vs-1
+    background: #607D8B // blue grey 500
+
+  &.vs-2
+    background: #FF5722 // deep orange 500
+
+.summary
+  &.vs-0
+    border-color: #2196F3 // blue 500
+
+  &.vs-1
+    border-color: #607D8B // blue grey 500
+
+  &.vs-2
+    border-color: #FF5722 // deep orange 500

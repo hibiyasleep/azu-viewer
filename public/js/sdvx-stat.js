@@ -53,17 +53,71 @@ window.statSwitch = function statSwitch(v) {
     $('.segment.rank-0')[0].style.width = '100%'
 
   } else if(row.count === row.clear[4] && val >= 12) {
-    $('.right')[0].classList.add('banseong')
+    $('.stat')[0].classList.add('banseong')
 
   } else {
-    $('.right')[0].classList.remove('banseong')
+    $('.stat')[0].classList.remove('banseong')
   }
 
 }
 
+window.vsSwitch = function(v) {
+
+  var timeout = 300
+
+  var val = typeof v === 'number'? v : this.value
+
+  var row1 = statdata[val]
+  var row2 = statdata2[val]
+  var segment
+
+  animateNumber('#v1_average', ~~(row1.total / row1.count) , timeout)
+  animateNumber('#v2_average', ~~(row2.total / row2.count) , timeout)
+
+  for(var i=0; i<=2; i++) {
+    segment = $('.segment.vs-' + i)[0]
+
+
+    segment.style.width = (row1.vs[i] / row1.vslength * 100) + '%'
+    animateNumber(segment, row1.vs[i], timeout)
+
+    animateNumber('#p_vs' + i     , row1.vs[i] / row1.vslength * 100, timeout, true)
+    animateNumber('.value.vs-' + i, row1.vs[i]                      , timeout)
+
+    if(row1.vs[i] == 0) {
+      $('.summary.vs-' + i)[0].classList.add('text-muted')
+    } else {
+      $('.summary.vs-' + i)[0].classList.remove('text-muted')
+    }
+  }
+
+  if(row1.vslength === 0) {
+    var segments = $('.segment')
+    var summaries = $('.summary')
+
+    // same length
+    for(var i=0; i<segments.length; i++) {
+      segments[i].style.width = '0'
+      summaries[i].classList.add('text-muted')
+    }
+
+    $('.segment.vs-1')[0].style.width = '100%'
+
+  } else if(row1.vs[1] === 0 && row1.vs[2] === 0) {
+    $('.stat')[0].classList.add('banseong')
+
+  } else {
+    $('.stat')[0].classList.remove('banseong')
+  }
+}
+
 window.addEventListener('load', function() {
 
-  $('#stat_level').addEventListener('change', statSwitch)
-  $('#stat_level').addEventListener('onkeyup', statSwitch)
-
+  if(!window.statdata2) {
+    $('#stat_level').addEventListener('change', statSwitch)
+    $('#stat_level').addEventListener('onkeyup', statSwitch)
+  } else {
+    $('#vs_level').addEventListener('change', vsSwitch)
+    $('#vs_level').addEventListener('onkeyup', vsSwitch)
+  }
 })

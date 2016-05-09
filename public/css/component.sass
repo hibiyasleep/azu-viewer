@@ -46,12 +46,17 @@
   //margin-top: -0.0625em
   //margin-left: -0.0625em
 
-  .top
-    width: calc(100% - #{$column-height + $column-sidebar-width})
-    height: $column-top-height
+  .top, .bottom
+    width: calc(100% - #{$column-height})
 
     float: left
     overflow: hidden
+
+  .side ~ .top, .side ~ .bottom
+    width: calc(100% - #{$column-height + $column-sidebar-width})
+
+  .top
+    height: $column-top-height
 
     border-bottom: 0.08em solid $card-border-color
 
@@ -91,11 +96,8 @@
       margin-top: 0
 
   .bottom
-    width: calc(100% - #{$column-height + $column-sidebar-width})
     height: $column-bottom-height
 
-    float: left
-    overflow: hidden
 
     > *
       line-height: 1.75em
@@ -116,6 +118,27 @@
 
     .rank
       border: $lamp-border-style transparent
+
+    .diff
+
+      &.win
+        color: #2196F3
+
+      &.draw
+        color: #90A4AE
+
+      &.lose
+        color: #FF5722
+
+    .pull-right
+
+
+
+      .clear
+        margin-left: 0em
+        margin-right: -0.5em
+        padding-left: 0.5em
+        padding-right: 0.75em
 
   .side
     width: $column-sidebar-width
