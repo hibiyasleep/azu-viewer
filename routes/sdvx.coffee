@@ -110,6 +110,10 @@ module.exports = (app) ->
     if name1 is '�' then name1 = ''
     if name2 is '�' then name2 = ''
 
+    if name1 is name2
+      res.redirect '../../'
+      return
+
     azuinfo.get config.sdvx.json, name1, (e, d1) ->
 
       if e
@@ -137,7 +141,6 @@ module.exports = (app) ->
 
         stat = Array.apply null, new Array 17
                     .map () ->
-          totalcount: 0
           count: 0
           total: 0
           vs: [0, 0, 0, 0]
@@ -145,7 +148,6 @@ module.exports = (app) ->
 
         stat2 = Array.apply null, new Array 17
                     .map () ->
-          totalcount: 0
           count: 0
           total: 0
 
@@ -161,10 +163,6 @@ module.exports = (app) ->
             isGravity: not not cdb.grv
 
           for fumen in ['nov', 'adv', 'exh', 'inf']
-
-            stat[0].totalcount += 1
-            if cdb[fumen]
-              stat[cdb[fumen]].totalcount += 1
 
             if song1 and song1[fumen].cnt?.play or song2 and song2[fumen].cnt?.play
               cf1 = song1?[fumen] or { score: 0 }

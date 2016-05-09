@@ -1,2 +1,25 @@
 .btn
-  margin: 0.5em
+  padding: 0.25em 0.5em
+
+  border-radius: 0.1em
+  box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.25)
+
+  background-color: white
+  transition: background-color 200ms ease
+
+  &:hover
+    background-color: #f4f4f4
+
+  &:active
+    color: inherit !important
+    background-color: #eee
+
+input
+  border: none
+  border-bottom: 0.125em solid #607D8B // blue grey 500
+  transition: border-bottom-color 200ms ease
+
+  background: none
+
+  &:active
+    border-bottom: 0.125em solid #009688 // teal 500

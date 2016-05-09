@@ -16,6 +16,14 @@ header
   margin: 0 auto
   padding-top: $header-padding-top
 
+  &.text-only
+    height: $header-padding-top * 2
+    color: white
+
+    h1
+      margin-left: 0.5em
+      font-weight: lighter
+
   .profile, .stat
     @extend %card
 

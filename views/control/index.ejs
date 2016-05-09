@@ -15,23 +15,23 @@ var fdate = function(ts) {
       return m.calendar()
   } else return '-'
 }
-var fddate = function(from, to, processing, complete) {
-  if(!to) {
+var fddate = function(from, to, waiting, processing, complete) {
+  if(!from) {
+    return waiting
+  } else if(!to) {
     return processing
   } else {
-    var diff = moment(moment(to * 1000) - moment(from * 1000))
-    return diff.format('')
+    return complete
   }
 }
 %>
-<header>
+<header class="text-only">
   <h1> 제어판 </h1>
 </header>
-<main>
+<main class="control">
   <div class="content">
     <h2> 기록 </h2>
     <p> 최근 5개의 기록만 보여집니다. </p>
-    <p> 상태 0: 시작 안 함, 1: 진행 중, 2: 완료. </p>
     <ol>
       <% var c = (refresh.length > 5)? 5 : refresh.length %>
       <% for(var i=0; i<c; i++) { %>
@@ -39,14 +39,37 @@ var fddate = function(from, to, processing, complete) {
         <% console.log(r) %>
         <li value="<%= r.id %>">
           <b><%= fdate(r.request) %></b>에 요청,
-          <b><%= fdate(r.start) %></b>부터
-          <b><%= fddate(r.start, r.end, '진행 중', '소요') %></b>
-          기종 <%= r.device %>,
-          오류 <%= r.error %>,
-          상태 <%= r.status %>
+          갱신
+          <b><%= ['대기 중', '진행 중', '완료'][r.status || 0] %></b>.
+          <span class="text-muted">
+            기종 <%= r.device %>,
+            오류 <%= r.error || '없음' %>
+          </span>
         </li>
       <% } %>
     </ol>
+    <h2> 기록 보기 </h2>
+    <ol style="list-style: disc">
+      <li>
+        구 아즈인포:
+        <a href="http://sdvx.azu.kr/<%= user.nickname %>"> http://sdvx.azu.kr/<%= user.nickname %> </a>
+      </li>
+      <li>
+        구 히비야 뷰어:
+        <a href="http://hibiya.azu.kr/<%= user.nickname %>"> http://hibiya.azu.kr/<%= user.nickname %> </a>
+      </li>
+      <li>
+        신 아즈인포:
+        <a href="http://test.azu.kr/<%= user.nickname %>"> http://test.azu.kr/<%= user.nickname %> </a>
+      </li>
+    </ol>
+    <h2> 기록 비교 </h2>
+    <p>
+      <input type="text" id="vs1" value="<%= user.nickname %>" />
+      vs
+      <input type="text" id="vs2" />
+      <button class="btn btn-primary" onclick="location.href='http://test.azu.kr/'+vs1.value+'/vs/'+vs2.value"> 이동 </button>
+    </p>
     <h2> 갱신 </h2>
     <p>
       <label for="card"> 카드 번호 </label>
@@ -61,12 +84,12 @@ var fddate = function(from, to, processing, complete) {
     </p>
     <p>
       <label> 기종 </label>
-      <input type="checkbox" id="device_1" class="input-devices" value="1" />
+      <input type="checkbox" id="device_1" class="input-devices" value="1" checked/>
       <label for="device_1"> 사볼 </label>
-      <input type="checkbox" id="device_2" class="input-devices" value="2" />
-      <label for="device_2"> 팝픈 (현재 조회 불가) </label>
+      <!--input type="checkbox" id="device_2" class="input-devices" value="2" />
+      <label for="device_2"> 팝픈 (현재 조회 불가) </label-->
+      <button id="request" class="btn btn-primary"> 갱신 요청 </button>
     </p>
-    <button id="request" class="btn btn-primary"> 갱신 요청 </button>
     <span id="loading" class="hidden"> 로드 중... </span>
     <span id="error" class="hidden"> </span>
   </div>
