@@ -7,9 +7,10 @@
 </header>
 <main>
   <div class="content">
+    <p> 2-16자 사이의 영문 대소문자, 숫자를 사용할 수 있습니다.</p>
     <form action="./nickname" method="post">
       <input type="text" name="nickname" pattern="^[0-9a-zA-Z_]{2,16}$" maxlength="16" placeholder="새 닉네임" />
-      <input type="submit" value="확인" />
+      <input type="submit" class="btn btn-primary" value="확인" />
     </form>
   </div>
 </main>
@@ -18,8 +19,6 @@
         error: error
       }) %>
 <% } %>
-<%- include('../partial/nav', {
-  left: true,
-  right: false
-}) %>
+<%- include('../partial/nav') %>
+<%- include('../partial/aside/control') %>
 <%- include('../partial/footer') %>
