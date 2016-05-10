@@ -137,7 +137,11 @@ module.exports = (app) ->
         d2 = d2.data
 
         songs = {}
-        ids = [].concat Object.keys(d1.song), Object.keys(d2.song)
+
+        id1 = Object.keys d1.song
+        id2 = Object.keys d2.song
+
+        ids = Array.from new Set [].concat id1, id2
 
         stat = Array.apply null, new Array 17
                     .map () ->
@@ -183,20 +187,20 @@ module.exports = (app) ->
               level = cdb[fumen]
 
               # stat
-              if typeof cf1.score is 'number'
+              if cf1.cnt?.play > 0
                 stat[0].count += 1
                 stat[level].count += 1
 
-                stat[0].total += cf1.score or 0
-                stat[level].total += cf1.score or 0
+                stat[0].total += cf1.score
+                stat[level].total += cf1.score
 
               # stat2
-              if typeof cf2.score is 'number'
+              if cf2.cnt?.play > 0
                 stat2[0].count += 1
                 stat2[level].count += 1
 
-                stat2[0].total += cf2.score or 0
-                stat2[level].total += cf2.score or 0
+                stat2[0].total += cf2.score
+                stat2[level].total += cf2.score
 
               # vs
               stat[0].vs[1 + compare cf1.score or 0, cf2.score or 0] += 1

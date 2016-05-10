@@ -24,7 +24,7 @@ header
       margin-left: 0.5em
       font-weight: lighter
 
-  .profile, .stat
+  .profile, &> .stat
     @extend %card
 
     display: inline-block
@@ -106,7 +106,7 @@ header
 
     &.vs
       width: calc(100% - #{$header-left-width * 2 + 2em})
-      min-width: 6em
+      min-width: $header-vs-min-width
 
       .body ul
         margin-top: -0.75em

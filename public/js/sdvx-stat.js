@@ -81,7 +81,7 @@ window.vsSwitch = function(v) {
     segment.style.width = (row1.vs[i] / row1.vslength * 100) + '%'
     animateNumber(segment, row1.vs[i], timeout)
 
-    animateNumber('#p_vs' + i     , row1.vs[i] / row1.vslength * 100, timeout, true)
+    animateNumber('#p_vs' + i     , row1.vs[i] / row1.count * 100, timeout, true)
     animateNumber('.value.vs-' + i, row1.vs[i]                      , timeout)
 
     if(row1.vs[i] == 0) {

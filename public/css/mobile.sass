@@ -12,7 +12,22 @@
       width: 100%
       min-width: 100%
 
+    .profile ~ .profile
+      margin-right: 0
+
+@media (max-width: #{$header-left-width * 2 + $header-vs-min-width + 2em})
+
+  header.vs
+    height: calc(#{$header-height * 2 + $header-padding-top} + 1em)
+
+    .profile
+      width: calc(50% - 0.5em)
+      margin-right: 1em
       margin-bottom: 1em
+
+    &> .stat.stat
+      width: 100%
+      min-width: 100%
 
     .profile ~ .profile
       margin-right: 0
@@ -22,7 +37,7 @@
   header
 
     &.vs
-      height: calc(#{$header-height * 3 + $header-padding-top} + 2em) 
+      height: calc(#{$header-height * 3 + $header-padding-top} + 2em)
 
     .profile
       width: 100%
