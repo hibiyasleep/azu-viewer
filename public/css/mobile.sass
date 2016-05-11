@@ -1,11 +1,12 @@
+// normal
 @media (max-width: #{$header-left-width + $header-right-min-width + 1em})
 
   header
     height: calc(#{$header-height * 2 + $header-padding-top} + 1em)
 
     .profile
-      width: calc(50% - 0.5em)
-      margin-right: 1em
+      width: 100%
+      margin-right: 0
       margin-bottom: 1em
 
     &> .stat.stat
@@ -15,6 +16,7 @@
     .profile ~ .profile
       margin-right: 0
 
+// vs
 @media (max-width: #{$header-left-width * 2 + $header-vs-min-width + 2em})
 
   header.vs
