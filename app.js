@@ -165,14 +165,7 @@ app.get('/:nickname', function(req, res){
       cdn: j.data.api.cdn,
       body: body,
       name: name,
-      basic: {
-        skill_name: j.data.user.skill_name,
-        skill_no: j.data.user.skill_no,
-        name: j.data.user.name,
-        play: j.data.user.play,
-        packet: j.data.user.packet,
-        block: j.data.user.block
-      },
+      basic: j.data.user,
       overview: overview,
       fn: fnSet
     }))
