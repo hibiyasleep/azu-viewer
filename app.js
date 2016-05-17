@@ -3,14 +3,16 @@ doT = require('dot').process({
 })
 // doT template
 index = require('./views/index')
+
 request = require('request')
 express = require('express')
 serveStatic = require('serve-static')
+
 fs = require('fs')
 app = express()
 
 config = require('./package.json').config
-illust = require('./json/illust.json')
+
 fnSet = { // Functions for in-template use
   score: function(n){
     if(!n)
@@ -29,6 +31,7 @@ fnSet = { // Functions for in-template use
       return ('00' + n.toFixed(6)).substr(-10)
   }
 }
+
 app.use(serveStatic('./public'))
 app.use(function(err, res, req, next){
   res.sendFile(__dirname + '/public/error.html')
@@ -44,116 +47,136 @@ app.get('/:nickname', function(req, res){
   if(name === '�'){
     name = ''
   }
-  request('http://sdvx.azu.kr/json/' + name + '.json', function(e, d){
-    if(e || d.statusCode !== 200 && d.statusCode !== 404){
+  request('http://api.kano.kr/playdata/sdvx/' + name + '.json', function(e, d){
+    if(e){
       res.sendFile(__dirname + '/public/error.html')
-      res.end()
-      return
-    } else if(d.statusCode === 404){
-      res.sendFile(__dirname + '/public/404.html')
       return
     }
-    request('http://sdvx.azu.kr/basic_json/' + name + '.json', function(e, d_basic){
-      if(e || d.statusCode !== 200 && d.statusCode !== 404){
-        res.sendFile(__dirname + '/public/error.html')
-        res.end()
-        return
+    try {
+      var j = JSON.parse(d.body)
+    } catch(e) {
+      res.sendFile(__dirname + '/public/error.html')
+      return
+    }
+
+    if(j.resCode && j.resCode == -6){
+      res.sendFile(__dirname + '/public/404.html')
+      return
+    } else if(j.resCode && j.resCode != 0) {
+      res.sendFile(__dirname + '/public/error.html')
+      return
+    }
+
+    var overview = Array.apply(null, new Array(16)).map(function(){
+      return {
+        'count': 0,
+        'leveltotal': 0,
+        'lamp': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] // AAA AA A B C D c C C U P
       }
-      try {
-        var j = JSON.parse(d.body)
-        var j_basic = JSON.parse(d_basic.body)
-      } catch(e) {
-        res.sendFile(__dirname + '/public/error.html')
-        return
+    })
+
+    var body = []
+    var db = j.data.db
+
+    for(var i in j.data.song) {
+      var o = j.data.song[i]
+      var r = {
+        d: [{
+          level: db[i].nov,
+          illust: db[i].albumart_nov,
+          cnt: {}
+        }, {
+          level: db[i].adv,
+          illust: db[i].albumart_adv,
+          cnt: {}
+        }, {
+          level: db[i].exh,
+          illust: db[i].albumart_exh,
+          cnt: {}
+        }, (db[i].grv || db[i].inf) && {
+          level: db[i].inf,
+          illust: db[i].albumart_inf,
+          cnt: {}
+        } || undefined ],
+        title: db[i].title,
+        artist: db[i].artist,
+      }
+      // song data
+      // NOV
+      if(Object.keys(o.nov).length && o.nov.cnt.play){
+        var levelindex = db[i].nov - 1
+        overview[levelindex].count += 1
+        overview[levelindex].leveltotal += o.nov.score || 0
+        overview[levelindex].lamp[5 - o.nov.rank] += 1
+        overview[levelindex].lamp[6 + o.nov.clear] += 1
+        r.d[0].cnt = o.nov.cnt
+        r.d[0].score = o.nov.score
+        r.d[0].cleartype = o.nov.clear
+        r.d[0].rank = o.nov.rank
+      }
+      // ADV
+      if(Object.keys(o.adv).length && o.adv.cnt.play){
+        var levelindex = db[i].adv - 1
+        overview[levelindex].count += 1
+        overview[levelindex].leveltotal += o.adv.score || 0
+        overview[levelindex].lamp[5 - o.adv.rank] += 1
+        overview[levelindex].lamp[6 + o.adv.clear] += 1
+        r.d[1].cnt = o.adv.cnt
+        r.d[1].score = o.adv.score
+        r.d[1].cleartype = o.adv.clear
+        r.d[1].rank = o.adv.rank
+      }
+      // EXH
+      if(Object.keys(o.exh).length && o.exh.cnt.play){
+        var levelindex = db[i].exh - 1
+        overview[levelindex].count += 1
+        overview[levelindex].leveltotal += o.exh.score || 0
+        overview[levelindex].lamp[5 - o.exh.rank] += 1
+        overview[levelindex].lamp[6 + o.exh.clear] += 1
+        r.d[2].cnt = o.exh.cnt
+        r.d[2].score = o.exh.score
+        r.d[2].cleartype = o.exh.clear
+        r.d[2].rank = o.exh.rank
+      }
+      // INF, o.inf.cnt)
+      if(db[i].inf && Object.keys(o.inf).length && o.inf.cnt.play){
+        var levelindex = db[i].inf - 1
+        overview[levelindex].count += 1
+        overview[levelindex].leveltotal += o.inf.score || 0
+        overview[levelindex].lamp[5 - o.inf.rank] += 1
+        overview[levelindex].lamp[6 + o.inf.clear] += 1
+        r.d[3].cnt = o.inf.cnt
+
+        r.d[3].score = o.inf.score
+        r.d[3].cleartype = o.inf.clear
+        r.d[3].rank = o.inf.rank
       }
 
-      var overview = Array.apply(null, new Array(16)).map(function(){
-        return {
-          'count': 0,
-          'leveltotal': 0,
-          'lamp': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] // AAA AA A B C D c C C U P
-        }
-      })
-      res.send(index({
-        body: j.map(function(o){
-          var r = {
-            d: [{}, {}, {}],
-            title: o.song.name,
-            artist: o.song.artist,
-          }
-          // song data
-          // NOV
-          if(o.nov_basic.play){
-            overview[o.nov_detail.level-1].count += 1
-            overview[o.nov_detail.level-1].leveltotal += parseInt(o.nov_detail.score)
-            overview[o.nov_detail.level-1].lamp[5 - o.nov_basic.rank] += 1
-            overview[o.nov_detail.level-1].lamp[6 + o.nov_basic.clear] += 1
-            r.d[0] = o.nov_detail
-            r.d[0].cleartype = o.nov_basic.clear
-            r.d[0].rank = o.nov_basic.rank
-          }
-          // ADV
-          if(o.adv_basic.play){
-            overview[o.adv_detail.level-1].count += 1
-            overview[o.adv_detail.level-1].leveltotal += parseInt(o.adv_detail.score)
-            overview[o.adv_detail.level-1].lamp[5 - o.adv_basic.rank] += 1
-            overview[o.adv_detail.level-1].lamp[6 + o.adv_basic.clear] += 1
-            r.d[1] = o.adv_detail
-            r.d[1].cleartype = o.adv_basic.clear
-            r.d[1].rank = o.adv_basic.rank
-          }
-          // EXH
-          if(o.exh_basic.play){
-            overview[o.exh_detail.level-1].count += 1
-            overview[o.exh_detail.level-1].leveltotal += parseInt(o.exh_detail.score)
-            overview[o.exh_detail.level-1].lamp[5 - o.exh_basic.rank] += 1
-            overview[o.exh_detail.level-1].lamp[6 + o.exh_basic.clear] += 1
-            r.d[2] = o.exh_detail
-            r.d[2].cleartype = o.exh_basic.clear
-            r.d[2].rank = o.exh_basic.rank
-          }
-          // INF
-          if(o.inf_basic && o.inf_basic.play){
-            overview[o.inf_detail.level-1].count += 1
-            overview[o.inf_detail.level-1].leveltotal += parseInt(o.inf_detail.score)
-            overview[o.inf_detail.level-1].lamp[5 - o.inf_basic.rank] += 1
-            overview[o.inf_detail.level-1].lamp[6 + o.inf_basic.clear] += 1
-            r.last = 'inf'
-            r.d[3] = o.inf_detail
-            r.d[3].cleartype = o.inf_basic.clear
-            r.d[3].rank = o.inf_basic.rank
-          // GRV (oh mom please)
-          } else if(o.grv_basic && o.grv_basic.play){
-            overview[o.grv_detail.level-1].count += 1
-            overview[o.grv_detail.level-1].leveltotal += parseInt(o.grv_detail.score)
-            overview[o.grv_detail.level-1].lamp[5 - o.grv_basic.rank] += 1
-            overview[o.grv_detail.level-1].lamp[6 + o.grv_basic.clear] += 1
-            r.last = 'grv'
-            r.d[3] = o.grv_detail
-            r.d[3].cleartype = o.grv_basic.clear
-            r.d[3].rank = o.grv_basic.rank
-          }
-          if(r.title in illust){
-            r.d[0].illust = illust[r.title][0]
-            r.d[1].illust = illust[r.title][1]
-            r.d[2].illust = illust[r.title][2]
-            if(!r.d[3] && illust[r.title].length == 4){
-              r.d[3] = {}
-              r.last = 'inf'
-            }
-            if(r.d[3]){
-              r.d[3].illust = illust[r.title][3] || undefined
-            }
-          }
-          return r
-        }),
-        name: name,
-        basic: j_basic,
-        overview: overview,
-        fn: fnSet
-      }))
-      res.end()
-    })
+      if(db[i].grv) {
+        r.last = 'grv'
+      } else if(db[i].inf) {
+        r.last = 'inf'
+      }
+
+      body.push(r)
+    }
+
+    res.send(index({
+      cdn: j.data.api.cdn,
+      body: body,
+      name: name,
+      basic: {
+        skill_name: j.data.user.skill_name,
+        skill_no: j.data.user.skill_no,
+        name: j.data.user.name,
+        play: j.data.user.play,
+        packet: j.data.user.packet,
+        block: j.data.user.block
+      },
+      overview: overview,
+      fn: fnSet
+    }))
+    res.end()
   })
 })
 
