@@ -69,9 +69,9 @@ var statdata2 = <%- JSON.stringify(stat2) %>
      --><span class="label"> 블럭 </span>
       </li>
     </ul>
-  </div> <!-- /profile -->
+  </div> <!-- /profile
   <% if(!vs) { %>
-    <div class="stat">
+  --><div class="stat">
       <div class="header">
         <span>
           <b>필터</b>:
@@ -141,7 +141,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
       </div> <!-- /body -->
     </div> <!-- /stat -->
   <% } else { %>
-    <div class="profile">
+ --><div class="profile">
       <div class="class" data-skill-level="<%= meta2.skill_no %>">
         <span>
           Class Lv. <%= meta2.skill_no == 12? '∞' : meta2.skill_no %>
@@ -168,8 +168,8 @@ var statdata2 = <%- JSON.stringify(stat2) %>
        --><span class="label"> 블럭 </span>
         </li>
       </ul>
-    </div> <!-- /profile -->
-    <div class="stat vs">
+    </div> <!-- /profile
+ --><div class="stat vs">
       <div class="header">
         <span>
           <b>필터</b>:
