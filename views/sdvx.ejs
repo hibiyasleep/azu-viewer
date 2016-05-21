@@ -12,7 +12,21 @@
       class: ['play', 'clear', 'uc', 'puc']
     }
   }
-  function zfill_p(f) {
+  zfill_score = function zfill_score(f) {
+    var val = parseInt(f)
+    var full = ('00000000' + val).slice(-8)
+
+    if(val === 0) {
+      return '<span class="score-leading-zero">0</span>'
+    } else if(val < 10000) {
+      return full.replace(/^0000(0{0,4})(\d{0,4})$/,
+            '<span class="score-leading-zero"><span class="score-first">0000</span>$1</span>$2')
+    } else {
+      return full.replace(/^(0{0,4})(\d{0,4})(\d{4})$/,
+            '<span class="score-first"><span class="score-leading-zero">$1</span>$2</span>$3')
+    }
+  }
+  zfill_p = function zfill_p(f) {
     return ('00' + (f * 100).toFixed(6)).slice(-10)
   }
   var total = [0, 0, 0, 0]
@@ -35,6 +49,8 @@
   ]
 }) %>
 <script>
+
+var zfill_score = <%- zfill_score.toString() %>
 
 var statdata = <%- JSON.stringify(stat) %>
 <% if(vs) { %>
@@ -243,6 +259,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
 </header>
 <main>
   <ul class="list-song list">
+    <% var fumenCount = 0; %>
     <% for(var song in songs) { %>
       <% var song = songs[song]; %>
       <% for(var f in name.fumen) { %>
@@ -250,6 +267,8 @@ var statdata2 = <%- JSON.stringify(stat2) %>
         <% var fumen = song[current]; %>
 
         <% if(fumen === undefined || fumen.score === undefined) continue; %>
+
+        <% fumenCount += 1 ;%>
 
         <li class="song <%= (song.isGravity && current == 'inf')? 'grv' : current %>"
             data-clear="<%= fumen.clear %>"
@@ -299,7 +318,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
                 <span class="unskew"> <%= name.rank[fumen.rank] %> </span>
               </span>
               <span class="score">
-                <%= fumen.score %>
+                <%- zfill_score(fumen.score) %>
               </span>
               <% if(vs && fumen.score && fumen.score2) { %>
                 <% var gap = (fumen.score || 0) - (fumen.score2 || 0); %>
@@ -470,6 +489,10 @@ var statdata2 = <%- JSON.stringify(stat2) %>
    --><span class="label">
         지우기
       </span>
+    </li>
+    <li class="menu-title">
+      <span id="list_total"><%= fumenCount %></span>개 중
+      <span id="list_display"><%= fumenCount >= 500? 500 : fumenCount %></span>개 표시됨.
     </li>
     <% if(vs) { %>
       <li class="menu-title">

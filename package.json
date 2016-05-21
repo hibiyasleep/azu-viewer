@@ -1,6 +1,6 @@
 {
   "name": "azu-viewer",
-  "version": "2.0.0-pre0",
+  "version": "2.0.0",
   "private": true,
   "author": "kuriyama hibiya <kuriyama@hibiya.moe>",
   "dependencies": {
