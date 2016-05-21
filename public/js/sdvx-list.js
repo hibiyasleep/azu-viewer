@@ -18,8 +18,13 @@ window.addEventListener('load', function() {
         'clearrate'
       ] }
     ],
-    page: 5000
+    indexAsync: true,
+    page: 500
   })
+
+  var updateDisplayCount = function() {
+    $('#list_display').textContent = l.visibleItems.length
+  }
 
   var filterLevel = function() {
     var val = typeof v === 'number'? v : parseInt(this.value)
@@ -29,19 +34,25 @@ window.addEventListener('load', function() {
     } else {
       l.filter(function(item) { return parseInt(item.values()['list-level']) == val })
     }
+
+    updateDisplayCount()
   }
+
+
 
   window.filterBorder = function(score, rank) {
     l.filter(function(item) {
       var v = item.values()
       return parseInt(v['score']) >= score && parseInt(v['rank']) == rank
     })
+    updateDisplayCount()
   }
 
   window.filterBoth = function() {
     l.filter(function(item) {
       return item.values().both == 'true'
     })
+    updateDisplayCount()
   }
 
   window.clearFilter = function() {
@@ -54,11 +65,14 @@ window.addEventListener('load', function() {
     } else {
       vsSwitch(0)
     }
+    updateDisplayCount()
   }
 
   l.sort('diff', { order: 'desc' })
 
-  $('.filter-level')[0].addEventListener('change', filterLevel)
-  $('.filter-level')[0].addEventListener('onkeyup', filterLevel)
+  $('.filter-level', 0).addEventListener('change', filterLevel)
+  $('.filter-level', 0).addEventListener('onkeyup', filterLevel)
+
+
 
 })

@@ -259,7 +259,6 @@ var statdata2 = <%- JSON.stringify(stat2) %>
 </header>
 <main>
   <ul class="list-song list">
-    <% var fumenCount = 0; %>
     <% for(var song in songs) { %>
       <% var song = songs[song]; %>
       <% for(var f in name.fumen) { %>
@@ -267,8 +266,6 @@ var statdata2 = <%- JSON.stringify(stat2) %>
         <% var fumen = song[current]; %>
 
         <% if(fumen === undefined || fumen.score === undefined) continue; %>
-
-        <% fumenCount += 1 ;%>
 
         <li class="song <%= (song.isGravity && current == 'inf')? 'grv' : current %>"
             data-clear="<%= fumen.clear %>"
@@ -491,8 +488,8 @@ var statdata2 = <%- JSON.stringify(stat2) %>
       </span>
     </li>
     <li class="menu-title">
-      <span id="list_total"><%= fumenCount %></span>개 중
-      <span id="list_display"><%= fumenCount >= 500? 500 : fumenCount %></span>개 표시됨.
+      <span id="list_total"><%= stat[0].count %></span>개 중
+      <span id="list_display"><%= stat[0].count >= 500? 500 : stat[0].count %></span>개 표시됨.
     </li>
     <% if(vs) { %>
       <li class="menu-title">

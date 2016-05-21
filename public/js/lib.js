@@ -1,9 +1,14 @@
 'use strict'
 
-var $ = function $(selector) {
+var $ = function $(selector, index) {
   'This is not jQuery, just shortcut for `document.querySelectorAll`.'
   if(/^#[0-9a-z_\-]+?$/.test(selector))
     return document.getElementById(selector.slice(1))
+  else if(index != undefined)
+    if(index == 0)
+      return document.querySelector(selector)
+    else
+      return document.querySelectorAll(selector)[index]
   else
     return document.querySelectorAll(selector)
 }

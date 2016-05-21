@@ -4,7 +4,7 @@ window.statSwitch = function statSwitch(v) {
 
   var timeout = 300
 
-  var val = typeof v === 'number'? v : this.value
+  var val = typeof v === 'number'? v : parseInt(this.value)
 
   var row = statdata[val]
   var segment
@@ -14,7 +14,7 @@ window.statSwitch = function statSwitch(v) {
   animateNumber('#v_average',     ~~(row.total / row.count) , timeout)
 
   for(var i=0; i<=6; i++) {
-    segment = $('.segment.rank-' + i)[0]
+    segment = $('.segment.rank-' + i, 0)
 
     segment.style.width = (row.rank[i] / row.count * 100) + '%'
     animateNumber(segment, row.rank[i], timeout)
@@ -23,14 +23,14 @@ window.statSwitch = function statSwitch(v) {
     animateNumber('.value.rank-' + i, row.rank[i]                   , timeout)
 
     if(row.rank[i] == 0) {
-      $('.summary.rank-' + i)[0].classList.add('text-muted')
+      $('.summary.rank-' + i, 0).classList.add('text-muted')
     } else {
-      $('.summary.rank-' + i)[0].classList.remove('text-muted')
+      $('.summary.rank-' + i, 0).classList.remove('text-muted')
     }
   }
 
   for(var i=0; i<=4; i++) {
-    segment = $('.segment.clear-' + i)[0]
+    segment = $('.segment.clear-' + i, 0)
 
     segment.style.width = (row.clear[i] / row.count * 100) + '%'
     animateNumber(segment, row.clear[i], timeout)
@@ -49,14 +49,14 @@ window.statSwitch = function statSwitch(v) {
       summaries[i].classList.add('text-muted')
     }
 
-    $('.segment.clear-0')[0].style.width = '100%'
-    $('.segment.rank-0')[0].style.width = '100%'
+    $('.segment.clear-0', 0).style.width = '100%'
+    $('.segment.rank-0', 0).style.width = '100%'
 
   } else if(row.count === row.clear[4] && val >= 12) {
-    $('.stat')[0].classList.add('banseong')
+    $('div.stat', 0).classList.add('banseong')
 
   } else {
-    $('.stat')[0].classList.remove('banseong')
+    $('.stat', 0).classList.remove('banseong')
   }
 
 }
@@ -75,7 +75,7 @@ window.vsSwitch = function(v) {
   animateNumber('#v2_average', ~~(row2.total / row2.count) , timeout)
 
   for(var i=0; i<=2; i++) {
-    segment = $('.segment.vs-' + i)[0]
+    segment = $('.segment.vs-' + i, 0)
 
 
     segment.style.width = (row1.vs[i] / row1.vslength * 100) + '%'
@@ -85,9 +85,9 @@ window.vsSwitch = function(v) {
     animateNumber('.value.vs-' + i, row1.vs[i]                      , timeout)
 
     if(row1.vs[i] == 0) {
-      $('.summary.vs-' + i)[0].classList.add('text-muted')
+      $('.summary.vs-' + i, 0).classList.add('text-muted')
     } else {
-      $('.summary.vs-' + i)[0].classList.remove('text-muted')
+      $('.summary.vs-' + i, 0).classList.remove('text-muted')
     }
   }
 
@@ -101,13 +101,13 @@ window.vsSwitch = function(v) {
       summaries[i].classList.add('text-muted')
     }
 
-    $('.segment.vs-1')[0].style.width = '100%'
+    $('.segment.vs-1', 0).style.width = '100%'
 
   } else if(row1.vs[1] === 0 && row1.vs[2] === 0) {
-    $('.stat')[0].classList.add('banseong')
+    $('.stat', 0).classList.add('banseong')
 
   } else {
-    $('.stat')[0].classList.remove('banseong')
+    $('.stat', 0).classList.remove('banseong')
   }
 }
 
