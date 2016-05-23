@@ -5,7 +5,7 @@
   ]
 }) %>
 <%
-var fdate = function(ts) {
+var fdate = function fdate(ts) {
   if(ts) {
     var m = moment(ts * 1000)
     var c = moment().subtract(2, 'hours')
@@ -15,7 +15,7 @@ var fdate = function(ts) {
       return m.calendar()
   } else return '-'
 }
-var fddate = function(from, to, waiting, processing, complete) {
+var fddate = function fddate(from, to, waiting, processing, complete) {
   if(!from) {
     return waiting
   } else if(!to) {
@@ -24,6 +24,24 @@ var fddate = function(from, to, waiting, processing, complete) {
     return complete
   }
 }
+var devices = function devices(n) {
+  n = n || 0
+  var r = [];
+  (n & 1) && r.push('사볼');
+  (n & 2) && r.push('팝픈');
+  (n & 4) && r.push('리플렉');
+  (n & 8) && r.push('너뭐냐');
+  return r.join(' + ') || '없음'
+}
+var errors = [
+  '오류 없음',
+  '카드 분리 실패 (유저)',
+  '카드 등록 실패 (아즈인포)',
+  '카드 분리 실패 (아즈인포)',
+  '카드 등록 실패 (유저)',
+  '카드 등록 실패 (유저)',
+  '갱신 취소됨'
+];
 %>
 <header class="text-only">
   <h1> 제어판 </h1>
@@ -32,7 +50,7 @@ var fddate = function(from, to, waiting, processing, complete) {
   <div class="content">
     <h2> 기록 </h2>
     <p> 최근 5개의 기록만 보여집니다. </p>
-    <ol>
+    <ol class="list">
       <% var c = (refresh.length > 5)? 5 : refresh.length %>
       <% for(var i=0; i<c; i++) { %>
         <% var r = refresh[i] %>
@@ -41,34 +59,51 @@ var fddate = function(from, to, waiting, processing, complete) {
           갱신
           <b><%= ['대기 중', '진행 중', '완료'][r.status || 0] %></b>.
           <span class="text-muted">
-            기종 <%= r.device %>,
-            오류 <%= r.error || '없음' %>
+            <%= devices(r.device) %> |
+            <%= errors[r.error] || r.error && '알 수 없는 오류 (' + r.error + ')' || '오류 없음' %>
           </span>
         </li>
       <% } %>
     </ol>
     <h2> 기록 보기 </h2>
-    <ol style="list-style: disc">
+    <ul class="list">
       <li>
-        구 아즈인포:
-        <a href="http://sdvx.azu.kr/<%= user.nickname %>"> http://sdvx.azu.kr/<%= user.nickname %> </a>
+        팝픈:
+        <ul class="list">
+          <li>
+            <a href="http://popn.azu.kr/<%= user.nickname %>"> http://popn.azu.kr/<%= user.nickname %> </a>
+          </li>
+          <li class="text-muted" style="text-decoration: strike">
+            신 아즈인포 준비 중
+          </li>
+        </ul>
       </li>
       <li>
-        구 히비야 뷰어:
-        <a href="http://hibiya.azu.kr/<%= user.nickname %>"> http://hibiya.azu.kr/<%= user.nickname %> </a>
+        사볼:
+        <ul class="list">
+          <li class="text-muted">
+            구 히비야 뷰어:
+            <a href="http://hibiya.azu.kr/<%= user.nickname %>"> http://hibiya.azu.kr/<%= user.nickname %> </a>
+          </li>
+          <li class="text-muted">
+            구 아즈인포:
+            <a href="http://sdvx.azu.kr/<%= user.nickname %>"> http://sdvx.azu.kr/<%= user.nickname %> </a>
+          </li>
+          <li>
+            신 아즈인포:
+            <a href="http://test.azu.kr/<%= user.nickname %>"> http://test.azu.kr/<%= user.nickname %> </a>
+          </li>
+          <li>
+            기록 비교하기:
+            <br />
+            <input type="text" id="vs1" value="<%= user.nickname %>" />
+            vs
+            <input type="text" id="vs2" />
+            <button class="btn btn-primary" onclick="location.href='http://test.azu.kr/'+vs1.value+'/vs/'+vs2.value"> 이동 </button>
+          </li>
+        </ul>
       </li>
-      <li>
-        신 아즈인포:
-        <a href="http://test.azu.kr/<%= user.nickname %>"> http://test.azu.kr/<%= user.nickname %> </a>
-      </li>
-    </ol>
-    <h2> 기록 비교 </h2>
-    <p>
-      <input type="text" id="vs1" value="<%= user.nickname %>" />
-      vs
-      <input type="text" id="vs2" />
-      <button class="btn btn-primary" onclick="location.href='http://test.azu.kr/'+vs1.value+'/vs/'+vs2.value"> 이동 </button>
-    </p>
+    </ul>
     <h2> 갱신 </h2>
     <p>
       <label for="card"> 카드 번호 </label>
@@ -85,8 +120,8 @@ var fddate = function(from, to, waiting, processing, complete) {
       <label> 기종 </label>
       <input type="checkbox" id="device_1" class="input-devices" value="1" checked/>
       <label for="device_1"> 사볼 </label>
-      <!--input type="checkbox" id="device_2" class="input-devices" value="2" />
-      <label for="device_2"> 팝픈 (현재 조회 불가) </label-->
+      <input type="checkbox" id="device_2" class="input-devices" value="2" />
+      <label for="device_2"> 팝픈 </label>
       <button id="request" class="btn btn-primary"> 갱신 요청 </button>
     </p>
     <span id="loading" class="hidden"> 로드 중... </span>
