@@ -37,6 +37,12 @@ window.statSwitch = function statSwitch(v) {
 
     animateNumber('#p_clear' + i     , row.clear[i] / row.count * 100, timeout, true)
     animateNumber('.value.clear-' + i, row.clear[i]                  , timeout)
+
+    if(row.clear[i] == 0) {
+      $('.summary.clear-' + i, 0).classList.add('text-muted')
+    } else {
+      $('.summary.clear-' + i, 0).classList.remove('text-muted')
+    }
   }
 
   if(row.count === 0) {
@@ -56,7 +62,7 @@ window.statSwitch = function statSwitch(v) {
     $('div.stat', 0).classList.add('banseong')
 
   } else {
-    $('.stat', 0).classList.remove('banseong')
+    $('div.stat', 0).classList.remove('banseong')
   }
 
 }
