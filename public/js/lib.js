@@ -15,10 +15,7 @@ var $ = function $(selector, index) {
 
 var animateNumber = function animateNumber(element, to, timeout, float) {
   if(typeof element === 'string') {
-    element = $(element)
-    if(element[0]) {
-      element = element[0]
-    }
+    element = $(element, 0)
   }
 
   var from = float? parseFloat(element.textContent) : parseInt(element.textContent)
@@ -42,3 +39,19 @@ var animateNumber = function animateNumber(element, to, timeout, float) {
     set(to)
   }, timeout)
 }
+
+window.addEventListener('load', function() {
+  window.bLazy = new Blazy({
+    selector: '.lazy-load',
+    successClass: 'lazy-loaded',
+    offset: 128
+  })
+
+  var sortButtons = $('.sort, .aside-menu > li[onclick]')
+  for(var i in sortButtons) {
+    var o = sortButtons[i]
+    o.addEventListener && o.addEventListener('click', function() {
+      bLazy.revalidate()
+    })
+  }
+})

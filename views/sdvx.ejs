@@ -45,7 +45,7 @@
     '/js/list-1.2.0.min.js',
     '/js/sdvx-list.js',
     '/js/sdvx-stat.js',
-    '/js/lazyload.min.js'
+    '/js/blazy-1.6.2.min.js'
   ]
 }) %>
 <script>
@@ -277,7 +277,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
               data-diff="<%= (fumen.score || 0) - (fumen.score2 || 0) %>"
               data-both="<%= fumen.score && fumen.score2 && true || false %>"
             <% } %>>
-          <img class="albumart lazy-load"
+          <img class="albumart"
                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                data-src="http://<%= api.cdn + fumen.illust %>" />
           <% if(!vs) { %>

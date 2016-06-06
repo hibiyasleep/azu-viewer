@@ -22,8 +22,9 @@ window.addEventListener('load', function() {
     page: 500
   })
 
-  var updateDisplayCount = function() {
+  var postFilter = function() {
     $('#list_display').textContent = l.visibleItems.length
+    bLazy.revalidate()
   }
 
   var filterLevel = function() {
@@ -35,7 +36,7 @@ window.addEventListener('load', function() {
       l.filter(function(item) { return parseInt(item.values()['list-level']) == val })
     }
 
-    updateDisplayCount()
+    postFilter()
   }
 
 
@@ -45,14 +46,14 @@ window.addEventListener('load', function() {
       var v = item.values()
       return parseInt(v['score']) >= score && parseInt(v['rank']) == rank
     })
-    updateDisplayCount()
+    postFilter()
   }
 
   window.filterBoth = function() {
     l.filter(function(item) {
       return item.values().both == 'true'
     })
-    updateDisplayCount()
+    postFilter()
   }
 
   window.clearFilter = function() {
@@ -65,7 +66,7 @@ window.addEventListener('load', function() {
     } else {
       vsSwitch(0)
     }
-    updateDisplayCount()
+    postFilter()
   }
 
   l.sort('diff', { order: 'desc' })
