@@ -85,7 +85,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
      --><span class="label"> 블럭 </span>
       </li>
     </ul>
-  </div> <!-- /profile
+  </div><!-- /profile
   <% if(!vs) { %>
   --><div class="stat">
       <div class="header">
@@ -184,7 +184,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
        --><span class="label"> 블럭 </span>
         </li>
       </ul>
-    </div> <!-- /profile
+    </div><!-- /profile
  --><div class="stat vs">
       <div class="header">
         <span>
@@ -277,7 +277,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
               data-diff="<%= (fumen.score || 0) - (fumen.score2 || 0) %>"
               data-both="<%= fumen.score && fumen.score2 && true || false %>"
             <% } %>>
-          <img class="albumart"
+          <img class="albumart lazy-load"
                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                data-src="http://<%= api.cdn + fumen.illust %>" />
           <% if(!vs) { %>
