@@ -54,4 +54,9 @@ window.addEventListener('load', function() {
       bLazy.revalidate()
     })
   }
+
+  // temporary fix
+  setInterval(function() {
+    bLazy.revalidate()
+  }, 10 * 1000)
 })

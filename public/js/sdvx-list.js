@@ -19,7 +19,7 @@ window.addEventListener('load', function() {
       ] }
     ],
     indexAsync: true,
-    page: 500
+    page: 300
   })
 
   var postFilter = function() {
