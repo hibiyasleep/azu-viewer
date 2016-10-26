@@ -138,3 +138,17 @@ aside
 
     &:active:active
       background: none
+
+.sort
+
+  &.asc:after, &.desc:after
+    display: inline
+    vertical-align: 0.375em
+    color: rgba(0, 0, 0, 0.5)
+    margin-left: -0.5em
+
+  &.asc:after
+    content: '오름차순'
+
+  &.desc:after
+    content: '내림차순'
