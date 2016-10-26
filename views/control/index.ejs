@@ -5,66 +5,138 @@
   ]
 }) %>
 <%
-var fdate = function fdate(ts) {
+const fdate = function fdate(ts, long) {
   if(ts) {
-    var m = moment(ts * 1000)
-    var c = moment().subtract(2, 'hours')
-    if(m > c)
-      return m.fromNow()
+    let m = moment(ts * 1000)
+    if(long)
+      return m.format('MM/DD HH:mm')
+    if(moment().isSame(m, 'day')) // today
+      return m.format('HH:mm')
     else
-      return m.calendar()
+      return m.format('M월 D일')
   } else return '-'
 }
-var fddate = function fddate(from, to, waiting, processing, complete) {
-  if(!from) {
-    return waiting
-  } else if(!to) {
-    return processing
+const devices = function devices(d, j) {
+  d = d || 0
+  let i = []
+  if(d & 1) i.push('사볼')
+  if(d & 2) i.push('팝픈')
+  if(d & 4) i.push('리플렉')
+  if(d & 8) i.push('??')
+  return i.join(j || ', ') || '없음'
+}
+const classes = function classes(r) {
+  r.device = r.device || 0
+  r.status = r.status || 0
+  let l = []
+  if(r.device & 1)  l.push('sdvx')
+  if(r.device & 2)  l.push('popn')
+  if(r.device & 4)  l.push('rb')
+  if(r.error)       l.push('error')
+  if(r.status == 0) l.push('waiting')
+  if(r.status == 1) l.push('working')
+  if(r.status == 2) l.push('done')
+
+  return l.join(' ') || 'none'
+}
+const phase = function phase(r) {
+  if(r.error) {
+    return [,
+      { phase: 'detach', message: '유저' },
+      { phase: 'attach', message: '아즈인포' },
+      { phase: 'detach', message: '아즈인포' },
+      { phase: 'attach', message: '유저' },
+      { phase: 'attach', message: '유저' },
+      { phase: 'cancel' }
+    ][r.error]
   } else {
-    return complete
+    return [
+      { phase: 'waiting', message: devices(r.device) },
+      { phase: 'working', message: devices(r.device) },
+      { phase: 'done', message: devices(r.device) }
+    ][r.status]
   }
 }
-var devices = function devices(n) {
-  n = n || 0
-  var r = [];
-  (n & 1) && r.push('사볼');
-  (n & 2) && r.push('팝픈');
-  (n & 4) && r.push('리플렉');
-  (n & 8) && r.push('너뭐냐');
-  return r.join(' + ') || '없음'
+
+const strings = {
+  waiting: {
+    t: '대기 중',
+    i: 'M12,3.7c-4.6,0-8.3,3.7-8.3,8.3s3.7,8.3,8.3,8.3c4.6,0,8.3-3.7,8.3-8.3S16.6,3.7,12,3.7z M12,18.7c-3.7,0-6.7-3-6.7-6.7 s3-6.7,6.7-6.7s6.7,3,6.7,6.7S15.7,18.7,12,18.7z M12.4,7.8h-1.2v5l4.4,2.6l0.6-1l-3.7-2.2V7.8z'
+  },
+  working: {
+    t: '진행 중',
+    i: 'M19.5,10.4h-5.7l2.3-2.3c-2.3-2.3-6-2.3-8.2-0.1c-2.3,2.3-2.3,5.9,0,8.2c2.3,2.3,6,2.3,8.2,0 c1.1-1.1,1.7-2.4,1.7-4.1h1.7c0,1.6-0.7,3.8-2.2,5.2c-2.9,2.9-7.7,2.9-10.6,0c-2.9-2.9-2.9-7.6,0-10.5s7.6-2.9,10.5,0l2.3-2.3V10.4 z M12.4,8.7v3.5l2.9,1.7l-0.6,1l-3.6-2.1V8.7H12.4z'
+  },
+  done: {
+    t: '성공',
+    i: 'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'
+  },
+  detach: {
+    t: '분리 실패',
+    i: 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'
+  },
+  attach: {
+    t: '연결 실패',
+    i: 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'
+  },
+  cancel: {
+    t: '취소됨',
+    i: 'M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z'
+  }
 }
-var errors = [
-  '오류 없음',
-  '카드 분리 실패 (유저)',
-  '카드 등록 실패 (아즈인포)',
-  '카드 분리 실패 (아즈인포)',
-  '카드 등록 실패 (유저)',
-  '카드 등록 실패 (유저)',
-  '갱신 취소됨'
-];
-%>
+/* const errors = [
+  000 '오류 없음',
+  001 '카드 분리 실패 (유저)',
+  010 '카드 등록 실패 (아즈인포)',
+  011 '카드 분리 실패 (아즈인포)',
+  100 '카드 등록 실패 (유저)',
+  101 '카드 등록 실패 (유저)',
+  110 '갱신 취소됨'
+] */
+
+;%>
 <header class="text-only">
   <h1> 제어판 </h1>
 </header>
 <main class="control">
   <div class="content">
     <h2> 기록 </h2>
-    <p> 최근 5개의 기록만 보여집니다. </p>
-    <ol class="list">
-      <% var c = (refresh.length > 5)? 5 : refresh.length %>
+    <p> 최근 8개의 기록만 보여집니다. </p>
+    <ul class="tile">
+      <% let c = (refresh.length > 8)? 8 : refresh.length %>
       <% for(var i=0; i<c; i++) { %>
-        <% var r = refresh[i] %>
-        <li value="<%= r.id %>">
-          <b><%= fdate(r.request) %></b>에 요청,
-          갱신
-          <b><%= ['대기 중', '진행 중', '완료'][r.status || 0] %></b>.
-          <span class="text-muted">
-            <%= devices(r.device) %> |
-            <%= errors[r.error] || r.error && '알 수 없는 오류 (' + r.error + ')' || '오류 없음' %>
-          </span>
+        <% let r = refresh[i] %>
+        <% let p = phase(r) %>
+        <% let s = strings[p.phase] %>
+        <li class="<%- classes(r) %>">
+          <div class="status">
+            <svg width="4.5em" height="4.5em" viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="<%- s.i %>" />
+            </svg>
+            <div class="label">
+              <b><%= s.t %></b><br />
+              <%= p.message %>
+            </div>
+          </div>
+          <div class="footer">
+            <span class="top">
+              <span class="id"> #<%= r.id %> </span>
+              <span class="right"> <%= fdate(r.end || r.start || r.request) %> </span>
+            </span>
+            <span class="bottom">
+              <dl>
+                <dd> <%= fdate(r.request, 1) %> </dd>
+                <dt> 요청 </dt>
+                <dd> <%= fdate(r.start, 1) %> </dd>
+                <dt> 시작 </dt>
+                <dd> <%= fdate(r.end, 1) %> </dd>
+                <dt> 완료 </dt>
+              </dl>
+          </div>
         </li>
       <% } %>
-    </ol>
+    </ul>
     <h2> 기록 보기 </h2>
     <ul class="list">
       <li>

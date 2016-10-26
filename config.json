@@ -5,5 +5,8 @@
   "login": "http://localhost:8080/control/login",
   "sdvx": {
     "json": "/playdata/sdvx"
+  },
+  "popn": {
+    "json": "/playdata/popn"
   }
 }
