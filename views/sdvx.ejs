@@ -274,7 +274,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
 
         <% if(fumen === undefined || fumen.score === undefined) continue; %>
 
-        <li class="song <%= (song.isGravity && current == 'inf')? 'grv' : current %>"
+        <li class="song <%= current == 'inf'? song.appendType : current %>"
             data-clear="<%= fumen.clear %>"
             data-score="<%= fumen.score %>"
             <% if(!vs) { %>

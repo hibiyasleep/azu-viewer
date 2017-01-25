@@ -55,7 +55,8 @@ module.exports = (app) ->
         ns =
           title: cdb.title
           artist: cdb.artist
-          isGravity: not not cdb.grv
+          appendType: ['inf', 'grv', 'hvn'][cdb.grv]
+
 
         for fumen in ['nov', 'adv', 'exh', 'inf', 'mxm']
 
@@ -174,7 +175,7 @@ module.exports = (app) ->
           ns =
             title: cdb.title
             artist: cdb.artist
-            isGravity: not not cdb.grv
+            appendType: ['inf', 'grv', 'hvn'][cdb.grv]
 
           for fumen in ['nov', 'adv', 'exh', 'inf']
 
