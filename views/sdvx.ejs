@@ -333,6 +333,10 @@ var statdata2 = <%- JSON.stringify(stat2) %>
                   <span class="diff lose"> <%= gap %> </span>
                 <% } %>
               <% } %>
+            <% } else { %>
+              <span class="clear clear-<%= fumen.clear %>">
+                <span class="unskew"> EMPTY </span>
+              </span>
             <% } %>
             <% if(fumen.score2) { %>
               <span class="pull-right">
@@ -344,6 +348,12 @@ var statdata2 = <%- JSON.stringify(stat2) %>
                 </span><!--
              --><span class="clear clear-<%= fumen.clear2 %>">
                   <span class="unskew"> <%= name.clear[fumen.clear2] %> </span>
+                </span>
+              </span>
+            <% } else { %>
+              <span class="pull-right">
+                <span class="clear clear-<%= fumen.clear %>">
+                  <span class="unskew"> EMPTY </span>
                 </span>
               </span>
             <% } %>
