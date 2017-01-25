@@ -27,80 +27,90 @@ module.exports = (app) ->
             res.render '404'
           else
             res.render 'error', e
+        return
 
-      else
-        d = d.data
+      d = d.data
+      legacy = false
 
-        songs = {}
+      for i of d.song
+        if not d.song[i].mxm
+          legacy = true
+        break
 
-        stat = Array.apply null, new Array 17
-                    .map () ->
-          totalcount: 0
-          count: 0
-          total: 0
-          rank: [0, 0, 0, 0, 0, 0, 0]
-          clear: [0, 0, 0, 0, 0]
+      songs = {}
 
-        for id of d.song
-          cdb = d.db[id]    # current db
-          song = d.song[id]
+      stat = Array.apply null, new Array if legacy then 17 else 21
+                  .map () ->
+        totalcount: 0
+        count: 0
+        total: 0
+        # d=c=b, a=a+, aa, aa+, aaa, aaa+, s
+        rank: [0, 0, 0, 0, 0, 0, 0]
+        clear: [0, 0, 0, 0, 0]
 
-          ns =
-            title: cdb.title
-            artist: cdb.artist
-            isGravity: not not cdb.grv
+      for id of d.song
+        cdb = d.db[id]    # current db
+        song = d.song[id]
 
-          for fumen in ['nov', 'adv', 'exh', 'inf']
+        ns =
+          title: cdb.title
+          artist: cdb.artist
+          isGravity: not not cdb.grv
 
-            stat[0].totalcount += 1
-            if cdb[fumen]
-              stat[cdb[fumen]].totalcount += 1
+        for fumen in ['nov', 'adv', 'exh', 'inf', 'mxm']
 
-            if song[fumen].cnt?.play
-              cf = song[fumen]
+          stat[0].totalcount += 1
+          if cdb[fumen]
+            stat[cdb[fumen]].totalcount += 1
+          if song[fumen]?.cnt?.play
+            cf = song[fumen]
 
-              ns[fumen] =
-                id: id
-                count: [
-                  cf.cnt.play, cf.cnt.clear, cf.cnt.ultimate, cf.cnt.perfect
-                ]
-                level: cdb[fumen]
-                score: cf.score
-                illust: cdb['albumart_' + fumen]
-                clear: cf.clear
-                rank: cf.rank
+            ns[fumen] =
+              id: id
+              count: [
+                cf.cnt.play, cf.cnt.clear, cf.cnt.ultimate, cf.cnt.perfect
+              ]
+              level: cdb[fumen]
+              score: cf.score
+              illust: cdb['albumart_' + fumen]
+              clear: cf.clear
+              rank: cf.rank
 
-              level = cdb[fumen]
+            level = cdb[fumen]
 
-              stat[0].count += 1
-              stat[level].count += 1
+            stat[0].count += 1
+            stat[level].count += 1
 
-              stat[0].total += cf.score
-              stat[level].total += cf.score
+            stat[0].total += cf.score
+            stat[level].total += cf.score
 
-              if cf.score >= 9900000
-                stat[0].rank[6] += 1
-                stat[level].rank[6] += 1
-              else
-                stat[0].rank[cf.rank] += 1
-                stat[level].rank[cf.rank] += 1
-
-              stat[0].clear[cf.clear] += 1
-              stat[level].clear[cf.clear] += 1
-
+            if legacy
+              r = cf.rank
             else
-              ns[fumen] = {}
+              r = cf.rank - 3
+              if r is 0 then r = 1
+              else if r < 0 then r = 0
 
-          songs[id] = ns
+            stat[0].rank[r] += 1
+            stat[level].rank[r] += 1
 
-        d.user.nickname = name
+            stat[0].clear[cf.clear] += 1
+            stat[level].clear[cf.clear] += 1
 
-        res.set 'Etag', d.api.etag
-        res.render 'sdvx',
-          api: d.api,
-          meta: d.user,
-          stat: stat,
-          songs: songs
+          else
+            ns[fumen] = {}
+
+        songs[id] = ns
+
+      d.user.nickname = name
+
+      res.set 'Etag', d.api.etag
+      res.render 'sdvx',
+        api: d.api,
+        meta: d.user,
+        stat: stat,
+        songs: songs,
+        legacy: if legacy then 'legacy' else ''
 
   app.get '/sdvx/:name1/vs/:name2', (req, res) ->
 

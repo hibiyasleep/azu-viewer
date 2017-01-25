@@ -1,8 +1,12 @@
 <%
   name = {
-    fumen: ['nov', 'adv', 'exh', 'inf'],
-    rank: ['D', 'C', 'B', 'A', 'AA', 'AAA', '990'],
-    rank2: ['D', 'C', 'B', 'A', 'AA', 'AAA<99', '99≤'],
+    fumen: ['nov', 'adv', 'exh', 'inf', 'mxm'],
+    rank: (legacy?
+      ['D', 'C', 'B', 'A', '',   'AA', '',    'AAA', '',     'S']
+    : ['D', 'C', 'B', 'A', 'A+', 'AA', 'AA+', 'AAA', 'AAA+', 'S']),
+    rank2: (legacy?
+      ['D', 'C', 'B', 'A', 'AA', 'AAA', 'S']
+    : ['B 이하', 'A/+', 'AA', 'AA+', 'AAA', 'AAA+', 'S']),
     clear: ['FAIL', 'CLR', 'H-CLR', 'UC', 'PUC'],
     vs: ['WIN', 'DRAW', 'LOSE'],
     clear_short: 'FCHUP',
@@ -94,7 +98,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
         </span>
         <select id="stat_level" class="filter-level">
           <option value="0"> 모두 </option>
-          <% for(var i=1; i<=16; i++) { %>
+          <% for(var i=1; i<=(legacy? 16 : 20); i++) { %>
             <option value="<%= i %>"> 레벨 <%= i %> </option>
           <% } %>
         </select>
@@ -112,7 +116,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
             <span id="v_average"> <%= ~~(stat[0].total / stat[0].count) %> </span>
           </span>
         </h2>
-        <div class="statbar">
+        <div class="statbar <%= legacy %>">
           <% for(var i=0; i<=6; i++) { %>
             <div class="segment rank-<%= i %>"
                  style="width: <%= stat[0].rank[i] / stat[0].count * 100 %>%">
@@ -272,7 +276,6 @@ var statdata2 = <%- JSON.stringify(stat2) %>
 
         <li class="song <%= (song.isGravity && current == 'inf')? 'grv' : current %>"
             data-clear="<%= fumen.clear %>"
-            data-rank="<%= fumen.rank %>"
             data-score="<%= fumen.score %>"
             <% if(!vs) { %>
               data-clearrate="<%= zfill_p(fumen.count[1] / fumen.count[0]) %>"
@@ -405,15 +408,6 @@ var statdata2 = <%- JSON.stringify(stat2) %>
         레벨
       </span>
     </li>
-    <li class="sort" data-sort="rank">
-      <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24"
-           xmlns="http://www.w3.org/2000/svg">
-        <path d="M12.45 16h2.09L9.43 3H7.57L2.46 16h2.09l1.12-3h5.64l1.14 3zm-6.02-5L8.5 5.48 10.57 11H6.43zm15.16.59l-8.09 8.09L9.83 16l-1.41 1.41 5.09 5.09L23 13l-1.41-1.41z"/>
-      </svg><!--
-   --><span class="label">
-        랭크
-      </span>
-    </li>
     <li class="sort" data-sort="clear">
       <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24"
            xmlns="http://www.w3.org/2000/svg">
@@ -429,7 +423,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
         <path d="M1.9,12.9c2.1,0,3.4-1.1,3.5-3.2c-1,1.3-3,1.3-4.1,0.2c-1-1.1-1.1-3-0.5-4.3c0.7-1.4,2.3-2,3.7-1.5c1.6,0.5,2.1,2.3,2.1,3.9 v0.5c0,1.4-0.2,3-1.1,4.2C4.7,13.6,3.3,14,1.9,14H1.8v-1.1H1.9z M3.5,9.6c0.9,0,1.7-0.6,2-1.4V7.7c0-0.9-0.2-1.9-1-2.5 C3.8,4.8,2.8,4.9,2.2,5.5C1.2,6.7,1.5,9.6,3.5,9.6z M15.3,4.7L11.2,14H9.8L14,5.1H8.6V4h6.7V4.7z M23.7,4.7L19.6,14h-1.3l4.1-8.8H17 V4h6.7V4.7z M3,17H0v3h3V17z M8,17H5v3h3V17z M24,17H10v3h14V17z"/>
       </svg><!--
    --><span class="label">
-        점수
+        점수 (랭크)
       </span>
     </li>
     <% if(!vs) { %>
@@ -461,31 +455,9 @@ var statdata2 = <%- JSON.stringify(stat2) %>
           점수 차이
         </span>
       </li>
-    <% } %>
-    <li class="menu-title">
-      필터
-    </li>
-    <li onclick="filterBorder(9777777, 4)">
-      <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24"
-           xmlns="http://www.w3.org/2000/svg">
-        <path d="M22 21c-1.11 0-1.73-.37-2.18-.64-.37-.22-.6-.36-1.15-.36-.56 0-.78.13-1.15.36-.46.27-1.07.64-2.18.64s-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36-.56 0-.78.13-1.15.36-.46.27-1.08.64-2.19.64-1.11 0-1.73-.37-2.18-.64-.37-.23-.6-.36-1.15-.36s-.78.13-1.15.36c-.46.27-1.08.64-2.19.64v-2c.56 0 .78-.13 1.15-.36.46-.27 1.08-.64 2.19-.64s1.73.37 2.18.64c.37.23.59.36 1.15.36.56 0 .78-.13 1.15-.36.46-.27 1.08-.64 2.19-.64 1.11 0 1.73.37 2.18.64.37.22.6.36 1.15.36s.78-.13 1.15-.36c.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.23.59.36 1.15.36v2zm0-4.5c-1.11 0-1.73-.37-2.18-.64-.37-.22-.6-.36-1.15-.36-.56 0-.78.13-1.15.36-.45.27-1.07.64-2.18.64s-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36-.56 0-.78.13-1.15.36-.45.27-1.07.64-2.18.64s-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36s-.78.13-1.15.36c-.47.27-1.09.64-2.2.64v-2c.56 0 .78-.13 1.15-.36.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36.56 0 .78-.13 1.15-.36.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36s.78-.13 1.15-.36c.45-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36v2zM8.67 12c.56 0 .78-.13 1.15-.36.46-.27 1.08-.64 2.19-.64 1.11 0 1.73.37 2.18.64.37.22.6.36 1.15.36s.78-.13 1.15-.36c.12-.07.26-.15.41-.23L10.48 5C8.93 3.45 7.5 2.99 5 3v2.5c1.82-.01 2.89.39 4 1.5l1 1-3.25 3.25c.31.12.56.27.77.39.37.23.59.36 1.15.36z"/>
-        <circle cx="16.5" cy="5.5" r="2.5" />
-      </svg><!--
-   --><span class="label">
-        9777777≤
-      </span>
-    </li>
-    <li onclick="filterBorder(9333333, 3)">
-      <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24"
-           xmlns="http://www.w3.org/2000/svg">
-        <path d="M11.15 12c-.31-.22-.59-.46-.82-.72l-1.4-1.55c-.19-.21-.43-.38-.69-.5-.29-.14-.62-.23-.96-.23h-.03C6.01 9 5 10.01 5 11.25V12H2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-8H11.15zM7 20H5v-6h2v6zm4 0H9v-6h2v6zm4 0h-2v-6h2v6zm4 0h-2v-6h2v6zm-.35-14.14l-.07-.07c-.57-.62-.82-1.41-.67-2.2L18 3h-1.89l-.06.43c-.2 1.36.27 2.71 1.3 3.72l.07.06c.57.62.82 1.41.67 2.2l-.11.59h1.91l.06-.43c.21-1.36-.27-2.71-1.3-3.71zm-4 0l-.07-.07c-.57-.62-.82-1.41-.67-2.2L14 3h-1.89l-.06.43c-.2 1.36.27 2.71 1.3 3.72l.07.06c.57.62.82 1.41.67 2.2l-.11.59h1.91l.06-.43c.21-1.36-.27-2.71-1.3-3.71z"/>
-        <circle cx="7" cy="6" r="2"/>
-      </svg><!--
-   --><span class="label">
-        9333333≤
-      </span>
-    </li>
-    <% if(vs) { %>
+      <li class="menu-title">
+        필터
+      </li>
       <li onclick="filterBoth()">
         <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24"
              xmlns="http://www.w3.org/2000/svg">
@@ -495,18 +467,18 @@ var statdata2 = <%- JSON.stringify(stat2) %>
           겹치는 기록만
         </span>
       </li>
+      <li onclick="clearFilter()">
+        <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg><!--
+     --><span class="label">
+          지우기
+        </span>
+      </li>
     <% } %>
-    <li onclick="clearFilter()">
-      <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24"
-           xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-      </svg><!--
-   --><span class="label">
-        지우기
-      </span>
-    </li>
     <li class="menu-title">
-      두 개 이상의 정렬을 순서대로 누르면 같이 적용됩니다.
+      두 개 이상의 정렬을 누르면 순서대로 같이 적용됩니다.
     </li>
     <li class="menu-title">
       <span id="list_total"><%= stat[0].count %></span>개 중
@@ -514,20 +486,20 @@ var statdata2 = <%- JSON.stringify(stat2) %>
     </li>
     <% if(vs) { %>
       <li class="menu-title">
-        <%= stat[0].count %> / <%= stat[0].total %>
+        <%= stat[0].count %>곡 / TBS <%= stat[0].total %>
       </li>
       <li class="menu-title">
-        <%= stat2[0].count %> / <%= stat2[0].total %>
+        <%= stat2[0].count %>곡 / TBS <%= stat2[0].total %>
       </li>
     <% } else { %>
       <li class="menu-title">
-        <%= stat[0].count %> / <%= stat[0].total %>.
+        <%= stat[0].count %>곡 / TBS <%= stat[0].total %>
       </li>
       <li class="menu-title">
-        <%= total[0] %>,
-        <%= total[1] %>,
-        <%= total[2] %>,
-        <%= total[3] %>
+        Pl <%= total[0] %>,
+        C <%= total[1] %>,
+        U <%= total[2] %>,
+        P <%= total[3] %>
       </li>
     <% } %>
   </ul>
