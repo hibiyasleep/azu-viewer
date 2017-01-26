@@ -39,6 +39,30 @@ header
     background-color: #006064 !important
     color: white
 
+    position: relative
+
+    &.legacy
+      &::before
+        display: flex
+        align-items: center
+        justify-content: center
+
+        content: 'SDVX III의 데이터'
+        font-size: 1.5rem
+
+        width: 100%
+        height: 100%
+        padding-top: 1rem
+
+        position: absolute
+
+        filter: none !important
+
+      &> *
+        -webkit-filter: blur(0.1rem) brightness(0.75)
+        filter: blur(0.1rem) brightness(0.75)
+
+
     .class
       width: 100%
       height: 3em

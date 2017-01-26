@@ -11,6 +11,10 @@ compare = (a, b) ->
   else
     -1
 
+isLegacy = (song) ->
+  for i of song
+    return not song[i].mxm
+
 module.exports = (app) ->
 
   app.get '/sdvx/:name', (req, res) ->
@@ -30,12 +34,7 @@ module.exports = (app) ->
         return
 
       d = d.data
-      legacy = false
-
-      for i of d.song
-        if not d.song[i].mxm
-          legacy = true
-        break
+      legacy = isLegacy d.song
 
       songs = {}
 
@@ -112,6 +111,7 @@ module.exports = (app) ->
         stat: stat,
         songs: songs,
         legacy: if legacy then 'legacy' else ''
+        legacy2: false
 
   app.get '/sdvx/:name1/vs/:name2', (req, res) ->
 
@@ -147,6 +147,9 @@ module.exports = (app) ->
         d1 = d1.data
         d2 = d2.data
 
+        legacy1 = isLegacy(d1.song)
+        legacy2 = isLegacy(d2.song)
+
         songs = {}
 
         id1 = Object.keys d1.song
@@ -154,21 +157,25 @@ module.exports = (app) ->
 
         ids = Array.from new Set [].concat id1, id2
 
-        stat = Array.apply null, new Array 17
+        stat = Array.apply null, new Array 21
                     .map () ->
           count: 0
           total: 0
           vs: [0, 0, 0, 0]
           vslength: 0
 
-        stat2 = Array.apply null, new Array 17
+        stat2 = Array.apply null, new Array 21
                     .map () ->
           count: 0
           total: 0
 
         for id in ids
 
-          cdb = d1.db[id] or d2.db[id]    # current db
+          if legacy1 # current db
+            cdb = d2.db[id] or d1.db[id]
+          else
+            cdb = d1.db[id] or d2.db[id]
+
           song1 = d1.song[id]
           song2 = d2.song[id]
 
@@ -196,6 +203,7 @@ module.exports = (app) ->
                 vs: compare cf1.score or 0, cf2.score or 0
 
               level = cdb[fumen]
+              if not level then console.log cdb, id, fumen
 
               # stat
               if cf1.cnt?.play > 0
@@ -234,5 +242,7 @@ module.exports = (app) ->
           meta: d1.user,
           meta2: d2.user,
           stat: stat,
-          stat2: stat2
-          songs: songs
+          stat2: stat2,
+          songs: songs,
+          legacy: if legacy1 then 'legacy' else '',
+          legacy2: if legacy2 then 'legacy' else ''

@@ -109,12 +109,18 @@ $clear-color: #666, #4ba, #a0d, #f48, #ff3
     .summary.rank-#{$i}
       border-color: nth($rank-color, $i + 1)
 
-.segment, .summary
+.segment
   &.vs-0
     background: #2196F3 // blue 500
-
   &.vs-1
     background: #607D8B // blue grey 500
-
   &.vs-2
     background: #FF5722 // deep orange 500
+
+.summary
+  &.vs-0
+    border-color: #2196F3 // blue 500
+  &.vs-1
+    border-color: #607D8B // blue grey 500
+  &.vs-2
+    border-color: #FF5722 // deep orange 500

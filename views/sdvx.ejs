@@ -1,12 +1,14 @@
 <%
   name = {
     fumen: ['nov', 'adv', 'exh', 'inf', 'mxm'],
-    rank: (legacy?
-      ['D', 'C', 'B', 'A', '',   'AA', '',    'AAA', '',     'S']
-    : ['D', 'C', 'B', 'A', 'A+', 'AA', 'AA+', 'AAA', 'AAA+', 'S']),
+    rank: [
+      ['D', 'C', 'B', 'A', 'A+', 'AA', 'AA+', 'AAA', 'AAA+', 'S'],
+      ['D', 'C', 'B', 'A', 'AA', 'AAA']
+    ],
     rank2: (legacy?
       ['D', 'C', 'B', 'A', 'AA', 'AAA', 'S']
-    : ['B 이하', 'A/+', 'AA', 'AA+', 'AAA', 'AAA+', 'S']),
+    : ['B 이하', 'A/+', 'AA', 'AA+', 'AAA', 'AAA+', 'S']
+    ),
     clear: ['FAIL', 'CLR', 'H-CLR', 'UC', 'PUC'],
     vs: ['WIN', 'DRAW', 'LOSE'],
     clear_short: 'FCHUP',
@@ -62,7 +64,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
 <% } %>
 </script>
 <header <%- vs? 'class="vs"':'' %>>
-  <div class="profile">
+  <div class="profile <%= legacy %>">
     <div class="class" data-skill-level="<%= meta.skill_no %>">
       <span>
         Class Lv. <%= meta.skill_no == 12? '∞' : meta.skill_no %>
@@ -98,7 +100,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
         </span>
         <select id="stat_level" class="filter-level">
           <option value="0"> 모두 </option>
-          <% for(var i=1; i<=(legacy? 16 : 20); i++) { %>
+          <% for(var i=1; i<=(legacy || legacy2? 16 : 20); i++) { %>
             <option value="<%= i %>"> 레벨 <%= i %> </option>
           <% } %>
         </select>
@@ -161,7 +163,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
       </div> <!-- /body -->
     </div> <!-- /stat -->
   <% } else { %>
- --><div class="profile">
+ --><div class="profile <%= legacy2 %>">
       <div class="class" data-skill-level="<%= meta2.skill_no %>">
         <span>
           Class Lv. <%= meta2.skill_no == 12? '∞' : meta2.skill_no %>
@@ -318,7 +320,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
                 <span class="unskew"> <%= name.clear[fumen.clear] %> </span>
               </span><!--
            --><span class="rank rank-<%= fumen.rank %>">
-                <span class="unskew"> <%= name.rank[fumen.rank] %> </span>
+                <span class="unskew"> <%= name.rank[+!!legacy][fumen.rank] %> </span>
               </span>
               <span class="score">
                 <%- zfill_score(fumen.score) %>
@@ -344,7 +346,7 @@ var statdata2 = <%- JSON.stringify(stat2) %>
                   <%- zfill_score(fumen.score2) %>
                 </span>
                 <span class="rank rank-<%= fumen.rank2 %>">
-                  <span class="unskew"> <%= name.rank[fumen.rank2] %> </span>
+                  <span class="unskew"> <%= name.rank[+!!legacy2][fumen.rank2] %> </span>
                 </span><!--
              --><span class="clear clear-<%= fumen.clear2 %>">
                   <span class="unskew"> <%= name.clear[fumen.clear2] %> </span>
